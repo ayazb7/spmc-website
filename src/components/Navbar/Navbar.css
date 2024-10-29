@@ -1,0 +1,50 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    background-color: #1B1E40;
+    padding: 0 20px;
+    z-index: 1000;
+}
+
+.navbar-logo img {
+    width: 100px;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 48px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-link-item {
+    position: relative;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+.contact-button {
+    background-color: #85BB40;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 22px;
+    padding: 10px 30px;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Urbanist', sans-serif;
+    transition: opacity 0.3s ease;
+}
+
+.contact-button:hover {
+    opacity: 0.9;
+}

@@ -1,0 +1,23 @@
+.service-description {
+    padding: 60px 20px;
+    text-align: center;
+    color: #174374;
+    background-color: #f9fafc;
+}
+
+.service-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #174374;
+    font-family: 'Urbanist', sans-serif;
+    margin-bottom: 1rem;
+}
+
+.service-subtitle {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #174374;
+    font-family: 'Urbanist', sans-serif;
+}
