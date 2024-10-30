@@ -1,0 +1,136 @@
+.footer {
+    padding: 60px 40px 20px 20px;
+    background-color: #ffffff;
+    color: #143C68;
+    font-family: 'Urbanist', sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-container {
+    max-width: 1250px;
+    width: 100%;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 3rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.footer-section {
+    width: 30%;
+}
+
+.footer-heading {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #143C68;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.green-heading {
+    color: #85BB40;
+}
+
+.green-line, .blue-line {
+    width: 200px;
+    height: 2px;
+    border: none;
+    margin: 0 auto 15px auto;
+}
+
+.green-line {
+    background-color: #85BB40;
+}
+
+.blue-line {
+    background-color: #143C68;
+}
+
+.link-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer a {
+    color: inherit; 
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.link-grid li {
+    font-size: 1rem;
+    color: #143C68;
+    text-align: left;
+    cursor: pointer;
+}
+
+.contact-list {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+}
+
+.contact-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    color: #143C68;
+}
+
+.contact-list li svg {
+    color: #85BB40;
+}
+
+.contact-icon {
+    margin-right: 10px;
+}
+
+.footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 3rem;
+}
+
+.footer-logo {
+    height: 150px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #174374;
+    color: #ffffff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: #143C68;
+}
