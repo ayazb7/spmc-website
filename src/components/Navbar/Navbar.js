@@ -5,6 +5,13 @@ import './Navbar.css';
 import logo from '../../assets/logo_white.png'; 
 
 const Navbar = () => {
+    const navItems = [
+        { text: "Care Services", path: "/care-services" },
+        { text: "Disability Support", path: "/disability-support" },
+        { text: "Social Events", path: "/social-events" },
+        { text: "About Us", path: "/about" }
+    ];
+
     return (
         <nav className="navbar">
             <div className="navbar-logo">
@@ -13,7 +20,7 @@ const Navbar = () => {
                 </Link>
             </div>
             <ul className="navbar-links">
-                {["Care Services", "Disability Support", "Social Events", "About Us"].map((text) => (
+                {navItems.map(({ text, path }) => (
                     <motion.li
                         key={text}
                         initial={{ backgroundColor: "rgba(255, 255, 255, 0)", color: "#FFFFFF" }}
@@ -24,7 +31,9 @@ const Navbar = () => {
                         }}
                         className="navbar-link-item"
                     >
-                        {text}
+                        <Link to={path} className="nav-link">
+                            {text}
+                        </Link>
                     </motion.li>
                 ))}
             </ul>

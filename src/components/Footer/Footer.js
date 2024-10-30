@@ -16,7 +16,7 @@ const Footer = () => {
                             <hr className="green-line" />
                         </div>
                         <ul className="link-grid">
-                            <li><a href="#">About Us</a></li>
+                            <li><a href="/about">About Us</a></li>
                             <li><a href="#">Privacy Policy</a></li>
                             <li><a href="#">News</a></li>
                             <li><a href="#">Useful Information</a></li>
