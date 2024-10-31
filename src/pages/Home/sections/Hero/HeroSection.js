@@ -2,16 +2,12 @@ import React, { useState, useEffect } from 'react';
 import './HeroSection.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
-const HeroSection = () => {
+const HeroSection = ({ serviceSectionRef }) => {
     const [hasScrolled, setHasScrolled] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY > 80) {
-                setHasScrolled(true);
-            } else {
-                setHasScrolled(false);
-            }
+            setHasScrolled(window.scrollY > 80);
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -20,6 +16,15 @@ const HeroSection = () => {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
+
+    const scrollToServices = () => {
+        const navbarHeight = document.querySelector('.navbar').offsetHeight;
+        const serviceSectionPosition = serviceSectionRef.current.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({
+            top: serviceSectionPosition - navbarHeight,
+            behavior: 'smooth',
+        });
+    };
 
     return (
         <div className="hero-section">
@@ -39,7 +44,7 @@ const HeroSection = () => {
                 </div>
             </div>
             
-            <div className={`chevron-down ${hasScrolled ? 'no-bounce' : ''}`}>
+            <div className={`chevron-down ${hasScrolled ? 'no-bounce' : ''}`} onClick={scrollToServices}>
                 <i className="fas fa-chevron-down"></i>
             </div>
         </div>
