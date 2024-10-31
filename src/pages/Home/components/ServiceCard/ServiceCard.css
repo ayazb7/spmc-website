@@ -11,17 +11,14 @@
     border-radius: 15px !important;
 }
 
-.service-card:hover .overlay {
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-.service-card:hover .card-title {
-    transform: translateY(-10px);
-}
-
-.service-card:hover .learn-more {
-    opacity: 1;
-    transform: translateY(0);
+.bottom-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)); 
+    pointer-events: none; 
 }
 
 .overlay {
@@ -35,6 +32,19 @@
     align-items: flex-end;
     padding: 20px;
     transition: background-color 0.3s ease;
+}
+
+.service-card:hover .overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.service-card:hover .card-title {
+    transform: translateY(-10px);
+}
+
+.service-card:hover .learn-more {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .card-content {
@@ -52,9 +62,13 @@
 .learn-more {
     text-align: start;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 500;
     color: #85BB40;
     opacity: 0;
     transform: translateY(10px);
     transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.learn-more:hover {
+    font-weight: 600;
 }

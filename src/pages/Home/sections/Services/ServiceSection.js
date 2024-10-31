@@ -3,11 +3,11 @@ import './ServiceSection.css';
 import ServiceCard from '../../components/ServiceCard/ServiceCard';
 
 import ServiceImage1 from '../../../../assets/service1.png';
-import ServiceImage2 from '../../../../assets/service1.png';
-import ServiceImage3 from '../../../../assets/service1.png';
-import ServiceImage4 from '../../../../assets/service1.png';
-import ServiceImage5 from '../../../../assets/service1.png';
-import ServiceImage6 from '../../../../assets/service1.png';
+import ServiceImage2 from '../../../../assets/service2.png';
+import ServiceImage3 from '../../../../assets/service3.png';
+import ServiceImage4 from '../../../../assets/service4.png';
+import ServiceImage5 from '../../../../assets/service5.png';
+import ServiceImage6 from '../../../../assets/service6.png';
 
 const ServiceSection = forwardRef((props, ref) => {
     const services = [

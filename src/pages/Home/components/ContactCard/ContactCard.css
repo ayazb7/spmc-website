@@ -1,0 +1,125 @@
+.contact-card {
+    width: 100%;
+    max-width: 1000px;
+    max-height: 900px;
+    height: 75vh;
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Urbanist', sans-serif;
+}
+
+.contact-header {
+    width: 100%;
+    max-width: 30%;
+    background-color: #85BB40;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    left: 1;
+}
+
+.contact-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    gap: 1.5rem;
+    padding-top: 80px;
+    padding-bottom: 40px;
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; 
+    text-align: left;
+}
+
+.contact-logo {
+    width: 100px;
+    height: auto;
+}
+
+.vertical-line {
+    width: 1px;
+    height: 80px; 
+    background-color: #1B1E40;
+}
+
+.contact-details p {
+    font-size: 1rem;
+    color: #1B1E40;
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.form-row {
+    display: flex;
+    gap: 24px; 
+    width: 100%;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #1B1E40;
+    border-radius: 8px;
+    font-size: 18px; 
+    margin-bottom: 18px;
+    outline: none;
+    background-color: transparent;
+    color: #1B1E40;
+    font-family: 'Urbanist', sans-serif;
+}
+
+.half-width {
+    flex: 1;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.message {
+    height: 70%;
+    resize: none;
+}
+
+.form-input::placeholder {
+    color: #BCB9B9;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 15px;
+    background-color: #174374;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 24px; 
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Urbanist', sans-serif; 
+}
+
+.submit-button:hover {
+    background-color: #123362;
+}

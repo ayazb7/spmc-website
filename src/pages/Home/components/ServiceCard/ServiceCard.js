@@ -19,6 +19,8 @@ const ServiceCard = ({ image, title, roundedCorners = [], width = 250, height = 
                 ...borderRadiusStyle
             }}
         >
+            <div className="bottom-overlay"></div>
+            
             <div className="overlay">
                 <div className="card-content">
                     <h3 className="card-title">{title}</h3>
