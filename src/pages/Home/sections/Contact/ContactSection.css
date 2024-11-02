@@ -49,7 +49,21 @@
     margin-top: 30px;
 }
 
-.partner-logos img {
-    width: 175px;
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-image {
+    width: 175px; 
     height: auto;
+}
+
+.registration-text {
+    font-size: 12px;
+    font-family: 'Urbanist', sans-serif;
+    color: white;
+    margin-top: 10px;
+    text-align: center;
 }

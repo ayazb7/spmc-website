@@ -2,10 +2,10 @@ import React from 'react';
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
 
-const Layout = ({ children }) => {
+const Layout = ({ children, contactSectionRef }) => {
     return (
         <>
-            <Navbar />
+            <Navbar contactSectionRef={contactSectionRef} />
             <main>{children}</main>
             <Footer />
         </>

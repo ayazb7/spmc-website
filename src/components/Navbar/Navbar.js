@@ -1,10 +1,25 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import './Navbar.css'; 
-import logo from '../../assets/logo_white.png'; 
+import './Navbar.css';
+import logo from '../../assets/logo_white.png';
 
-const Navbar = () => {
+const Navbar = ({ contactSectionRef }) => {
+    const location = useLocation();
+
+    const scrollToContact = () => {
+        if (location.pathname === '/' && contactSectionRef?.current) {
+            const navbarHeight = document.querySelector('.navbar').offsetHeight;
+            const contactSectionPosition = contactSectionRef.current.getBoundingClientRect().top + window.scrollY;
+            window.scrollTo({
+                top: contactSectionPosition - navbarHeight,
+                behavior: 'smooth',
+            });
+        } else {
+            window.location.href = "/";
+        }
+    };
+
     const navItems = [
         { text: "Care Services", path: "/care-services" },
         { text: "Disability Support", path: "/disability-support" },
@@ -37,7 +52,7 @@ const Navbar = () => {
                     </motion.li>
                 ))}
             </ul>
-            <button className="contact-button">Contact</button>
+            <button className="contact-button" onClick={scrollToContact}>Contact</button>
         </nav>
     );
 };

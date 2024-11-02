@@ -1,18 +1,17 @@
 .contact-card {
     width: 100%;
     max-width: 1000px;
-    max-height: 900px;
-    height: 75vh;
+    height: 70vh;
     background-color: #ffffff;
     border-radius: 15px;
-    padding: 20px;
+    padding: 10px 20px; /* Reduced padding */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
-    overflow: hidden;
+    justify-content: center;
     font-family: 'Urbanist', sans-serif;
+    position: relative;
 }
 
 .contact-header {
@@ -28,30 +27,29 @@
     font-weight: bold;
     position: absolute;
     top: 0;
-    left: 1;
+    left: 15%;
 }
 
 .contact-content {
-    width: 100%;
+    width: 85%;
+    height: 100%; 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center; 
-    gap: 1.5rem;
-    padding-top: 80px;
-    padding-bottom: 40px;
+    gap: 2rem; 
 }
 
 .contact-info {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px; 
+    gap: 30px; 
     text-align: left;
 }
 
 .contact-logo {
-    width: 100px;
+    width: 150px;
     height: auto;
 }
 
@@ -62,12 +60,19 @@
 }
 
 .contact-details p {
-    font-size: 1rem;
+    font-size: 18px;
     color: #1B1E40;
     margin: 5px 0;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 12px;
+}
+
+.contact-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px; 
 }
 
 .form-row {
@@ -81,8 +86,7 @@
     padding: 12px;
     border: 1px solid #1B1E40;
     border-radius: 8px;
-    font-size: 18px; 
-    margin-bottom: 18px;
+    font-size: 18px;
     outline: none;
     background-color: transparent;
     color: #1B1E40;
@@ -98,7 +102,7 @@
 }
 
 .message {
-    height: 70%;
+    height: 200px; 
     resize: none;
 }
 
@@ -113,11 +117,11 @@
     color: white;
     border: none;
     border-radius: 10px;
-    font-size: 24px; 
+    font-size: 24px;
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    font-family: 'Urbanist', sans-serif; 
+    font-family: 'Urbanist', sans-serif;
 }
 
 .submit-button:hover {

@@ -41,10 +41,10 @@
 }
 
 .green-line, .blue-line {
-    width: 200px;
+    width: 50%;
     height: 2px;
     border: none;
-    margin: 0 auto 15px auto;
+    margin: 0 auto 0px auto;
 }
 
 .green-line {

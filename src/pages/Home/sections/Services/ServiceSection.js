@@ -9,7 +9,7 @@ import ServiceImage4 from '../../../../assets/service4.png';
 import ServiceImage5 from '../../../../assets/service5.png';
 import ServiceImage6 from '../../../../assets/service6.png';
 
-const ServiceSection = forwardRef((props, ref) => {
+const ServiceSection = forwardRef(({ contactSectionRef }, ref) => {
     const services = [
         { title: 'Care for adults', image: ServiceImage1, roundedCorners: ['top-left'] },
         { title: 'Disabilities Support', image: ServiceImage2, roundedCorners: [] },
@@ -18,6 +18,17 @@ const ServiceSection = forwardRef((props, ref) => {
         { title: 'Home Care', image: ServiceImage5, roundedCorners: [] },
         { title: 'Social Engagement', image: ServiceImage6, roundedCorners: ['bottom-right'] },
     ];
+
+    const scrollToContact = () => {
+        if (contactSectionRef.current) { // Check if ref is defined
+            const navbarHeight = document.querySelector('.navbar').offsetHeight;
+            const contactSectionPosition = contactSectionRef.current.getBoundingClientRect().top + window.scrollY;
+            window.scrollTo({
+                top: contactSectionPosition - navbarHeight,
+                behavior: 'smooth',
+            });
+        }
+    };
 
     return (
         <section className="service-description" ref={ref}>
@@ -42,7 +53,7 @@ const ServiceSection = forwardRef((props, ref) => {
                     />
                 ))}
             </div>
-            <button className="cta-button">CONTACT US</button>
+            <button className="cta-button" onClick={scrollToContact}>CONTACT US</button>
         </section>
     );
 });

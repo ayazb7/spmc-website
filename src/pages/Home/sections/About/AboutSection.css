@@ -1,0 +1,147 @@
+.about-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 50px 0;
+    background-color: #f9fafc;
+    height: 95vh;
+}
+
+.about-background {
+    position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.about-ellipse {
+    position: absolute;
+    left: -400px; 
+    top: 50%;
+    transform: translateY(-50%);
+    object-fit: cover; 
+    z-index: 2;
+}
+
+.about-blue-ellipse {
+    position: absolute;
+    right: -500px; 
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1600px; 
+    height: 1100px;
+    background-color: #174374;
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.about-blue-rectangle {
+    position: absolute;
+    top: 0;
+    width: 100vw; 
+    height: 50vh;
+    background-color: #174374;
+    z-index: 0; 
+}
+
+.about-card {
+    position: absolute;
+    right: 100px;
+    max-width: 600px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    height: 45vh;
+    font-family: 'Urbanist', sans-serif;
+    z-index: 2;
+}
+
+.about-header {
+    width: 100%;
+    max-width: 30%;
+    background-color: #85BB40;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding: 12px;
+    text-align: center;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    right: 15%;
+}
+
+.about-content {
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    flex-grow: 1;
+    padding: 30px 0;
+}
+
+.about-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #1B1E40;
+    margin-bottom: 16px;
+    text-align: left;
+}
+
+.about-description {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 16px;
+    text-align: left;
+}
+
+.about-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: flex-end;
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+.btn {
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Urbanist', sans-serif;
+}
+
+.btn-primary {
+    background-color: #143C68;
+    color: white;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0f2a4a;
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: #143C68;
+    border: 2px solid #143C68;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-outline:hover {
+    background-color: #143C68;
+    color: white;
+}
