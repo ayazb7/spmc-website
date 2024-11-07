@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import './ContactSection.css';
 import ContactCard from '../../components/ContactCard/ContactCard';
 import CQCLogo from '../../../../assets/cqc_logo.png';
 import CityCouncilLogo from '../../../../assets/city_council_logo.png';
 
-const ContactSection = () => {
+const ContactSection = forwardRef((props, ref) => {
     return (
-        <section className="contact-section">
+        <section className="contact-section" ref={ref}>
             <div className="contact-container">
                 <div className="contact-left">
                     <ContactCard />
@@ -23,13 +23,19 @@ const ContactSection = () => {
                         living life to the fullest.
                     </p>
                     <div className="partner-logos">
-                        <img src={CQCLogo} alt="Care Quality Commission" />
-                        <img src={CityCouncilLogo} alt="Southampton City Council" />
+                        <div className="logo-container">
+                            <img className="logo-image" src={CQCLogo} alt="Care Quality Commission" />
+                            <span className="registration-text">*REGISTRATION PENDING</span>
+                        </div>
+                        <div className="logo-container">
+                            <img className="logo-image" src={CityCouncilLogo} alt="Southampton City Council" />
+                            <span className="registration-text">*REGISTRATION PENDING</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     );
-};
+});
 
 export default ContactSection;

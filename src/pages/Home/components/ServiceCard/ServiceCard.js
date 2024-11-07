@@ -1,7 +1,7 @@
 import React from 'react';
 import './ServiceCard.css';
 
-const ServiceCard = ({ image, title, roundedCorners = [], width = 250, height = 250 }) => {
+const ServiceCard = ({ image, title, roundedCorners = [], width = 250, height = 250, onClick }) => {
     const borderRadiusStyle = {
         borderTopLeftRadius: roundedCorners.includes('top-left') ? '15px' : '0',
         borderTopRightRadius: roundedCorners.includes('top-right') ? '15px' : '0',
@@ -18,6 +18,7 @@ const ServiceCard = ({ image, title, roundedCorners = [], width = 250, height = 
                 height: `${height}px`,
                 ...borderRadiusStyle
             }}
+            onClick={onClick}
         >
             <div className="bottom-overlay"></div>
             
