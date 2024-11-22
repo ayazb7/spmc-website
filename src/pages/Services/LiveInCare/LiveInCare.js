@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import './CareForAdults.css';
+import './LiveInCare.css';
 import '../Global.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import VideoSection from '../VideoSection';
 
-const CareForAdults = () => {
+const LiveInCare = () => {
     const [hasScrolled, setHasScrolled] = useState(false);
 
     useEffect(() => {
@@ -30,15 +30,15 @@ const CareForAdults = () => {
                 behavior: 'smooth',
             });
         }
-    };    
+    }; 
 
     return (
         <div className='care-page'>
-            <section className="care-hero-section care-hero-adults">
+            <section className="care-hero-section live-in-care">
                 <div className="care-hero-overlay"></div>
                 <div className="care-hero-content">
-                    <h1>Care for Adults</h1>
-                    <p>Whether you require assistance for a few hours a day, round-the-clock care, or a dedicated live-in carer, we are committed to finding the perfect solution to meet your needs.</p>
+                    <h1>Live-in Care</h1>
+                    <p>Our extensive range of services is designed to support you or your loved ones, whether on a short-term or long-term basis, with a focus on promoting independence and enhancing quality of life.</p>
                     
                     <div className="care-search-section">
                         <p className="care-search-title">Looking for homecare?</p>
@@ -58,10 +58,8 @@ const CareForAdults = () => {
 
             <section className="service-description">
 
-                <h2 className="service-title">Adult and Home Care Services</h2>
-                <p className="service-subtitle">
-                Our companions are thoughtfully chosen for their kindness and dedication, bringing positivity and joy to each interaction. Let our companionship visits enhance your daily life with genuine human connection, comfort, and support. Discover the uplifting impact a compassionate companion can make.
-                </p>
+                <h2 className="service-title">Supported Living And Home Care Services</h2>
+                <p className="service-subtitle">At Solent Primary Medical Care Services, we place great emphasis on understanding your unique requirements and preferences. We carefully select a carer who possesses the appropriate skills and experience to provide the highest standard of care. Our aim is to empower you to maintain your independence and continue enjoying the activities you love with confidence.                </p>
 
             </section>
 
@@ -70,4 +68,4 @@ const CareForAdults = () => {
     );
 };
 
-export default CareForAdults;
+export default LiveInCare;

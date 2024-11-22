@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import './CareForAdults.css';
+import './AfterHospitalCare.css';
 import '../Global.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import VideoSection from '../VideoSection';
 
-const CareForAdults = () => {
+const AfterHospitalCare = () => {
     const [hasScrolled, setHasScrolled] = useState(false);
 
     useEffect(() => {
@@ -34,10 +34,10 @@ const CareForAdults = () => {
 
     return (
         <div className='care-page'>
-            <section className="care-hero-section care-hero-adults">
+            <section className="care-hero-section after-hospital-care">
                 <div className="care-hero-overlay"></div>
                 <div className="care-hero-content">
-                    <h1>Care for Adults</h1>
+                    <h1>After Hospital Care</h1>
                     <p>Whether you require assistance for a few hours a day, round-the-clock care, or a dedicated live-in carer, we are committed to finding the perfect solution to meet your needs.</p>
                     
                     <div className="care-search-section">
@@ -70,4 +70,4 @@ const CareForAdults = () => {
     );
 };
 
-export default CareForAdults;
+export default AfterHospitalCare;

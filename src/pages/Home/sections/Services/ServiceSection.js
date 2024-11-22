@@ -15,9 +15,9 @@ const ServiceSection = forwardRef(({ contactSectionRef }, ref) => {
 
     const services = [
         { title: 'Care for adults', image: ServiceImage1, roundedCorners: ['top-left'], route: '/care-for-adults' },
-        { title: 'Disabilities Support', image: ServiceImage2, roundedCorners: [] },
-        { title: 'Live-in Care', image: ServiceImage3, roundedCorners: ['top-right'] },
-        { title: 'After Hospital Care', image: ServiceImage4, roundedCorners: ['bottom-left'] },
+        { title: 'Disabilities Support', image: ServiceImage2, roundedCorners: [], route: '/disabilities-support'},
+        { title: 'Live-in Care', image: ServiceImage3, roundedCorners: ['top-right'], route: '/live-in-care' },
+        { title: 'After Hospital Care', image: ServiceImage4, roundedCorners: ['bottom-left'], route: '/after-hospital-care' },
         { title: 'Home Care', image: ServiceImage5, roundedCorners: [] },
         { title: 'Social Engagement', image: ServiceImage6, roundedCorners: ['bottom-right'] },
     ];
@@ -40,7 +40,7 @@ const ServiceSection = forwardRef(({ contactSectionRef }, ref) => {
 
             <h2 className="service-title">High Quality Companionship Services</h2>
             <p className="service-subtitle">
-                Our companions are thoughtfully chosen for their kindness and dedication...
+            Our companions are thoughtfully chosen for their kindness and dedication, bringing positivity and joy to each interaction. Let our companionship visits enhance your daily life with genuine human connection, comfort, and support. Discover the uplifting impact a compassionate companion can make.
             </p>
             <div className="service-cards">
                 {services.map((service, index) => (
@@ -52,7 +52,10 @@ const ServiceSection = forwardRef(({ contactSectionRef }, ref) => {
                         width={250}
                         height={250}
                         onClick={() => {
-                            if (service.route) navigate(service.route); // Navigate if route exists
+                            if (service.route) {
+                                navigate(service.route);
+                                window.scrollTo(0, 0);
+                            }
                         }}
                     />
                 ))}
