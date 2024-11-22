@@ -68,7 +68,7 @@
     border-bottom-left-radius: 10px;
     outline: none;
     width: 400px;
-    height: 75px;
+    height: 60px;
     font-family: 'Urbanist', sans-serif;
 }
 
@@ -78,8 +78,8 @@
     cursor: pointer;
     color: #ffffff;
     font-size: 1.2rem;
-    width: 75px;
-    height: 75px;
+    width: 60px;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;

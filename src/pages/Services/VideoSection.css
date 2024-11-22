@@ -122,8 +122,8 @@
     align-items: center;
 }
 
-.logo-image {
-    width: 250px;
+.logo-image.larger {
+    width: 200px;
     height: auto;
 }
 

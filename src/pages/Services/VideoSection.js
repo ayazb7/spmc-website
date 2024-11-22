@@ -2,6 +2,7 @@ import React from 'react';
 import './VideoSection.css';
 import CQCLogo from '../../assets/cqc_logo.png';
 import CityCouncilLogo from '../../assets/city_council_logo.png';
+import ICOLogo from '../../assets/ico-logo.png';
 
 const VideoSection = () => {
     return (
@@ -31,11 +32,15 @@ const VideoSection = () => {
                 </div>
                 <div className="video-right">
                     <div className="logo-container">
-                        <img className="logo-image" src={CQCLogo} alt="Care Quality Commission" />
+                        <img className="logo-image larger" src={CQCLogo} alt="Care Quality Commission" />
                         <span className="registration-text">*REGISTRATION PENDING</span>
                     </div>
                     <div className="logo-container">
-                        <img className="logo-image" src={CityCouncilLogo} alt="Southampton City Council" />
+                        <img className="logo-image larger" src={CityCouncilLogo} alt="Southampton City Council" />
+                        <span className="registration-text">*REGISTRATION PENDING</span>
+                    </div>
+                    <div className="logo-container">
+                        <img className="logo-image larger" src={ICOLogo} alt="ICO" />
                         <span className="registration-text">*REGISTRATION PENDING</span>
                     </div>
                 </div>
