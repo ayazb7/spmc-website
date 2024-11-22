@@ -7,6 +7,8 @@ import CareForAdults from './pages/Services/CareForAdults/CareForAdults';
 import DisabilitiesSupport from './pages/Services/DisabilitiesSupport/DisabilitiesSupport';
 import LiveInCare from './pages/Services/LiveInCare/LiveInCare';
 import AfterHospitalCare from './pages/Services/AfterHospitalCare/AfterHospitalCare';
+import HomeCare from './pages/Services/HomeCare/HomeCare';
+import SocialEngagement from './pages/Services/SocialEngagement/SocialEngagement';
 
 const App = () => {
     return (
@@ -19,6 +21,8 @@ const App = () => {
                     <Route path="/disabilities-support" element={<DisabilitiesSupport />} />
                     <Route path="/live-in-care" element={<LiveInCare />} />
                     <Route path="/after-hospital-care" element={<AfterHospitalCare />} />
+                    <Route path="/home-care" element={<HomeCare />} />
+                    <Route path="/social-engagement" element={<SocialEngagement />} />
                 </Routes>
             </Layout>
         </Router>

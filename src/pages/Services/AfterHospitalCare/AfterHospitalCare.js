@@ -4,6 +4,8 @@ import '../Global.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import VideoSection from '../VideoSection';
 
+import ServiceImage1 from '../../../assets/care-for-adults.png';
+
 const AfterHospitalCare = () => {
     const [hasScrolled, setHasScrolled] = useState(false);
 
@@ -63,6 +65,61 @@ const AfterHospitalCare = () => {
                 Our companions are thoughtfully chosen for their kindness and dedication, bringing positivity and joy to each interaction. Let our companionship visits enhance your daily life with genuine human connection, comfort, and support. Discover the uplifting impact a compassionate companion can make.
                 </p>
 
+                <div className="discover-services">
+                    <span className="line"></span>
+                    <span className="discover-text">DISCOVER OUR SERVICES</span>
+                    <span className="line"></span>
+                </div>
+
+            </section>
+
+            <section className="service-sections">
+                <div className="section green-section">
+                    <div className="section-content">
+                        <div className="text-container">
+                            <h3 className="section-title">Supported Living Services</h3>
+                            <ul className="service-list">
+                                <li>Dementia Care</li>
+                                <li>End of Life Care</li>
+                                <li>Respite Care</li>
+                                <li>Hospital Discharge Support</li>
+                                <li>Rehabilitation/Aftercare at Home</li>
+                                <li>Walking Night Care</li>
+                            </ul>
+                        </div>
+                        <div className="image-container">
+                            <img
+                                src={ServiceImage1}
+                                alt="Supported Living Services"
+                                className="section-image"
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                <div className="section white-section">
+                    <div className="section-content">
+                        <div className="image-container">
+                            <img
+                                src={ServiceImage1}
+                                alt="Homecare Services"
+                                className="section-image"
+                            />
+                        </div>
+                        <div className="text-container">
+                            <h3 className="section-title">Homecare Services</h3>
+                            <ul className="service-list">
+                                <li>Washing/Bathing Assistance</li>
+                                <li>Oral Hygiene, Dressing</li>
+                                <li>Catheters & Stoma Care</li>
+                                <li>Medical Administration</li>
+                                <li>Laundry & Ironing</li>
+                                <li>Shopping, Cleaning</li>
+                                <li>Companionship</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </section>
 
             <VideoSection />

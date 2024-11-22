@@ -18,8 +18,8 @@ const ServiceSection = forwardRef(({ contactSectionRef }, ref) => {
         { title: 'Disabilities Support', image: ServiceImage2, roundedCorners: [], route: '/disabilities-support'},
         { title: 'Live-in Care', image: ServiceImage3, roundedCorners: ['top-right'], route: '/live-in-care' },
         { title: 'After Hospital Care', image: ServiceImage4, roundedCorners: ['bottom-left'], route: '/after-hospital-care' },
-        { title: 'Home Care', image: ServiceImage5, roundedCorners: [] },
-        { title: 'Social Engagement', image: ServiceImage6, roundedCorners: ['bottom-right'] },
+        { title: 'Home Care', image: ServiceImage5, roundedCorners: [], route: '/home-care' },
+        { title: 'Social Engagement', image: ServiceImage6, roundedCorners: ['bottom-right'], route: '/social-engagement' },
     ];
 
     const scrollToContact = () => {

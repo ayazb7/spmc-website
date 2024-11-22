@@ -5,6 +5,8 @@
     color: #174374;
     background-color: #f9fafc;
     overflow: hidden;
+    align-content: center;
+    justify-content: center;
 }
 
 .service-title {
