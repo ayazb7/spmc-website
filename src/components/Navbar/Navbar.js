@@ -21,10 +21,10 @@ const Navbar = ({ contactSectionRef }) => {
     };
 
     const navItems = [
-        { text: "Care Services", path: "/care-services" },
-        { text: "Disability Support", path: "/disability-support" },
+        { text: "Services", path: "/care-services" },
         { text: "Social Events", path: "/social-events" },
-        { text: "About Us", path: "/about" }
+        { text: "Why Us?", path: "/about" },
+        { text: "Careers", path: "/about" }
     ];
 
     return (

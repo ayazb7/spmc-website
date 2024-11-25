@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './HeroSection.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import heroVideo from '../../../../assets/hero_video.mp4'; // Replace with your actual video path
 
 const HeroSection = ({ serviceSectionRef }) => {
     const [hasScrolled, setHasScrolled] = useState(false);
@@ -28,6 +29,10 @@ const HeroSection = ({ serviceSectionRef }) => {
 
     return (
         <div className="hero-section">
+            <video className="hero-video" autoPlay loop muted playsInline>
+                <source src={heroVideo} type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
             <div className="hero-overlay"></div>
             <div className="hero-content">
                 <h1>Solent Primary Medical Care</h1>
