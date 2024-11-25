@@ -3,6 +3,7 @@ import './ContactSection.css';
 import ContactCard from '../../components/ContactCard/ContactCard';
 import CQCLogo from '../../../../assets/cqc_logo.png';
 import CityCouncilLogo from '../../../../assets/city_council_logo.png';
+import ICOLogo from '../../../../assets/ico-logo.png';
 
 const ContactSection = forwardRef((props, ref) => {
     return (
@@ -30,6 +31,9 @@ const ContactSection = forwardRef((props, ref) => {
                         <div className="logo-container">
                             <img className="logo-image" src={CityCouncilLogo} alt="Southampton City Council" />
                             <span className="registration-text">*REGISTRATION PENDING</span>
+                        </div>
+                        <div className="logo-container">
+                            <img className="logo-image" src={ICOLogo} alt="ICO" />
                         </div>
                     </div>
                 </div>

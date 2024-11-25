@@ -6,7 +6,8 @@
     align-items: center;
     justify-content: space-between;
     height: 80px;
-    background-color: #1B1E40;
+    /* background-color: #1B1E40; */
+    background-color: #E4EAF6;
     padding: 0 20px;
     z-index: 1000;
 }
@@ -21,17 +22,97 @@
     list-style: none;
     margin: 0;
     padding: 0;
+    position: relative;
+    color: white;
 }
 
+/* Headers with a submenu */
 .navbar-link-item {
     position: relative;
     font-size: 18px;
     font-weight: 500;
     cursor: pointer;
     padding: 10px 20px;
-    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    border-radius: 20px 20px 0 0; /* Rounded only on top corners */
+    transition: background-color 0.3s ease;
 }
 
+/* Headers without a submenu */
+.navbar-link-item:not(:has(.dropdown-menu)) {
+    border-radius: 20px; /* Fully rounded borders */
+}
+
+/* Hover styling for all headers */
+.navbar-link-item:hover {
+    background-color: rgba(255, 255, 255, 1);
+    color: #1B1E40;
+}
+
+/* Chevron icon for headers with submenu */
+.chevron-icon {
+    margin-left: 5px;
+    font-size: 12px;
+}
+
+/* Dropdown Menu Styles */
+.dropdown-menu {
+    display: block;
+    position: absolute;
+    top: 100%; /* Place directly below the parent */
+    left: 0;
+    background-color: #FFFFFF;
+    padding: 10px 0;
+    border-radius: 0 0 8px 8px; /* Rounded only on bottom corners */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    z-index: 1000;
+    opacity: 0; /* Initially hidden */
+    visibility: hidden; /* Initially not visible */
+    transform: translateY(-10px); /* Start slightly above */
+    transition: all 0.3s ease; /* Smooth transition for appearance */
+}
+
+/* Show dropdown with cascading animation */
+.navbar-link-item:hover .dropdown-menu,
+.navbar-link-item:focus-within .dropdown-menu {
+    opacity: 1; /* Fully visible */
+    visibility: visible; /* Ensure it's visible */
+    transform: translateY(0); /* Slide into position */
+}
+
+/* Dropdown menu links */
+.dropdown-menu li {
+    list-style: none;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(-10px); /* Start slightly above */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
+    transition-delay: calc(var(--index, 0) * 0.05s); /* Cascade delay based on index */
+}
+
+/* Show dropdown links with cascading animation */
+.dropdown-menu li:nth-child(n):hover,
+.navbar-link-item:hover .dropdown-menu li {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Slide into position */
+}
+
+/* Dropdown link styling */
+.dropdown-link {
+    display: block;
+    padding: 10px 20px;
+    color: #1B1E40;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+}
+
+.dropdown-link:hover {
+    background-color: #F0F0F0; /* Highlight on hover */
+}
+
+/* Contact button */
 .contact-button {
     background-color: #85BB40;
     color: #FFFFFF;
@@ -50,11 +131,39 @@
 }
 
 .nav-link {
-    color: inherit;
+    color: #1B1E40;
     text-decoration: none;
-    display: block;
+    display: flex;
+    align-items: center;
 }
 
 .nav-link:hover {
-    color: #1B1E40; 
+    color: #1B1E40;
+}
+
+.burger-menu {
+    display: none;
+}
+
+/* Hide headers and contact button on mobile */
+@media screen and (max-width: 768px) {
+    .navbar-links,
+    .contact-button {
+        display: none;
+    }
+
+    .navbar {
+        justify-content: space-between; /* Logo on the left, menu on the right */
+    }
+
+    .burger-menu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        color: #1B1E40;
+        font-size: 24px;
+    }
 }

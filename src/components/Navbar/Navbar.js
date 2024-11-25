@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import './Navbar.css';
-import logo from '../../assets/logo_white.png';
+import logo from '../../assets/logo.png';
+import { FaChevronDown } from 'react-icons/fa'; // Import the chevron down icon
 
 const Navbar = ({ contactSectionRef }) => {
+    const [dropdownOpen, setDropdownOpen] = useState(false);
     const location = useLocation();
 
     const scrollToContact = () => {
@@ -21,10 +23,20 @@ const Navbar = ({ contactSectionRef }) => {
     };
 
     const navItems = [
-        { text: "Services", path: "/care-services" },
+        {
+            text: "Services",
+            submenu: [
+                { text: 'Care for adults', path: '/care-for-adults' },
+                { text: 'Disabilities Support', path: '/disabilities-support' },
+                { text: 'Live-in Care', path: '/live-in-care' },
+                { text: 'After Hospital Care', path: '/after-hospital-care' },
+                { text: 'Home Care', path: '/home-care' },
+                { text: 'Social Engagement', path: '/social-engagement' },
+            ],
+        },
         { text: "Social Events", path: "/social-events" },
         { text: "Why Us?", path: "/about" },
-        { text: "Careers", path: "/about" }
+        { text: "Careers", path: "/about" },
     ];
 
     return (
@@ -35,24 +47,35 @@ const Navbar = ({ contactSectionRef }) => {
                 </Link>
             </div>
             <ul className="navbar-links">
-                {navItems.map(({ text, path }) => (
-                    <motion.li
+                {navItems.map(({ text, path, submenu }) => (
+                    <li
                         key={text}
-                        initial={{ backgroundColor: "rgba(255, 255, 255, 0)", color: "#FFFFFF" }}
-                        whileHover={{
-                            backgroundColor: "rgba(255, 255, 255, 1)",
-                            color: "#1B1E40",
-                            transition: { duration: 0.3 },
-                        }}
                         className="navbar-link-item"
+                        onMouseEnter={() => submenu && setDropdownOpen(true)}
+                        onMouseLeave={() => submenu && setDropdownOpen(false)}
                     >
                         <Link to={path} className="nav-link">
                             {text}
+                            {submenu && <FaChevronDown className="chevron-icon" />}
                         </Link>
-                    </motion.li>
+                        {submenu && dropdownOpen && (
+                            <ul className="dropdown-menu">
+                                {submenu.map((subItem) => (
+                                    <li key={subItem.text}>
+                                        <Link to={subItem.path} className="dropdown-link">
+                                            {subItem.text}
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
+                    </li>
                 ))}
             </ul>
             <button className="contact-button" onClick={scrollToContact}>Contact</button>
+            <div className="burger-menu">
+                <i className="fas fa-bars"></i>
+            </div>
         </nav>
     );
 };

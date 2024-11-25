@@ -127,3 +127,13 @@
 .submit-button:hover {
     background-color: #123362;
 }
+
+@media screen and (max-width: 768px) {
+    .contact-card {
+        border-radius: 0px;
+    } 
+
+    .contact-header {
+        display: none;
+    }
+}
