@@ -178,4 +178,19 @@
         order: 2;
         height: 100px; 
     }
+
+    .footer-heading {
+        justify-content: flex-start; 
+    }
+
+    .green-line, .blue-line {
+        flex-grow: 1; 
+        width: auto; 
+        height: 2px;
+        margin: 0; 
+    }
+
+    .footer-heading h3 {
+        margin-right: 30px; 
+    }
 }

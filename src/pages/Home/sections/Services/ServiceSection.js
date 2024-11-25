@@ -35,8 +35,8 @@ const ServiceSection = forwardRef(({ contactSectionRef }, ref) => {
 
     return (
         <section className="service-description" ref={ref}>
-            <div className="ellipse-bg ellipse1"></div>
-            <div className="ellipse-bg ellipse2"></div>
+            {/* <div className="ellipse-bg ellipse1"></div>
+            <div className="ellipse-bg ellipse2"></div> */}
 
             <h2 className="service-title">High Quality Companionship Services</h2>
             <p className="service-subtitle">

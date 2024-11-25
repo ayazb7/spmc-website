@@ -59,10 +59,24 @@ const Navbar = ({ contactSectionRef }) => {
             </div>
             <ul className="navbar-links">
                 {navItems.map(({ text, path, submenu }) => (
-                    <li key={text} className="navbar-link-item">
+                    <li
+                        key={text}
+                        className={`navbar-link-item ${submenu ? "has-dropdown" : ""}`}
+                    >
                         <Link to={path} className="nav-link">
                             {text}
                         </Link>
+                        {submenu && (
+                            <ul className="dropdown-menu">
+                                {submenu.map((subItem) => (
+                                    <li key={subItem.text}>
+                                        <Link to={subItem.path} className="dropdown-link">
+                                            {subItem.text}
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
                     </li>
                 ))}
             </ul>
