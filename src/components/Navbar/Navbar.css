@@ -7,7 +7,7 @@
     justify-content: space-between;
     height: 80px;
     /* background-color: #1B1E40; */
-    background-color: #E4EAF6;
+    background-color: #DBE5F9;
     padding: 0 20px;
     z-index: 1000;
 }
@@ -26,7 +26,6 @@
     color: white;
 }
 
-/* Headers with a submenu */
 .navbar-link-item {
     position: relative;
     font-size: 18px;
@@ -35,70 +34,62 @@
     padding: 10px 20px;
     display: flex;
     align-items: center;
-    border-radius: 20px 20px 0 0; /* Rounded only on top corners */
+    border-radius: 20px 20px 0 0; 
     transition: background-color 0.3s ease;
 }
 
-/* Headers without a submenu */
 .navbar-link-item:not(:has(.dropdown-menu)) {
-    border-radius: 20px; /* Fully rounded borders */
+    border-radius: 20px; 
 }
 
-/* Hover styling for all headers */
 .navbar-link-item:hover {
     background-color: rgba(255, 255, 255, 1);
     color: #1B1E40;
 }
 
-/* Chevron icon for headers with submenu */
 .chevron-icon {
     margin-left: 5px;
     font-size: 12px;
 }
 
-/* Dropdown Menu Styles */
 .dropdown-menu {
     display: block;
     position: absolute;
-    top: 100%; /* Place directly below the parent */
+    top: 100%;
     left: 0;
     background-color: #FFFFFF;
     padding: 10px 0;
-    border-radius: 0 0 8px 8px; /* Rounded only on bottom corners */
+    border-radius: 0 0 8px 8px; 
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
     min-width: 200px;
     z-index: 1000;
-    opacity: 0; /* Initially hidden */
-    visibility: hidden; /* Initially not visible */
-    transform: translateY(-10px); /* Start slightly above */
-    transition: all 0.3s ease; /* Smooth transition for appearance */
+    opacity: 0; 
+    visibility: hidden; 
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
 }
 
-/* Show dropdown with cascading animation */
 .navbar-link-item:hover .dropdown-menu,
 .navbar-link-item:focus-within .dropdown-menu {
-    opacity: 1; /* Fully visible */
-    visibility: visible; /* Ensure it's visible */
-    transform: translateY(0); /* Slide into position */
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0); 
 }
 
-/* Dropdown menu links */
 .dropdown-menu li {
     list-style: none;
-    opacity: 0; /* Initially hidden */
-    transform: translateY(-10px); /* Start slightly above */
-    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
-    transition-delay: calc(var(--index, 0) * 0.05s); /* Cascade delay based on index */
+    opacity: 0;
+    transform: translateY(-10px); 
+    transition: opacity 0.3s ease, transform 0.3s ease; 
+    transition-delay: calc(var(--index, 0) * 0.05s); 
 }
 
-/* Show dropdown links with cascading animation */
 .dropdown-menu li:nth-child(n):hover,
 .navbar-link-item:hover .dropdown-menu li {
-    opacity: 1; /* Fully visible */
-    transform: translateY(0); /* Slide into position */
+    opacity: 1; 
+    transform: translateY(0);
 }
 
-/* Dropdown link styling */
 .dropdown-link {
     display: block;
     padding: 10px 20px;
@@ -109,10 +100,9 @@
 }
 
 .dropdown-link:hover {
-    background-color: #F0F0F0; /* Highlight on hover */
+    background-color: #F0F0F0; 
 }
 
-/* Contact button */
 .contact-button {
     background-color: #85BB40;
     color: #FFFFFF;
@@ -141,29 +131,148 @@
     color: #1B1E40;
 }
 
-.burger-menu {
-    display: none;
+.mobile-menu {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    max-height: 0; /* Start with max-height 0 for animation */
+    background-color: #FFFFFF;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease; /* Smooth animation */
 }
 
-/* Hide headers and contact button on mobile */
+.mobile-menu-open {
+    max-height: 70vh; /* Adjust height based on your preference */
+    padding: 20px 20px; /* Add padding for open state */
+}
+
+.mobile-menu-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.mobile-menu-item {
+    margin: 10px 0;
+    width: 100%;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.mobile-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.mobile-menu-header.expanded {
+    background-color: #F7F7F7;
+}
+
+.mobile-menu-text {
+    font-size: 18px;
+    color: #1B1E40;
+    font-weight: bold;
+    text-align: left;
+}
+
+.submenu-icon {
+    font-size: 14px;
+    color: #1B1E40;
+    transform: rotate(0);
+    transition: transform 0.3s ease; /* Smooth rotation */
+}
+
+.mobile-menu-header.expanded .submenu-icon {
+    transform: rotate(45deg); /* Rotate the icon when expanded */
+}
+
+.mobile-submenu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-height: 0; /* Start with max-height 0 for animation */
+    overflow: hidden; /* Hide overflowing content */
+    opacity: 0; /* Start with opacity 0 */
+    transition: max-height 0.3s ease, opacity 0.3s ease; /* Smooth animation */
+}
+
+.mobile-submenu-item {
+    margin: 10px 0; /* Adjust spacing */
+    padding-left: 20px;
+}
+
+.mobile-submenu-link {
+    text-decoration: none; 
+    color: #1B1E40;
+    font-size: 16px;
+    padding: 5px 0;
+    display: block;
+}
+
+.mobile-menu-header.expanded + .mobile-submenu {
+    max-height: 300px; /* Adjust to accommodate submenu items */
+    opacity: 1; /* Fully visible when expanded */
+    transition: max-height 0.3s ease, opacity 0.3s ease; /* Smooth animation */
+}
+
+.mobile-contact-button {
+    margin-top: 20px;
+    background-color: #85BB40;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 22px;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: 'Urbanist', sans-serif;
+    align-self: center;
+    transition: opacity 0.3s ease;
+}
+
+.mobile-contact-button:hover {
+    opacity: 0.9;
+}
+
+.burger-menu {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #1B1E40;
+}
+
 @media screen and (max-width: 768px) {
     .navbar-links,
     .contact-button {
         display: none;
     }
 
-    .navbar {
-        justify-content: space-between; /* Logo on the left, menu on the right */
-    }
-
     .burger-menu {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 40px;
-        height: 40px;
-        cursor: pointer;
-        color: #1B1E40;
-        font-size: 24px;
+    }
+}
+
+/* Animation for the cascading submenu */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
