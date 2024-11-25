@@ -216,3 +216,70 @@
     list-style-type: disc;
     margin-left: 20px; 
 }
+
+
+@media screen and (max-width: 768px) {
+    .care-hero-section {
+        height: 100vh;
+    }
+
+    .care-hero-content h1 {
+        font-size: 2.75rem;
+    }
+    
+    .care-hero-content p {
+        font-size: 1.2rem;
+        margin-top: 0.8rem;
+    }
+
+    .care-hero-content {
+        width: 90%;
+    }
+
+    .service-title {
+        font-size: 1.5rem;
+    }
+
+    .discover-services .discover-text {
+        font-size: 14px;
+    }
+
+    .section {
+        height: auto;
+    }
+
+    .section-content {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center-align content */
+        text-align: center; /* Center-align text */
+        width: 100vw;
+    }
+
+    .section-title {
+        font-size: 1.5rem; /* Make the font size smaller */
+        margin-bottom: 20px; /* Add spacing below the title */
+        text-align: center;
+    }
+
+    .image-container {
+        order: 2; /* Ensure image comes after the title */
+        padding: 0px;
+    }
+
+    .text-container {
+        order: 3; /* Ensure text container comes last */
+        text-align: left; /* Left-align the list text */
+    }
+
+    .service-list {
+        font-size: 1rem; /* Adjust font size for the list text */
+        line-height: 1.5; /* Improve line spacing */
+        margin-left: 0; /* Remove left margin for better centering */
+        list-style-position: inside; /* Bring bullet points inside the container */
+    }
+
+    .section.green-section,
+    .section.white-section {
+        padding: 20px; /* Reduce padding for mobile */
+    }
+}
