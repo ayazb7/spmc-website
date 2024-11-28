@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './LiveInCare.css';
 import '../Global.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import { Helmet } from 'react-helmet-async';
 import VideoSection from '../VideoSection';
 
 import ServiceImage1 from '../../../assets/care-for-adults.png';
@@ -35,6 +36,10 @@ const LiveInCare = () => {
     }; 
 
     return (
+        <>
+        <Helmet>
+            <title>SPMC | Live in Care</title>
+        </Helmet>
         <div className='care-page'>
             <section className="care-hero-section live-in-care">
                 <div className="care-hero-overlay"></div>
@@ -61,7 +66,40 @@ const LiveInCare = () => {
             <section className="service-description">
 
                 <h2 className="service-title">Supported Living And Home Care Services</h2>
-                <p className="service-subtitle">At Solent Primary Medical Care Services, we place great emphasis on understanding your unique requirements and preferences. We carefully select a carer who possesses the appropriate skills and experience to provide the highest standard of care. Our aim is to empower you to maintain your independence and continue enjoying the activities you love with confidence.                </p>
+                <div className="service-paragraph">
+                    <div className="paragraph-text">
+                        <p className="service-subtitle" style={{marginBottom: "0px"}}>
+                            Live-in care from Solent Primary Medical Care offers a compassionate and comprehensive solution for individuals who wish to remain in their own homes while receiving full-time support. This personalised, 24/7 care service ensures safety, comfort, and a sense of independence in familiar surroundings.
+                            <br/>
+                            <br/>
+                            Our service is tailored to meet the specific needs of each client, whether that involves assistance with personal care such as bathing, dressing, and grooming, or support with daily household tasks like cooking, cleaning, and shopping. We are committed to providing care that enhances dignity, well-being, and quality of life.                        </p>
+                    </div>
+                    <div className="section-image-container">
+                        <img
+                            src={ServiceImage1}
+                            alt="Supported Living Services"
+                            className="section-image"
+                        />
+                    </div>
+                </div>
+                <div className="service-paragraph">
+                    <div className="section-image-container">
+                        <img
+                            src={ServiceImage1}
+                            alt="Supported Living Services"
+                            className="section-image"
+                        />
+                    </div>
+                    <div className="paragraph-text">
+                        <p className="service-subtitle" style={{marginBottom: "0px"}}>
+                            Having a dedicated caregiver available around the clock creates a secure and supportive environment, offering not just care but companionship. Through regular reviews, we continuously adapt our services to meet evolving needs, ensuring the highest standards of care are maintained.
+                            <br/>
+                            <br/>
+                            <strong>Solent Primary Medical Care:</strong> professional live-in care designed to make home the best place to be.<br/> 
+                            Contact us today to explore how live-in care can provide a safe and supportive solution for you or your loved ones.
+                        </p>
+                    </div>
+                </div>
 
                 <div className="discover-services">
                     <span className="line"></span>
@@ -75,46 +113,22 @@ const LiveInCare = () => {
                 <div className="section green-section">
                     <div className="section-content">
                         <div className="text-container">
-                            <h3 className="section-title">Supported Living Services</h3>
+                            <h3 className="section-title">Live-in Care Services</h3>
                             <ul className="service-list">
-                                <li>Dementia Care</li>
-                                <li>End of Life Care</li>
-                                <li>Respite Care</li>
-                                <li>Hospital Discharge Support</li>
-                                <li>Rehabilitation/Aftercare at Home</li>
-                                <li>Walking Night Care</li>
+                                <li>
+                                    <strong>24/7 In-Home Support:</strong> Continuous, personalised care tailored to the unique needs of each client. From personal assistance to household tasks, we ensure clients can live safely and independently at home.
+                                </li>
+                                <li>
+                                    <strong>Personal Care and Hygiene:</strong> Comprehensive assistance with daily hygiene, dressing, grooming, and incontinence care, promoting comfort, health, and dignity.
+                                </li>
                             </ul>
                         </div>
                         <div className="image-container">
                             <img
                                 src={ServiceImage1}
-                                alt="Supported Living Services"
+                                alt="Live-in Care Services"
                                 className="section-image"
                             />
-                        </div>
-                    </div>
-                </div>
-
-                <div className="section white-section">
-                    <div className="section-content">
-                        <div className="image-container">
-                            <img
-                                src={ServiceImage1}
-                                alt="Homecare Services"
-                                className="section-image"
-                            />
-                        </div>
-                        <div className="text-container">
-                            <h3 className="section-title">Homecare Services</h3>
-                            <ul className="service-list">
-                                <li>Washing/Bathing Assistance</li>
-                                <li>Oral Hygiene, Dressing</li>
-                                <li>Catheters & Stoma Care</li>
-                                <li>Medical Administration</li>
-                                <li>Laundry & Ironing</li>
-                                <li>Shopping, Cleaning</li>
-                                <li>Companionship</li>
-                            </ul>
                         </div>
                     </div>
                 </div>
@@ -122,6 +136,7 @@ const LiveInCare = () => {
 
             <VideoSection />
         </div>
+        </>
     );
 };
 

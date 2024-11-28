@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './DisabilitiesSupport.css';
 import '../Global.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import { Helmet } from 'react-helmet-async';
 import VideoSection from '../VideoSection';
 
 import ServiceImage1 from '../../../assets/care-for-adults.png';
@@ -35,6 +36,10 @@ const DisabilitiesSupport = () => {
     }; 
 
     return (
+        <>
+        <Helmet>
+            <title>SPMC | Disability Support</title>
+        </Helmet>
         <div className='care-page'>
             <section className="care-hero-section care-hero-disabilities">
                 <div className="care-hero-overlay"></div>
@@ -61,9 +66,40 @@ const DisabilitiesSupport = () => {
             <section className="service-description">
 
                 <h2 className="service-title">Learning Disability Support</h2>
-                <p className="service-subtitle">
-                Learning disabilities manifest in various ways, making it difficult to determine the most suitable care options. Our team of experienced carers is here to guide you through these challenges, ensuring the best possible care for your loved one. Our goal is to empower individuals with learning disabilities to live fulfilling and independent lives, with the right support and guidance every step of the way.
-                </p>
+                <div className="service-paragraph">
+                    <div className="paragraph-text">
+                        <p className="service-subtitle" style={{marginBottom: "0px"}}>
+                            At Solent Primary Medical Care, we are committed to supporting individuals with learning disabilities, enabling them to lead meaningful and independent lives. Our care is designed to address each individual’s unique needs, aspirations, and goals, helping them achieve their potential while enhancing their quality of life.                            <br/>
+                            <br/>
+                            We work closely with families, support networks, and commissioning partners to create bespoke care plans that cater to every aspect of an individual’s life, from building life skills to fostering social inclusion. Our dedicated team focuses on empowering individuals through active support and positive behavioural strategies, encouraging confidence, independence, and personal growth.
+                        </p>
+                    </div>
+                    <div className="section-image-container">
+                        <img
+                            src={ServiceImage1}
+                            alt="Supported Living Services"
+                            className="section-image"
+                        />
+                    </div>
+                </div>
+                <div className="service-paragraph">
+                    <div className="section-image-container">
+                        <img
+                            src={ServiceImage1}
+                            alt="Supported Living Services"
+                            className="section-image"
+                        />
+                    </div>
+                    <div className="paragraph-text">
+                        <p className="service-subtitle" style={{marginBottom: "0px"}}>
+                            Regular reviews ensure that our approach remains flexible and adaptive to changing needs, always striving for the best possible outcomes. With a focus on understanding and collaboration, we deliver care that truly makes a difference.
+                            <br/>
+                            <br/>
+                            <strong>Solent Primary Medical Care:</strong> helping individuals with learning disabilities thrive every step of the way.<br/> 
+                            Contact us today to learn more about our tailored solutions for learning disability support.
+                        </p>
+                    </div>
+                </div>
 
                 <div className="discover-services">
                     <span className="line"></span>
@@ -77,20 +113,23 @@ const DisabilitiesSupport = () => {
                 <div className="section green-section">
                     <div className="section-content">
                         <div className="text-container">
-                            <h3 className="section-title">Supported Living Services</h3>
+                            <h3 className="section-title">Disabilities Support Services</h3>
                             <ul className="service-list">
-                                <li>Dementia Care</li>
-                                <li>End of Life Care</li>
-                                <li>Respite Care</li>
-                                <li>Hospital Discharge Support</li>
-                                <li>Rehabilitation/Aftercare at Home</li>
-                                <li>Walking Night Care</li>
+                                <li>
+                                    <strong>Learning Disabilities/Autism Care:</strong> Individualised support promoting social engagement, skill-building, and independence in a structured, understanding environment.
+                                </li>
+                                <li>
+                                    <strong>Physical Disabilities Support:</strong> Practical assistance with daily activities, including mobility support and accessibility adaptations.
+                                </li>
+                                <li>
+                                    <strong>Mental Health Support:</strong> Compassionate care addressing mental health needs, offering coping strategies, resources, and emotional support.
+                                </li>
                             </ul>
                         </div>
                         <div className="image-container">
                             <img
                                 src={ServiceImage1}
-                                alt="Supported Living Services"
+                                alt="Disabilities Support Services"
                                 className="section-image"
                             />
                         </div>
@@ -102,28 +141,32 @@ const DisabilitiesSupport = () => {
                         <div className="image-container">
                             <img
                                 src={ServiceImage1}
-                                alt="Homecare Services"
+                                alt="Recovery and Reablement Services"
                                 className="section-image"
                             />
                         </div>
                         <div className="text-container">
-                            <h3 className="section-title">Homecare Services</h3>
+                            <h3 className="section-title">Recovery and Reablement Services</h3>
                             <ul className="service-list">
-                                <li>Washing/Bathing Assistance</li>
-                                <li>Oral Hygiene, Dressing</li>
-                                <li>Catheters & Stoma Care</li>
-                                <li>Medical Administration</li>
-                                <li>Laundry & Ironing</li>
-                                <li>Shopping, Cleaning</li>
-                                <li>Companionship</li>
+                                <li>
+                                    <strong>Reablement Care:</strong> Short-term support focused on regaining skills and independence after illness or injury.
+                                </li>
+                                <li>
+                                    <strong>After Hospital Care:</strong> Assistance during the recovery process at home, ensuring a smooth transition from hospital to daily life.
+                                </li>
+                                <li>
+                                    <strong>Temporary & Permanent Staffing Services:</strong> Provision of trained carers and healthcare professionals to meet temporary or long-term needs.
+                                </li>
                             </ul>
                         </div>
                     </div>
                 </div>
+
             </section>
 
             <VideoSection />
         </div>
+        </>
     );
 };
 

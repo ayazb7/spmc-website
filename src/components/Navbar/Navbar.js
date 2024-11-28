@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { FaChevronDown, FaBars, FaTimes, FaPlus } from 'react-icons/fa'; // Import necessary icons
 import './Navbar.css';
@@ -33,6 +33,27 @@ const Navbar = ({ contactSectionRef }) => {
         }
     };
 
+    // Scroll to top on route change
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [location]);
+
+    // New function to close dropdown when clicking outside
+    const handleClickOutside = (e) => {
+        const navbar = document.querySelector('.navbar');
+        if (navbar && !navbar.contains(e.target)) {
+            setExpandedMenu(null); // Close any open submenu
+        }
+    };
+
+    // Add event listener for clicks outside the navbar
+    useEffect(() => {
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
+
     const navItems = [
         {
             text: "Services",
@@ -62,15 +83,28 @@ const Navbar = ({ contactSectionRef }) => {
                     <li
                         key={text}
                         className={`navbar-link-item ${submenu ? "has-dropdown" : ""}`}
+                        onMouseEnter={() => submenu && setExpandedMenu(text)} // Open dropdown on hover
+                        onMouseLeave={() => submenu && setExpandedMenu(null)} // Close dropdown on mouse leave
                     >
-                        <Link to={path} className="nav-link">
+                        <Link
+                            to={path || '#'}
+                            className="nav-link"
+                            onClick={(e) => {
+                                if (submenu) e.preventDefault(); // Prevent navigation for dropdown parent
+                                setExpandedMenu(expandedMenu === text ? null : text); // Toggle submenu on click
+                            }}
+                        >
                             {text}
                         </Link>
-                        {submenu && (
+                        {submenu && expandedMenu === text && (
                             <ul className="dropdown-menu">
                                 {submenu.map((subItem) => (
                                     <li key={subItem.text}>
-                                        <Link to={subItem.path} className="dropdown-link">
+                                        <Link
+                                            to={subItem.path}
+                                            className="dropdown-link"
+                                            onClick={() => setExpandedMenu(null)} // Close submenu on click
+                                        >
                                             {subItem.text}
                                         </Link>
                                     </li>

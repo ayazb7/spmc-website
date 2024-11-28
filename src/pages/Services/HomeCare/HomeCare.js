@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './HomeCare.css';
 import '../Global.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import { Helmet } from 'react-helmet-async';
 import VideoSection from '../VideoSection';
 
 import ServiceImage1 from '../../../assets/care-for-adults.png';
@@ -35,6 +36,10 @@ const HomeCare = () => {
     };    
 
     return (
+        <>
+        <Helmet>
+            <title>SPMC | Home Care</title>
+        </Helmet>
         <div className='care-page'>
             <section className="care-hero-section home-care">
                 <div className="care-hero-overlay"></div>
@@ -61,9 +66,41 @@ const HomeCare = () => {
             <section className="service-description">
 
                 <h2 className="service-title">Adult and Home Care Services</h2>
-                <p className="service-subtitle">
-                Our companions are thoughtfully chosen for their kindness and dedication, bringing positivity and joy to each interaction. Let our companionship visits enhance your daily life with genuine human connection, comfort, and support. Discover the uplifting impact a compassionate companion can make.
-                </p>
+                <div className="service-paragraph">
+                    <div className="paragraph-text">
+                        <p className="service-subtitle" style={{marginBottom: "0px"}}>
+                            At Solent Primary Medical Care, our home care services are crafted to help individuals maintain independence while ensuring they feel supported, safe, and comfortable in their own homes. With a personalised approach, we prioritise dignity, well-being, and quality of life.
+                            <br/>
+                            <br/>
+                            Our carers assist with daily household tasks, from cleaning and tidying to laundry and ironing, helping create a calm and organised home environment. With our help, clients can focus on the things they enjoy most without the stress of daily chores.
+                        </p>
+                    </div>
+                    <div className="section-image-container">
+                        <img
+                            src={ServiceImage1}
+                            alt="Home Care Services"
+                            className="section-image"
+                        />
+                    </div>
+                </div>
+
+                <div className="service-paragraph">
+                    <div className="section-image-container">
+                        <img
+                            src={ServiceImage1}
+                            alt="Personalised Home Care"
+                            className="section-image"
+                        />
+                    </div>
+                    <div className="paragraph-text">
+                        <p className="service-subtitle" style={{marginBottom: "0px"}}>
+                            Our carers also provide sensitive and respectful assistance with personal hygiene, including bathing, showering, and grooming, helping clients feel confident and comfortable. Additionally, we support safe and timely medication management, offering peace of mind to clients and their families.
+                            <br/>
+                            <br/>
+                            Beyond practical help, we bring companionship and meaningful interaction, alleviating loneliness through engaging conversations and shared activities. Our mission is to provide care that enriches daily life in every way possible.
+                        </p>
+                    </div>
+                </div>
 
                 <div className="discover-services">
                     <span className="line"></span>
@@ -74,23 +111,26 @@ const HomeCare = () => {
             </section>
 
             <section className="service-sections">
-                <div className="section green-section">
+            <   div className="section green-section">
                     <div className="section-content">
                         <div className="text-container">
-                            <h3 className="section-title">Supported Living Services</h3>
+                            <h3 className="section-title">Home Care Services</h3>
                             <ul className="service-list">
-                                <li>Dementia Care</li>
-                                <li>End of Life Care</li>
-                                <li>Respite Care</li>
-                                <li>Hospital Discharge Support</li>
-                                <li>Rehabilitation/Aftercare at Home</li>
-                                <li>Walking Night Care</li>
+                                <li>
+                                    <strong>Medication Administration:</strong> Safe and accurate management of medications, ensuring clients take their prescriptions on time and as prescribed to support their health and well-being.
+                                </li>
+                                <li>
+                                    <strong>Meal Preparation:</strong> Nutritious meal planning and preparation tailored to dietary needs and preferences, promoting good health and enjoyment of food.
+                                </li>
+                                <li>
+                                    <strong>Cleaning, Laundry & Ironing:</strong> Routine household chores, including cleaning, washing, and ironing, to maintain a comfortable, clean, and organised home environment.
+                                </li>
                             </ul>
                         </div>
                         <div className="image-container">
                             <img
                                 src={ServiceImage1}
-                                alt="Supported Living Services"
+                                alt="Home Care Services"
                                 className="section-image"
                             />
                         </div>
@@ -102,20 +142,16 @@ const HomeCare = () => {
                         <div className="image-container">
                             <img
                                 src={ServiceImage1}
-                                alt="Homecare Services"
+                                alt="Personal Hygiene Assistance"
                                 className="section-image"
                             />
                         </div>
                         <div className="text-container">
-                            <h3 className="section-title">Homecare Services</h3>
+                            <h3 className="section-title">Personal Hygiene Assistance</h3>
                             <ul className="service-list">
-                                <li>Washing/Bathing Assistance</li>
-                                <li>Oral Hygiene, Dressing</li>
-                                <li>Catheters & Stoma Care</li>
-                                <li>Medical Administration</li>
-                                <li>Laundry & Ironing</li>
-                                <li>Shopping, Cleaning</li>
-                                <li>Companionship</li>
+                                <li>
+                                    <strong>Assistance with Washing, Bathing, Showering:</strong> Sensitive and dignified personal care services to help clients with daily hygiene routines, fostering independence and confidence.
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -124,6 +160,7 @@ const HomeCare = () => {
 
             <VideoSection />
         </div>
+        </>
     );
 };
 

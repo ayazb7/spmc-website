@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './SocialEngagement.css';
 import '../Global.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import { Helmet } from 'react-helmet-async';
 import VideoSection from '../VideoSection';
 
 import ServiceImage1 from '../../../assets/care-for-adults.png';
@@ -35,6 +36,10 @@ const SocialEngagement = () => {
     }; 
 
     return (
+        <>
+        <Helmet>
+            <title>SPMC | Social Engagement</title>
+        </Helmet>
         <div className='care-page'>
             <section className="care-hero-section social-engagement">
                 <div className="care-hero-overlay"></div>
@@ -61,7 +66,41 @@ const SocialEngagement = () => {
             <section className="service-description">
 
                 <h2 className="service-title">Supported Living And Home Care Services</h2>
-                <p className="service-subtitle">At Solent Primary Medical Care Services, we place great emphasis on understanding your unique requirements and preferences. We carefully select a carer who possesses the appropriate skills and experience to provide the highest standard of care. Our aim is to empower you to maintain your independence and continue enjoying the activities you love with confidence.                </p>
+                <div className="service-paragraph">
+                    <div className="paragraph-text">
+                        <p className="service-subtitle" style={{marginBottom: "0px"}}>
+                            At Solent Primary Medical Care, we believe meaningful connections are the key to a fulfilling life. Our social engagement services are designed to combat loneliness, inspire joy, and foster a sense of belonging within the community.
+                            <br/>
+                            <br/>
+                            From heartfelt conversations to sharing cherished memories over a cup of tea, our carers provide genuine companionship that nurtures emotional well-being. We help create moments of joy, ensuring every individual feels valued and connected.
+                        </p>
+                    </div>
+                    <div className="section-image-container">
+                        <img
+                            src={ServiceImage1}
+                            alt="Social Engagement Services"
+                            className="section-image"
+                        />
+                    </div>
+                </div>
+
+                <div className="service-paragraph">
+                    <div className="section-image-container">
+                        <img
+                            src={ServiceImage1}
+                            alt="Meaningful Outings and Activities"
+                            className="section-image"
+                        />
+                    </div>
+                    <div className="paragraph-text">
+                        <p className="service-subtitle" style={{marginBottom: "0px"}}>
+                            We’re here to make outings stress-free and enjoyable, whether it’s attending an appointment, visiting loved ones, or taking a trip to a favourite café. Our carers provide reliable support every step of the way, ensuring independence and confidence.
+                            <br/>
+                            <br/>
+                            From rekindling hobbies to enjoying walks in the park or participating in community events, we tailor every experience to individual preferences. At Solent Primary Medical Care, social connection goes beyond interaction—it’s about creating purpose and meaningful moments.
+                        </p>
+                    </div>
+                </div>
 
                 <div className="discover-services">
                     <span className="line"></span>
@@ -75,20 +114,20 @@ const SocialEngagement = () => {
                 <div className="section green-section">
                     <div className="section-content">
                         <div className="text-container">
-                            <h3 className="section-title">Supported Living Services</h3>
+                            <h3 className="section-title">Engagement Services</h3>
                             <ul className="service-list">
-                                <li>Dementia Care</li>
-                                <li>End of Life Care</li>
-                                <li>Respite Care</li>
-                                <li>Hospital Discharge Support</li>
-                                <li>Rehabilitation/Aftercare at Home</li>
-                                <li>Walking Night Care</li>
+                                <li>
+                                    <strong>Companionship:</strong> Friendly, one-on-one interaction to reduce loneliness, including engaging in conversations, activities, and shared interests that foster emotional well-being.
+                                </li>
+                                <li>
+                                    <strong>Accompanying to Appointments:</strong> Reliable transportation and support during medical, personal, or social appointments, ensuring clients feel safe and supported.
+                                </li>
                             </ul>
                         </div>
                         <div className="image-container">
                             <img
                                 src={ServiceImage1}
-                                alt="Supported Living Services"
+                                alt="Social Engagement Services"
                                 className="section-image"
                             />
                         </div>
@@ -100,28 +139,29 @@ const SocialEngagement = () => {
                         <div className="image-container">
                             <img
                                 src={ServiceImage1}
-                                alt="Homecare Services"
+                                alt="Supporting Hobbies and Outings"
                                 className="section-image"
                             />
                         </div>
                         <div className="text-container">
-                            <h3 className="section-title">Homecare Services</h3>
+                            <h3 className="section-title">Supporting Hobbies and Outings</h3>
                             <ul className="service-list">
-                                <li>Washing/Bathing Assistance</li>
-                                <li>Oral Hygiene, Dressing</li>
-                                <li>Catheters & Stoma Care</li>
-                                <li>Medical Administration</li>
-                                <li>Laundry & Ironing</li>
-                                <li>Shopping, Cleaning</li>
-                                <li>Companionship</li>
+                                <li>
+                                    <strong>Hobbies Support:</strong> Encouragement and assistance with hobbies or interests, whether it’s gardening, arts and crafts, reading, or any activity that brings joy and fulfilment.
+                                </li>
+                                <li>
+                                    <strong>Going Out to Places of Choice:</strong> Facilitation of outings to places the client enjoys, such as parks, cafes, or family gatherings, promoting independence and a continued connection to the community.
+                                </li>
                             </ul>
                         </div>
                     </div>
                 </div>
+
             </section>
 
             <VideoSection />
         </div>
+        </>
     );
 };
 

@@ -8,7 +8,6 @@ const About = () => {
                 <title>SPMC | About Us</title>
             </Helmet>
             <h1>About Us</h1>
-            {/* Content for About Us page */}
         </div>
     );
 };
