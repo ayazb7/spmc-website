@@ -66,6 +66,16 @@ const Navbar = ({ contactSectionRef }) => {
                 { text: 'Social Engagement', path: '/social-engagement' },
             ],
         },
+        {
+            text: "Lifestyle Support",
+            submenu: [
+                { text: 'About', path: '/lifestyle-about' },
+                { text: 'Services', path: '/lifestyle-services' },
+                { text: 'Why Choose Us?', path: '/lifestyle-why' },
+                { text: 'FAQs', path: '/lifestyle-faqs' },
+                { text: 'Contact', path: '/lifestyle-contact' },
+            ],
+        },
         { text: "Social Events", path: "/social-events" },
         { text: "Why Us?", path: "/about" },
         { text: "Careers", path: "/about" },
@@ -83,15 +93,15 @@ const Navbar = ({ contactSectionRef }) => {
                     <li
                         key={text}
                         className={`navbar-link-item ${submenu ? "has-dropdown" : ""}`}
-                        onMouseEnter={() => submenu && setExpandedMenu(text)} // Open dropdown on hover
-                        onMouseLeave={() => submenu && setExpandedMenu(null)} // Close dropdown on mouse leave
+                        onMouseEnter={() => submenu && setExpandedMenu(text)} 
+                        onMouseLeave={() => submenu && setExpandedMenu(null)} 
                     >
                         <Link
                             to={path || '#'}
                             className="nav-link"
                             onClick={(e) => {
-                                if (submenu) e.preventDefault(); // Prevent navigation for dropdown parent
-                                setExpandedMenu(expandedMenu === text ? null : text); // Toggle submenu on click
+                                if (submenu) e.preventDefault();
+                                setExpandedMenu(expandedMenu === text ? null : text); 
                             }}
                         >
                             {text}
@@ -103,7 +113,7 @@ const Navbar = ({ contactSectionRef }) => {
                                         <Link
                                             to={subItem.path}
                                             className="dropdown-link"
-                                            onClick={() => setExpandedMenu(null)} // Close submenu on click
+                                            onClick={() => setExpandedMenu(null)} 
                                         >
                                             {subItem.text}
                                         </Link>
@@ -143,8 +153,8 @@ const Navbar = ({ contactSectionRef }) => {
                                                 to={subItem.path}
                                                 className="mobile-submenu-link"
                                                 onClick={() => {
-                                                    setMobileMenuOpen(false); // Close the mobile menu
-                                                    setExpandedMenu(null); // Close the submenu
+                                                    setMobileMenuOpen(false); 
+                                                    setExpandedMenu(null); 
                                                 }}
                                             >
                                                 {subItem.text}
@@ -160,7 +170,7 @@ const Navbar = ({ contactSectionRef }) => {
                     className="mobile-contact-button"
                     onClick={() => {
                         setMobileMenuOpen(false);
-                        setExpandedMenu(null); // Close submenu when Contact is clicked
+                        setExpandedMenu(null); 
                         scrollToContact();
                     }}
                 >

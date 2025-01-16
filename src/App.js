@@ -9,6 +9,7 @@ import LiveInCare from './pages/Services/LiveInCare/LiveInCare';
 import AfterHospitalCare from './pages/Services/AfterHospitalCare/AfterHospitalCare';
 import HomeCare from './pages/Services/HomeCare/HomeCare';
 import SocialEngagement from './pages/Services/SocialEngagement/SocialEngagement';
+import LifestyleServices from './pages/Lifestyle/Services/LifestyleServices';
 
 const App = () => {
     return (
@@ -23,6 +24,8 @@ const App = () => {
                     <Route path="/after-hospital-care" element={<AfterHospitalCare />} />
                     <Route path="/home-care" element={<HomeCare />} />
                     <Route path="/social-engagement" element={<SocialEngagement />} />
+
+                    <Route path="/lifestyle-services" element={<LifestyleServices />} />
                 </Routes>
             </Layout>
         </Router>
