@@ -37,7 +37,7 @@ const LifestyleServices = () => {
     return (
         <>
         <Helmet>
-            <title>SPMC | After Hospital Care</title>
+            <title>SPMC | Lifestyle Support Services</title>
         </Helmet>
         <div className='care-page'>
             <section className="care-hero-section after-hospital-care">

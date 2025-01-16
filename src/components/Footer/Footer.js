@@ -28,10 +28,12 @@ const Footer = () => {
                             <hr className="blue-line" />
                         </div>
                         <ul className="link-grid">
-                            <li><a href="#">Care for adults</a></li>
-                            <li><a href="#">Disabilities care</a></li>
-                            <li><a href="#">Home Care</a></li>
-                            <li><a href="#">Social Engagement</a></li>
+                            <li><a href="/care-for-adults">Care for adults</a></li>
+                            <li><a href="/disabilities-support">Disabilities Support</a></li>
+                            <li><a href="/live-in-care">Live-in Care</a></li>
+                            <li><a href="/after-hospital-care">After Hospital Care</a></li>
+                            <li><a href="/home-care">Home Care</a></li>
+                            <li><a href="/social-engagement">Social Engagement</a></li>
                         </ul>
                     </div>
                     <div className="footer-section">
@@ -40,8 +42,8 @@ const Footer = () => {
                             <hr className="blue-line" />
                         </div>
                         <ul className="link-grid">
-                            <li><a href="tel:07921511703"><FontAwesomeIcon icon={faPhoneAlt} className="contact-icon"/> 07921 511703</a></li>
-                            <li><a href="mailto:info@spmcs.co.uk"><FontAwesomeIcon icon={faEnvelope} className="contact-icon"/> info@spmcs.co.uk</a></li>
+                            <li><a href="tel:07921511703"><FontAwesomeIcon icon={faPhoneAlt} className="contact-icon"/>07921 511703</a></li>
+                            <li><a href="mailto:info@spmcs.co.uk"><FontAwesomeIcon icon={faEnvelope} className="contact-icon"/>info@spmcs.co.uk</a></li>
                         </ul>
                     </div>
                 </div>
