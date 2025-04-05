@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './LifestyleHeroSection.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import heroVideo from '../../../../../assets/hero_video.mp4';
 
 const LifestyleHeroSection = ({ serviceSectionRef }) => {
     const [hasScrolled, setHasScrolled] = useState(false);
+    const videoRef = useRef(null);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -19,17 +20,39 @@ const LifestyleHeroSection = ({ serviceSectionRef }) => {
     }, []);
 
     const scrollToServices = () => {
-        const navbarHeight = document.querySelector('.navbar').offsetHeight;
-        const serviceSectionPosition = serviceSectionRef.current.getBoundingClientRect().top + window.scrollY;
-        window.scrollTo({
-            top: serviceSectionPosition - navbarHeight,
-            behavior: 'smooth',
-        });
+        if (serviceSectionRef && serviceSectionRef.current) {
+            const navbarHeight = document.querySelector('.navbar')?.offsetHeight || 0;
+            const serviceSectionPosition = serviceSectionRef.current.getBoundingClientRect().top + window.scrollY;
+            window.scrollTo({
+                top: serviceSectionPosition - navbarHeight,
+                behavior: 'smooth',
+            });
+        } else {
+            // Fallback if ref is not available
+            const navbarHeight = document.querySelector('.navbar')?.offsetHeight || 0;
+            const serviceSection = document.querySelector('.service-description');
+            
+            if (serviceSection) {
+                const serviceSectionPosition = serviceSection.getBoundingClientRect().top + window.scrollY;
+                window.scrollTo({
+                    top: serviceSectionPosition - navbarHeight,
+                    behavior: 'smooth',
+                });
+            }
+        }
     };
 
     return (
         <div className="hero-section">
-            <video className="hero-video" autoPlay loop muted playsInline>
+            <video 
+                ref={videoRef}
+                className="hero-video" 
+                autoPlay 
+                loop 
+                muted 
+                playsInline 
+                preload="auto"
+            >
                 <source src={heroVideo} type="video/mp4" />
                 Your browser does not support the video tag.
             </video>

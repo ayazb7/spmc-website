@@ -1,6 +1,5 @@
 .service-description {
     position: relative;
-    padding: 60px 20px;
     text-align: center;
     color: #174374;
     background-color: #f9fafc;
@@ -77,6 +76,7 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin-top: 3.5rem;
+    margin-bottom: 80px;
     font-family: 'Urbanist', sans-serif;
     display: inline-block;
     text-align: center;

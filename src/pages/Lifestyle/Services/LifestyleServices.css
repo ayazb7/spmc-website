@@ -1,3 +1,482 @@
 .care-hero-section.after-hospital-care {
     background-image: url('../../../assets/after-hospital-care.png');
+    background-attachment: fixed; /* Parallax effect */
+    margin-bottom: 40px; /* Reduced spacing between hero and service section */
+}
+
+/* Make entire page have consistent background */
+body, html {
+    background-color: #f9fafc;
+}
+
+.care-page {
+    background-color: #f9fafc;
+}
+
+.care-hero-content {
+    position: relative;
+    text-align: center;
+    z-index: 1;
+    width: 45%;
+    max-width: 800px;
+    background-color: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+}
+
+.care-search-input {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.care-search-input:focus {
+    transform: scale(1.02);
+    box-shadow: 0 0 10px rgba(133, 187, 64, 0.3);
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: #4CAF50;
+    margin-bottom: 15px;
+    font-family: 'Urbanist', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 8px;
+}
+
+.section-subtitle::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #85BB40;
+    transform-origin: bottom right;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-out;
+}
+
+.section:hover .section-subtitle::after {
+    transform-origin: bottom left;
+    transform: scaleX(1);
+}
+
+.green-section .section-subtitle {
+    color: #ffffff;
+    opacity: 0.9;
+}
+
+.green-section .section-subtitle::after {
+    background-color: #ffffff;
+}
+
+/* Discover Services section */
+.service-description {
+    margin: 0;
+    padding: 20px 0 0 0;
+    background-color: #f9fafc;
+}
+
+.discover-services {
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    gap: 15px;
+    margin: 0 auto; 
+    width: 100%; 
+    max-width: 900px; 
+    padding: 20px 0 50px 0;
+    background-color: #f9fafc;
+}
+
+.discover-services .line {
+    flex-grow: 1;
+    height: 1.3px; 
+    background-color: #85BB40;
+}
+
+.discover-services .discover-text {
+    font-size: 17px;
+    font-weight: 600;
+    color: #85BB40;
+    font-family: 'Urbanist', sans-serif; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    white-space: nowrap; 
+    text-align: center;
+}
+
+.service-sections {
+    background-color: #f9fafc;
+    padding-top: 20px; /* Increased from 0 to add more space after discover services text */
+    padding-bottom: 50px;
+    overflow: hidden;
+}
+
+.section {
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 20px 0;
+}
+
+/* Green and white section styling with different rounded corners */
+.white-section {
+    background-color: #fff;
+    border-radius: 20px 0 0 20px;
+    margin: 1.5rem 0;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    max-width: 95%;
+    margin-left: auto;
+    margin-right: 0;
+    position: relative;
+}
+
+.green-section {
+    background-color: #85BB40;
+    color: white;
+    border-radius: 0 20px 20px 0;
+    margin: 1.5rem 0;
+    box-shadow: 0 5px 20px rgba(133, 187, 64, 0.3);
+    max-width: 95%;
+    margin-left: 0;
+    margin-right: auto;
+    position: relative;
+}
+
+.section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.service-list {
+    padding-left: 0;
+    list-style: none;
+}
+
+.service-list li {
+    margin-bottom: 12px;
+    position: relative;
+    transition: transform 0.3s ease;
+    padding: 10px 15px;
+    border-radius: 8px;
+}
+
+.white-section .service-list li {
+    background-color: rgba(133, 187, 64, 0.05);
+    margin-bottom: 8px;
+}
+
+.green-section .service-list li {
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-bottom: 8px;
+}
+
+.service-list li:hover {
+    transform: translateX(5px);
+}
+
+.white-section .service-list li:hover {
+    background-color: rgba(133, 187, 64, 0.1);
+}
+
+.green-section .service-list li:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.section-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.text-container, .image-container {
+    flex: 1 1 300px; /* Base size with ability to grow and shrink */
+    min-width: 0; /* Allow container to shrink below min-content width */
+}
+
+.section-image {
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    filter: brightness(0.95);
+    max-height: 350px;
+    object-fit: cover;
+    width: 100%; /* Make image responsive */
+    max-width: 100%; /* Prevent image overflow */
+}
+
+.section:hover .section-image {
+    transform: scale(1.05);
+    filter: brightness(1.05);
+}
+
+.section-title {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 2rem;
+}
+
+/* Animations for sections */
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.service-sections .white-section {
+    animation: slideInRight 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+.service-sections .green-section {
+    animation: slideInLeft 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+.service-sections .section:nth-child(1) { animation-delay: 0.1s; }
+.service-sections .section:nth-child(2) { animation-delay: 0.2s; }
+.service-sections .section:nth-child(3) { animation-delay: 0.3s; }
+.service-sections .section:nth-child(4) { animation-delay: 0.4s; }
+.service-sections .section:nth-child(5) { animation-delay: 0.5s; }
+.service-sections .section:nth-child(6) { animation-delay: 0.6s; }
+.service-sections .section:nth-child(7) { animation-delay: 0.7s; }
+.service-sections .section:nth-child(8) { animation-delay: 0.8s; }
+.service-sections .section:nth-child(9) { animation-delay: 0.9s; }
+
+/* Enhanced bounce animation for chevron */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0) translateX(-50%);
+    }
+    40% {
+        transform: translateY(-20px) translateX(-50%);
+    }
+    60% {
+        transform: translateY(-10px) translateX(-50%);
+    }
+}
+
+.care-chevron-down {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ffffff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    animation: bounce 2s infinite;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: rgba(133, 187, 64, 0.7);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.care-chevron-down:hover {
+    background-color: rgba(133, 187, 64, 1);
+    transform: translateX(-50%) scale(1.1);
+}
+
+.care-no-bounce {
+    animation: none;
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Floating animation for the search bar */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.care-search-bar {
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Rotating Icons */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.care-search-button {
+    position: relative;
+    overflow: hidden;
+}
+
+.care-search-button:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+}
+
+.care-search-button:hover:after {
+    animation: ripple 1s ease-out;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0, 0);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(20, 20);
+        opacity: 0;
+    }
+}
+
+.care-search-button i {
+    animation: pulse 2s infinite;
+}
+
+/* Scroll down text */
+.scroll-text {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 0.8rem;
+    opacity: 0.8;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .section-subtitle {
+        font-size: 1rem;
+        text-align: center;
+        width: 100%;
+    }
+
+    .section-subtitle::after {
+        left: 50%;
+        transform: translateX(-50%) scaleX(0);
+        transform-origin: center;
+        width: 100px; /* Set a fixed width for the underline */
+    }
+
+    .section:hover .section-subtitle::after {
+        transform: translateX(-50%) scaleX(1);
+        transform-origin: center;
+    }
+    
+    .service-list li {
+        margin-bottom: 8px;
+        padding: 8px 12px;
+    }
+    
+    .white-section {
+        margin: 1rem 0 1rem 1rem;
+        border-radius: 15px 0 0 15px;
+    }
+    
+    .green-section {
+        margin: 1rem 1rem 1rem 0;
+        border-radius: 0 15px 15px 0;
+    }
+    
+    .care-hero-content {
+        width: 90%;
+    }
+
+    .section-content {
+        width: 95%;
+        padding: 15px 0;
+        gap: 10px;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+        text-align: center;
+        width: 100%;
+    }
+
+    .image-container, .text-container {
+        flex: 1 1 100%;
+    }
+
+    .section-image {
+        max-height: 250px;
+    }
+    
+    .discover-services {
+        padding: 15px 10px 20px 10px;
+    }
+    
+    .discover-services .discover-text {
+        font-size: 14px;
+    }
+    
+    .service-sections {
+        padding-bottom: 30px;
+    }
+    
+    .section {
+        width: 95%;
+    }
+    
+    .care-hero-section.after-hospital-care {
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .white-section, .green-section {
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+    }
 }

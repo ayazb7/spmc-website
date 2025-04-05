@@ -58,6 +58,7 @@ const CareForAdults = () => {
                     </div>
                 </div>
                 
+                <div className="scroll-text">Scroll to explore</div>
                 <div className={`care-chevron-down ${hasScrolled ? 'care-no-bounce' : ''}`} onClick={scrollToServices}>
                     <i className="fas fa-chevron-down"></i>
                 </div>

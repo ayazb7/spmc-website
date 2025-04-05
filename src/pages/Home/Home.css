@@ -1,3 +1,17 @@
 .home-page {
     margin-top: 80px;
 }
+
+.contact-section {
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9fafc;
+}
+
+@media screen and (max-width: 768px) {
+    .contact-section {
+        padding: 40px 0;
+    }
+}

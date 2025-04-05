@@ -11,6 +11,8 @@ import HomeCare from './pages/Services/HomeCare/HomeCare';
 import SocialEngagement from './pages/Services/SocialEngagement/SocialEngagement';
 import LifestyleAbout from './pages/Lifestyle/About/LifestyleAbout';
 import LifestyleServices from './pages/Lifestyle/Services/LifestyleServices';
+import WhyChooseUs from './pages/Lifestyle/WhyChooseUs/WhyChooseUs';
+import Contact from './pages/Contact/Contact';
 
 const App = () => {
     return (
@@ -28,6 +30,8 @@ const App = () => {
                     
                     <Route path="/lifestyle-about" element={<LifestyleAbout />} />
                     <Route path="/lifestyle-services" element={<LifestyleServices />} />
+                    <Route path="/lifestyle-why" element={<WhyChooseUs />} />
+                    <Route path="/contact" element={<Contact />} />
                 </Routes>
             </Layout>
         </Router>

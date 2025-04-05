@@ -114,6 +114,7 @@
     font-weight: bold;
     font-family: 'Urbanist', sans-serif;
     transition: opacity 0.3s ease;
+    text-decoration: none !important;
 }
 
 .contact-button:hover {
@@ -239,6 +240,7 @@
     font-family: 'Urbanist', sans-serif;
     align-self: center;
     transition: opacity 0.3s ease;
+    text-decoration: none !important;
 }
 
 .mobile-contact-button:hover {

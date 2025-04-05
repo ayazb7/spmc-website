@@ -6,6 +6,10 @@
     justify-content: center;
     color: white;
     overflow: hidden; /* Ensure the video fits perfectly */
+    margin-bottom: 60px; /* Add spacing after hero section */
+    background-image: url('../../../../../assets/home_bg.png'); /* Fallback background */
+    background-size: cover;
+    background-position: center;
 }
 
 .hero-video {
@@ -15,7 +19,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover; /* Ensures the video covers the entire section */
-    z-index: -1; /* Place the video behind the content */
+    z-index: 0; /* Change to make video visible but below content */
 }
 
 .hero-overlay {
@@ -25,13 +29,13 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for better text visibility */
-    z-index: 0; /* Overlay is above the video but below the content */
+    z-index: 1; /* Overlay above the video */
 }
 
 .hero-content {
     position: relative;
     text-align: center;
-    z-index: 1; /* Content is above the overlay and video */
+    z-index: 2; /* Content is above the overlay and video */
     width: 45%;
     max-width: 800px;
 }
@@ -108,13 +112,28 @@
 
 .chevron-down {
     position: absolute;
-    bottom: 20px; 
+    bottom: 30px; 
     left: 50%;
     transform: translateX(-50%);
     color: #ffffff;
     font-size: 1.25rem;
     cursor: pointer;
     animation: bounce 1.5s infinite;
+    padding: 15px;
+    border-radius: 50%;
+    background-color: rgba(133, 187, 64, 0.7);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10; /* Ensure it's clickable */
+}
+
+.chevron-down:hover {
+    background-color: rgba(133, 187, 64, 1);
+    transform: translateX(-50%) scale(1.1);
 }
 
 .no-bounce {
@@ -142,4 +161,19 @@
         font-size: 1.5rem;
         margin-top: 1rem;
     }
+}
+
+.scroll-text {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 0.9rem;
+    opacity: 0.9;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Urbanist', sans-serif;
+    text-align: center;
+    z-index: 10;
 }

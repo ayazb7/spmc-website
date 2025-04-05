@@ -4,7 +4,7 @@ import { FaChevronDown, FaBars, FaTimes, FaPlus } from 'react-icons/fa'; // Impo
 import './Navbar.css';
 import logo from '../../assets/logo.png';
 
-const Navbar = ({ contactSectionRef }) => {
+const Navbar = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [expandedMenu, setExpandedMenu] = useState(null); // To track which menu is expanded
     const location = useLocation();
@@ -18,19 +18,6 @@ const Navbar = ({ contactSectionRef }) => {
 
     const toggleSubMenu = (menuText) => {
         setExpandedMenu((prev) => (prev === menuText ? null : menuText));
-    };
-
-    const scrollToContact = () => {
-        if (location.pathname === '/' && contactSectionRef?.current) {
-            const navbarHeight = document.querySelector('.navbar').offsetHeight;
-            const contactSectionPosition = contactSectionRef.current.getBoundingClientRect().top + window.scrollY;
-            window.scrollTo({
-                top: contactSectionPosition - navbarHeight,
-                behavior: 'smooth',
-            });
-        } else {
-            window.location.href = "/";
-        }
     };
 
     // Scroll to top on route change
@@ -124,9 +111,9 @@ const Navbar = ({ contactSectionRef }) => {
                     </li>
                 ))}
             </ul>
-            <button className="contact-button" onClick={scrollToContact}>
-                Contact
-            </button>
+            <div className="nav-buttons">
+                <Link to="/contact" className="contact-button">Contact Us</Link>
+            </div>
             <div className="burger-menu" onClick={toggleMobileMenu}>
                 {mobileMenuOpen ? <FaTimes /> : <FaBars />}
             </div>
@@ -166,16 +153,16 @@ const Navbar = ({ contactSectionRef }) => {
                         </li>
                     ))}
                 </ul>
-                <button
+                <Link
+                    to="/contact"
                     className="mobile-contact-button"
                     onClick={() => {
                         setMobileMenuOpen(false);
-                        setExpandedMenu(null); 
-                        scrollToContact();
+                        setExpandedMenu(null);
                     }}
                 >
                     Contact
-                </button>
+                </Link>
             </div>
         </nav>
     );
