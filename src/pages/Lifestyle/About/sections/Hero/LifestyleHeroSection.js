@@ -30,12 +30,12 @@ const LifestyleHeroSection = ({ serviceSectionRef }) => {
         } else {
             // Fallback if ref is not available
             const navbarHeight = document.querySelector('.navbar')?.offsetHeight || 0;
-            const serviceSection = document.querySelector('.service-description');
+            const descriptionSection = document.querySelector('.description-section');
             
-            if (serviceSection) {
-                const serviceSectionPosition = serviceSection.getBoundingClientRect().top + window.scrollY;
+            if (descriptionSection) {
+                const sectionPosition = descriptionSection.getBoundingClientRect().top + window.scrollY;
                 window.scrollTo({
-                    top: serviceSectionPosition - navbarHeight,
+                    top: sectionPosition - navbarHeight,
                     behavior: 'smooth',
                 });
             }

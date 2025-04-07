@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './LifestyleServices.css';
-import '../Global.css';
+import '../../Global.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { Helmet } from 'react-helmet-async';
 

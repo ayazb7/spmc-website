@@ -41,31 +41,40 @@ const Navbar = () => {
         };
     }, []);
 
-    const navItems = [
+    const menuItems = [
         {
-            text: "Services",
-            submenu: [
-                { text: 'Care for adults', path: '/care-for-adults' },
+            text: 'Services',
+            path: '#',
+            subItems: [
+                { text: 'Care for Adults', path: '/care-for-adults' },
                 { text: 'Disabilities Support', path: '/disabilities-support' },
                 { text: 'Live-in Care', path: '/live-in-care' },
                 { text: 'After Hospital Care', path: '/after-hospital-care' },
                 { text: 'Home Care', path: '/home-care' },
-                { text: 'Social Engagement', path: '/social-engagement' },
-            ],
+                { text: 'Social Engagement', path: '/social-engagement' }
+            ]
         },
         {
-            text: "Lifestyle Support",
-            submenu: [
-                { text: 'About', path: '/lifestyle-about' },
-                { text: 'Services', path: '/lifestyle-services' },
-                { text: 'Why Choose Us?', path: '/lifestyle-why' },
-                { text: 'FAQs', path: '/lifestyle-faqs' },
-                { text: 'Contact', path: '/lifestyle-contact' },
-            ],
+            text: 'Lifestyle Support',
+            path: '/lifestyle'
         },
-        { text: "Social Events", path: "/social-events" },
-        { text: "Why Us?", path: "/about" },
-        { text: "Careers", path: "/about" },
+        {
+            text: 'Why Us?',
+            path: '/why-us'
+        },
+        {
+            text: 'FAQ',
+            path: '/faq'
+        },
+        {
+            text: 'Social Events',
+            path: '/about'
+        },
+        {
+            text: 'Careers',
+            path: '/about'
+        },
+
     ];
 
     return (
@@ -76,26 +85,26 @@ const Navbar = () => {
                 </Link>
             </div>
             <ul className="navbar-links">
-                {navItems.map(({ text, path, submenu }) => (
+                {menuItems.map(({ text, path, subItems }) => (
                     <li
                         key={text}
-                        className={`navbar-link-item ${submenu ? "has-dropdown" : ""}`}
-                        onMouseEnter={() => submenu && setExpandedMenu(text)} 
-                        onMouseLeave={() => submenu && setExpandedMenu(null)} 
+                        className={`navbar-link-item ${subItems ? "has-dropdown" : ""}`}
+                        onMouseEnter={() => subItems && setExpandedMenu(text)} 
+                        onMouseLeave={() => subItems && setExpandedMenu(null)} 
                     >
                         <Link
                             to={path || '#'}
                             className="nav-link"
                             onClick={(e) => {
-                                if (submenu) e.preventDefault();
+                                if (subItems) e.preventDefault();
                                 setExpandedMenu(expandedMenu === text ? null : text); 
                             }}
                         >
                             {text}
                         </Link>
-                        {submenu && expandedMenu === text && (
+                        {subItems && expandedMenu === text && (
                             <ul className="dropdown-menu">
-                                {submenu.map((subItem) => (
+                                {subItems.map((subItem) => (
                                     <li key={subItem.text}>
                                         <Link
                                             to={subItem.path}
@@ -121,20 +130,35 @@ const Navbar = () => {
                 className={`mobile-menu ${mobileMenuOpen ? "mobile-menu-open" : ""}`}
             >
                 <ul className="mobile-menu-links">
-                    {navItems.map(({ text, path, submenu }) => (
+                    {menuItems.map(({ text, path, subItems }) => (
                         <li key={text} className="mobile-menu-item">
                             <div
                                 className={`mobile-menu-header ${
                                     expandedMenu === text ? "expanded" : ""
                                 }`}
-                                onClick={() => submenu && toggleSubMenu(text)}
+                                onClick={() => subItems ? toggleSubMenu(text) : setMobileMenuOpen(false)}
                             >
-                                <span className="mobile-menu-text">{text}</span>
-                                {submenu && <FaPlus className="submenu-icon" />}
+                                {subItems ? (
+                                    <>
+                                        <span className="mobile-menu-text">{text}</span>
+                                        <FaPlus className="submenu-icon" />
+                                    </>
+                                ) : (
+                                    <Link
+                                        to={path}
+                                        className="mobile-menu-text mobile-menu-link"
+                                        onClick={() => {
+                                            setMobileMenuOpen(false);
+                                            setExpandedMenu(null);
+                                        }}
+                                    >
+                                        {text}
+                                    </Link>
+                                )}
                             </div>
-                            {submenu && expandedMenu === text && (
+                            {subItems && expandedMenu === text && (
                                 <ul className="mobile-submenu">
-                                    {submenu.map((subItem) => (
+                                    {subItems.map((subItem) => (
                                         <li key={subItem.text} className="mobile-submenu-item">
                                             <Link
                                                 to={subItem.path}

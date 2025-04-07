@@ -1,12 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './WhyChooseUs.css';
-import '../Global.css';
+import '../../pages/Global.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { Helmet } from 'react-helmet-async';
 
 const WhyChooseUs = () => {
     const sectionRefs = useRef([]);
     const [hasScrolled, setHasScrolled] = useState(false);
+    const contentRef = useRef(null);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -48,24 +49,35 @@ const WhyChooseUs = () => {
         };
     }, []);
 
+    const scrollToContent = () => {
+        if (contentRef.current) {
+            const navbarHeight = document.querySelector('.navbar')?.offsetHeight || 0;
+            const contentPosition = contentRef.current.getBoundingClientRect().top + window.scrollY;
+            window.scrollTo({
+                top: contentPosition - navbarHeight,
+                behavior: 'smooth',
+            });
+        }
+    };
+
     return (
         <>
             <Helmet>
                 <title>SPMC | Why Choose Us</title>
             </Helmet>
 
-            <div className='why-choose-us-page'>
-                <section className="hero-section no-bottom-margin">
-                    <div className="hero-overlay"></div>
-                    <div className="hero-content">
-                        <h1>Your Everyday Ally</h1>
-                        <p>Discover why we're the trusted choice for lifestyle support services.</p>
-                    </div>
-                    <div className={`chevron-down ${hasScrolled ? 'no-bounce' : ''}`} onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}>
-                        <i className="fas fa-chevron-down"></i>
-                    </div>
-                </section>
+            <section className="hero-section no-bottom-margin">
+                <div className="hero-overlay"></div>
+                <div className="hero-content">
+                    <h1>Your Everyday Ally</h1>
+                    <p>Discover why we're the trusted choice for lifestyle support services.</p>
+                </div>
+                <div className={`chevron-down ${hasScrolled ? 'no-bounce' : ''}`} onClick={scrollToContent}>
+                    <i className="fas fa-chevron-down"></i>
+                </div>
+            </section>
 
+            <div className="why-choose-us-page" ref={contentRef}>
                 <div className="why-choose-us-intro" ref={el => sectionRefs.current[0] = el}>
                     <div className="intro-container">
                         <div className="intro-icon-container">

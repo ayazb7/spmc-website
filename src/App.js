@@ -9,10 +9,10 @@ import LiveInCare from './pages/Services/LiveInCare/LiveInCare';
 import AfterHospitalCare from './pages/Services/AfterHospitalCare/AfterHospitalCare';
 import HomeCare from './pages/Services/HomeCare/HomeCare';
 import SocialEngagement from './pages/Services/SocialEngagement/SocialEngagement';
-import LifestyleAbout from './pages/Lifestyle/About/LifestyleAbout';
-import LifestyleServices from './pages/Lifestyle/Services/LifestyleServices';
-import WhyChooseUs from './pages/Lifestyle/WhyChooseUs/WhyChooseUs';
+import Lifestyle from './pages/Lifestyle/Lifestyle';
+import WhyChooseUs from './pages/WhyChooseUs/WhyChooseUs';
 import Contact from './pages/Contact/Contact';
+import FAQ from './pages/FAQ/FAQ';
 
 const App = () => {
     return (
@@ -27,11 +27,10 @@ const App = () => {
                     <Route path="/after-hospital-care" element={<AfterHospitalCare />} />
                     <Route path="/home-care" element={<HomeCare />} />
                     <Route path="/social-engagement" element={<SocialEngagement />} />
-                    
-                    <Route path="/lifestyle-about" element={<LifestyleAbout />} />
-                    <Route path="/lifestyle-services" element={<LifestyleServices />} />
-                    <Route path="/lifestyle-why" element={<WhyChooseUs />} />
+                    <Route path="/lifestyle" element={<Lifestyle />} />
+                    <Route path="/why-us" element={<WhyChooseUs />} />
                     <Route path="/contact" element={<Contact />} />
+                    <Route path="/faq" element={<FAQ />} />
                 </Routes>
             </Layout>
         </Router>

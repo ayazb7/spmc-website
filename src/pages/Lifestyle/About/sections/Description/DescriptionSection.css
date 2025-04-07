@@ -1,6 +1,6 @@
-.service-description {
+.description-section {
     position: relative;
-    padding: 60px 20px 150px 20px;
+    padding: 30px 20px 30px 20px;
     text-align: center;
     color: #174374;
     background-color: #f9fafc;
@@ -9,21 +9,62 @@
     justify-content: center;
 }
 
-.service-title {
+.premium-description {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.premium-description h2 {
     font-size: 2.5rem;
     font-weight: bold;
     color: #174374;
     font-family: 'Urbanist', sans-serif;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
-.service-subtitle {
+.premium-description p {
     font-size: 1.2rem;
     line-height: 1.6;
-    max-width: 900px;
-    margin: 0 auto 3rem auto;
+    margin: 0 auto 1.5rem auto;
     color: #174374;
     font-family: 'Urbanist', sans-serif;
+}
+
+.learn-more-button {
+    background-color: #85BB40;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    padding: 15px 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 1.5rem;
+    font-family: 'Urbanist', sans-serif;
+    display: inline-block;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.learn-more-button:hover {
+    background-color: #6ca233; 
+}
+
+@media screen and (max-width: 768px) {
+    .premium-description h2 {
+        font-size: 1.9rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .premium-description p {
+        font-size: 1rem;
+    }
+
+    .learn-more-button {
+        font-size: 16px;
+        padding: 12px 24px;
+    }
 }
 
 .service-cards {
@@ -64,49 +105,4 @@
     height: 700px;
     top: 200px;
     right: -150px;
-}
-
-.cta-button {
-    background-color: #85BB40;
-    color: #FFFFFF;
-    font-size: 22px;
-    font-weight: bold;
-    border: none;
-    border-radius: 10px;
-    padding: 15px 30px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 1.5rem;
-    font-family: 'Urbanist', sans-serif;
-    display: inline-block;
-    text-align: center;
-}
-
-.cta-button:hover {
-    background-color: #6ca233; 
-}
-
-@media screen and (max-width: 768px) {
-    .service-title {
-        font-size: 1.9rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .service-subtitle {
-        font-size: 1rem;
-    }
-
-    .service-cards {
-        grid-template-columns: 1fr; 
-        gap: 24px; 
-        justify-items: center; 
-    }
-
-    .service-card {
-        border-radius: 20px !important;
-    }
-
-    .ellipse-bg {
-        display: none;
-    }
 }

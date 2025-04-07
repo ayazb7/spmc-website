@@ -1,0 +1,37 @@
+.discover-services-section {
+    background-color: #f9fafc;
+    text-align: center;
+}
+
+.discover-services {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.line {
+    height: 2px;
+    width: 80px;
+    background-color: #174374;
+    display: inline-block;
+}
+
+.discover-text {
+    font-family: 'Urbanist', sans-serif;
+    font-weight: 600;
+    color: #174374;
+    margin: 0 20px;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+@media screen and (max-width: 768px) {
+    .line {
+        width: 40px;
+    }
+    
+    .discover-text {
+        font-size: 1rem;
+        margin: 0 10px;
+    }
+} 

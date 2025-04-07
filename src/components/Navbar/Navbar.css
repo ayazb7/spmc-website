@@ -104,21 +104,21 @@
 }
 
 .contact-button {
-    background-color: #85BB40;
-    color: #FFFFFF;
+    background: linear-gradient(90deg, #85BB40, #6ca233);
+    color: white;
     border: none;
-    border-radius: 22px;
-    padding: 10px 30px;
-    font-size: 20px;
-    cursor: pointer;
+    padding: 15px 40px;
+    font-size: 1.2rem;
     font-weight: bold;
-    font-family: 'Urbanist', sans-serif;
-    transition: opacity 0.3s ease;
-    text-decoration: none !important;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(133, 187, 64, 0.3);
+    text-decoration: none;
 }
 
 .contact-button:hover {
-    opacity: 0.9;
+    transform: translateY(-5px);
 }
 
 .nav-link {
@@ -182,9 +182,20 @@
 
 .mobile-menu-text {
     font-size: 18px;
-    color: #1B1E40;
-    font-weight: bold;
-    text-align: left;
+    font-weight: 600;
+    color: #333;
+}
+
+.mobile-menu-link {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    color: #174374;
+    transition: color 0.3s ease;
+}
+
+.mobile-menu-link:hover {
+    color: #85BB40;
 }
 
 .submenu-icon {
