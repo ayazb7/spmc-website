@@ -66,10 +66,10 @@ const Navbar = () => {
             text: 'FAQ',
             path: '/faq'
         },
-        {
-            text: 'Social Events',
-            path: '/about'
-        },
+        // {
+        //     text: 'Social Events',
+        //     path: '/about'
+        // },
         {
             text: 'Careers',
             path: '/about'

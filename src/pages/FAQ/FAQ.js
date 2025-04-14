@@ -171,7 +171,7 @@ const FAQ = () => {
                             placeholder="Search for questions..." 
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
-                            className="search-input"
+                            className="faq-search-input"
                         />
                         {searchTerm && (
                             <button onClick={resetSearch} className="reset-search">

@@ -62,7 +62,7 @@
     z-index: 20; /* Ensure search is on top */
 }
 
-.search-input {
+.faq-search-input {
     width: 100%;
     padding: 16px 24px;
     border-radius: 50px;
@@ -72,9 +72,10 @@
     outline: none;
     transition: all 0.3s ease;
     font-family: 'Urbanist', sans-serif;
+    height: 75px;
 }
 
-.search-input:focus {
+.faq-search-input:focus {
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
     transform: translateY(-2px);
 }
