@@ -13,6 +13,8 @@ import Lifestyle from './pages/Lifestyle/Lifestyle';
 import WhyChooseUs from './pages/WhyChooseUs/WhyChooseUs';
 import Contact from './pages/Contact/Contact';
 import FAQ from './pages/FAQ/FAQ';
+import ServiceAvailable from './pages/ServiceAvailable/ServiceAvailable';
+import ServiceUnavailable from './pages/ServiceUnavailable/ServiceUnavailable';
 
 const App = () => {
     return (
@@ -31,6 +33,8 @@ const App = () => {
                     <Route path="/why-us" element={<WhyChooseUs />} />
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/faq" element={<FAQ />} />
+                    <Route path="/service-available" element={<ServiceAvailable />} />
+                    <Route path="/service-unavailable" element={<ServiceUnavailable />} />
                 </Routes>
             </Layout>
         </Router>
