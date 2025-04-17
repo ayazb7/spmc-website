@@ -51,7 +51,8 @@ const Navbar = () => {
                 { text: 'Live-in Care', path: '/live-in-care' },
                 { text: 'After Hospital Care', path: '/after-hospital-care' },
                 { text: 'Home Care', path: '/home-care' },
-                { text: 'Social Engagement', path: '/social-engagement' }
+                { text: 'Social Engagement', path: '/social-engagement' },
+                { text: 'Supported Living', path: '/supported-living' }
             ]
         },
         {
