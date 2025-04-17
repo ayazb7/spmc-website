@@ -365,15 +365,18 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    background: rgba(255, 255, 255, 0.1);
+    background: white;
     padding: 12px 15px;
     border-radius: 10px;
     transition: all 0.3s ease;
+    color: #174374;
 }
 
 .contact-method:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: #85BB40;
     transform: translateY(-3px);
+    cursor: pointer;
+    color: white;
 }
 
 .contact-method i {

@@ -41,7 +41,6 @@ const VideoSection = () => {
                     </div>
                     <div className="logo-container">
                         <img className="logo-image larger" src={ICOLogo} alt="ICO" />
-                        <span className="registration-text">*REGISTRATION PENDING</span>
                     </div>
                 </div>
             </div>

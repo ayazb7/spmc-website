@@ -63,7 +63,7 @@ const Contact = () => {
     return (
         <div className="standalone-contact-page">
             <Helmet>
-                <title>Contact Us | SPMC - Personal Management Services</title>
+                <title>SPMC | Contact Us</title>
                 <meta name="description" content="Get in touch with SPMC for premium personal management services. We're here to help with all your lifestyle support needs." />
             </Helmet>
 

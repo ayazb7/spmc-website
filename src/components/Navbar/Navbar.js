@@ -73,7 +73,7 @@ const Navbar = () => {
         // },
         {
             text: 'Careers',
-            path: '/about'
+            path: '/careers'
         },
 
     ];

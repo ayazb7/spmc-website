@@ -36,6 +36,10 @@
     z-index: 5;
 }
 
+.faq-hero-content h1{
+    color: white;
+}
+
 .hero-icon {
     font-size: 4rem;
     margin-bottom: 1rem;
@@ -300,32 +304,6 @@
     margin-bottom: 50px;
 }
 
-.contact-method {
-    background-color: white;
-    padding: 30px 20px;
-    border-radius: 15px;
-    width: 250px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-}
-
-.contact-method:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-}
-
-
-.contact-method h3 {
-    font-size: 1.3rem;
-    margin-bottom: 5px;
-    color: #174374;
-}
-
-.contact-method p {
-    color: #555;
-    font-size: 1rem;
-}
-
 /* Animations */
 @keyframes bounce {
     0%, 100% {
@@ -397,11 +375,6 @@
         border-radius: 0 !important;
         height: auto !important;
         min-height: 70vh;
-    }
-    
-    .contact-method {
-        width: 100%;
-        max-width: 300px;
     }
     
     .contact-heading h2 {

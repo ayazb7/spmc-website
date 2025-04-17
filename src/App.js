@@ -16,6 +16,8 @@ import Contact from './pages/Contact/Contact';
 import FAQ from './pages/FAQ/FAQ';
 import ServiceAvailable from './pages/ServiceAvailable/ServiceAvailable';
 import ServiceUnavailable from './pages/ServiceUnavailable/ServiceUnavailable';
+import Careers from './pages/Careers/Careers';
+import CareersApply from './pages/Careers/CareersApply';
 
 const App = () => {
     return (
@@ -35,6 +37,8 @@ const App = () => {
                     <Route path="/why-us" element={<WhyChooseUs />} />
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/faq" element={<FAQ />} />
+                    <Route path="/careers" element={<Careers />} />
+                    <Route path="/careers-apply" element={<CareersApply />} />
                     <Route path="/service-available" element={<ServiceAvailable />} />
                     <Route path="/service-unavailable" element={<ServiceUnavailable />} />
                 </Routes>
