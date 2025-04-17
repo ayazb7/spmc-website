@@ -9,8 +9,6 @@ const CareersApply = () => {
     fullName: '',
     email: '',
     phone: '',
-    address: '',
-    postcode: '',
     position: '',
     experience: '',
     coverLetter: null,
@@ -187,34 +185,6 @@ const CareersApply = () => {
                     onChange={handleInputChange}
                     required
                     placeholder="Enter your phone number"
-                  />
-                </div>
-              </div>
-
-              <div className="form-row">
-                <div className="form-group">
-                  <label htmlFor="address">Address *</label>
-                  <input
-                    type="text"
-                    id="address"
-                    name="address"
-                    value={formState.address}
-                    onChange={handleInputChange}
-                    required
-                    placeholder="Enter your address"
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="postcode">Postcode *</label>
-                  <input
-                    type="text"
-                    id="postcode"
-                    name="postcode"
-                    value={formState.postcode}
-                    onChange={handleInputChange}
-                    required
-                    placeholder="Enter your postcode"
                   />
                 </div>
               </div>
