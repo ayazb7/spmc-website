@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './HeroSection.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import heroVideo from '../../../../assets/hero_video.mp4'; // Replace with your actual video path
+import heroVideo from '../../../../assets/hero_video.mp4';
 
 const HeroSection = ({ serviceSectionRef }) => {
     const [hasScrolled, setHasScrolled] = useState(false);
@@ -31,7 +31,6 @@ const HeroSection = ({ serviceSectionRef }) => {
                 behavior: 'smooth',
             });
         } else {
-            // Fallback if ref is not available
             const navbarHeight = document.querySelector('.navbar')?.offsetHeight || 0;
             const serviceSection = document.querySelector('.service-description');
             
@@ -46,55 +45,55 @@ const HeroSection = ({ serviceSectionRef }) => {
     };
 
     const isValidPostcode = async (postcode) => {
-        const cleanPostcode = postcode.replace(/\s/g, '').toUpperCase();
+      const cleanPostcode = postcode.replace(/\s/g, '').toUpperCase();
       
-        const postcodeRegex = /^[A-Z]{1,2}[0-9][0-9A-Z]?[0-9][A-Z]{2}$/;
-        if (!postcodeRegex.test(cleanPostcode)) {
-          return false;
-        }
+      const postcodeRegex = /^[A-Z]{1,2}[0-9][0-9A-Z]?[0-9][A-Z]{2}$/;
+      if (!postcodeRegex.test(cleanPostcode)) {
+        return false;
+      }
       
-        try {
-          const response = await fetch(`https://api.postcodes.io/postcodes/${cleanPostcode}`);
-          const data = await response.json();
+      try {
+        const response = await fetch(`https://api.postcodes.io/postcodes/${cleanPostcode}`);
+        const data = await response.json();
+    
+        if (data.status !== 200 || !data.result) return false;
       
-          if (data.status !== 200 || !data.result) return false;
+        const { admin_county, pfa } = data.result;
+    
+        return admin_county === 'Hampshire' || pfa === 'Hampshire';
       
-          const { admin_county, pfa } = data.result;
-      
-          return admin_county === 'Hampshire' || pfa === 'Hampshire';
-      
-        } catch (error) {
-          console.error('Postcode API error:', error);
-          return false;
-        }
-      };
+      } catch (error) {
+        console.error('Postcode API error:', error);
+        return false;
+      }
+    };
 
-      const handlePostcodeSubmit = async () => {
-        if (!postcode) {
-          alert('Please enter a postcode');
-          return;
-        }
+    const handlePostcodeSubmit = async () => {
+      if (!postcode) {
+        alert('Please enter a postcode');
+        return;
+      }
       
-        const isValid = await isValidPostcode(postcode);
+      const isValid = await isValidPostcode(postcode);
       
-        if (isValid) {
-          navigate('/service-available', {
-            state: {
-              postcode: postcode.toUpperCase(),
-              message: "You're in luck – we've got you covered!",
-              subMessage: "Our team is already warming up to serve you. We'll be in touch very soon!"
-            }
-          });
-        } else {
-          navigate('/service-unavailable', {
-            state: {
-              postcode: postcode.toUpperCase(),
-              message: "Oh no! We're not in your area... yet!",
-              subMessage: "But don't worry – we're growing fast. Drop your email below and we'll be the first to let you know when we arrive in your neighbourhood!"
-            }
-          });
-        }
-      };
+      if (isValid) {
+        navigate('/service-available', {
+          state: {
+            postcode: postcode.toUpperCase(),
+            message: "You're in luck – we've got you covered!",
+            subMessage: "Our team is already warming up to serve you. We'll be in touch very soon!"
+          }
+        });
+      } else {
+        navigate('/service-unavailable', {
+          state: {
+            postcode: postcode.toUpperCase(),
+            message: "Oh no! We're not in your area... yet!",
+            subMessage: "But don't worry – we're growing fast. Drop your email below and we'll be the first to let you know when we arrive in your neighbourhood!"
+          }
+        });
+      }
+    };
 
     return (
         <div className="hero-section">

@@ -194,12 +194,6 @@ body, html {
     visibility: hidden;
 }
 
-/* Video section styling */
-.video-section {
-    background-color: #f9fafc;
-    padding-top: 20px;
-}
-
 @media screen and (max-width: 768px) {
     .care-hero-content {
         width: 85%;

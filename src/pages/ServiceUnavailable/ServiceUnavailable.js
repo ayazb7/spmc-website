@@ -64,7 +64,6 @@ const ServiceUnavailable = () => {
               >
                 <div className="input-group">
                   <div className="input-wrapper">
-                    <FaEnvelope className="input-icon" />
                     <input
                       type="email"
                       value={email}
@@ -76,7 +75,6 @@ const ServiceUnavailable = () => {
                   <button type="submit" className="notify-button">
                     <FaBell className="bell-icon" />
                     Notify Me
-                    <FaArrowRight className="arrow-icon" />
                   </button>
                 </div>
               </motion.form>
@@ -94,13 +92,11 @@ const ServiceUnavailable = () => {
           </AnimatePresence>
           
           <div className="cta-buttons">
-            <Link to="/contact" className="secondary-button">
+            <Link to="/contact" className="primary-button">
               Contact Us
-              <FaArrowRight className="arrow-icon" />
             </Link>
             <Link to="/faq" className="secondary-button">
               View FAQ
-              <FaArrowRight className="arrow-icon" />
             </Link>
           </div>
         </motion.div>

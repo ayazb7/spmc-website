@@ -43,7 +43,7 @@ const ServiceAvailable = () => {
             We're ready to provide exceptional care and support services tailored to your needs.
           </p>
           
-          <div className="features">
+          {/* <div className="features">
             <motion.div 
               className="feature-item"
               initial={{ opacity: 0, x: -20 }}
@@ -53,14 +53,13 @@ const ServiceAvailable = () => {
               <FaCalendarCheck className="feature-icon" />
               <span>Book a Free Consultation</span>
             </motion.div>
-          </div>
+          </div> */}
           
           <div className="cta-buttons">
             <Link to="/contact" className="primary-button">
               Book Consultation
-              <FaArrowRight className="arrow-icon" />
             </Link>
-            <Link to="/services" className="secondary-button">
+            <Link to="/" className="secondary-button">
               View Services
             </Link>
           </div>
