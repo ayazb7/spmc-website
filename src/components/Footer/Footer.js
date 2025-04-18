@@ -29,6 +29,7 @@ const Footer = () => {
                         </div>
                         <ul className="link-grid">
                             <li><a href="/care-for-adults">Care for adults</a></li>
+                            <li><a href="/supported-living">Supported Living</a></li>
                             <li><a href="/disabilities-support">Disabilities Support</a></li>
                             <li><a href="/live-in-care">Live-in Care</a></li>
                             <li><a href="/after-hospital-care">After Hospital Care</a></li>

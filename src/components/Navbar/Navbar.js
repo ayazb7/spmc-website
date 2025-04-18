@@ -47,12 +47,12 @@ const Navbar = () => {
             path: '#',
             subItems: [
                 { text: 'Care for Adults', path: '/care-for-adults' },
+                { text: 'Supported Living', path: '/supported-living' },
                 { text: 'Disabilities Support', path: '/disabilities-support' },
                 { text: 'Live-in Care', path: '/live-in-care' },
                 { text: 'After Hospital Care', path: '/after-hospital-care' },
                 { text: 'Home Care', path: '/home-care' },
                 { text: 'Social Engagement', path: '/social-engagement' },
-                { text: 'Supported Living', path: '/supported-living' }
             ]
         },
         {
