@@ -392,4 +392,30 @@ select {
   font-size: 0.9rem;
   text-align: center;
   font-family: 'Urbanist', sans-serif;
+}
+
+.cv-notice {
+  background-color: #e8f4fd;
+  border-left: 4px solid #3498db;
+  border-radius: 4px;
+  padding: 16px 20px;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.cv-notice .info-icon {
+  color: #3498db;
+  font-size: 1.2rem;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.cv-notice p {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  font-family: 'Urbanist', sans-serif;
 } 

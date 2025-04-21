@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
-import { FaArrowLeft, FaCheck, FaPaperclip, FaSpinner } from 'react-icons/fa';
+import { FaArrowLeft, FaCheck, FaInfoCircle, FaSpinner } from 'react-icons/fa';
 import './CareersApply.css';
 import emailjs from 'emailjs-com';
 
@@ -12,13 +12,6 @@ const CareersApply = () => {
     phone: '',
     position: '',
     experience: '',
-    coverLetter: null,
-    resume: null,
-  });
-
-  const [fileNames, setFileNames] = useState({
-    coverLetter: '',
-    resume: '',
   });
 
   const [submitting, setSubmitting] = useState(false);
@@ -38,34 +31,6 @@ const CareersApply = () => {
     });
   };
 
-  const handleFileChange = (e) => {
-    const { name, files } = e.target;
-    if (files && files[0]) {
-      setFormState({
-        ...formState,
-        [name]: files[0],
-      });
-      setFileNames({
-        ...fileNames,
-        [name]: files[0].name,
-      });
-    }
-  };
-
-  const convertFileToBase64 = (file) => {
-    return new Promise((resolve, reject) => {
-      if (!file) {
-        resolve(null);
-        return;
-      }
-      
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onload = () => resolve(reader.result);
-      reader.onerror = (error) => reject(error);
-    });
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmitting(true);
@@ -73,51 +38,45 @@ const CareersApply = () => {
     
     try {
       // Get current date and time
-      // const now = new Date();
-      // const formattedDate = now.toLocaleDateString('en-GB', {
-      //   day: '2-digit',
-      //   month: 'short',
-      //   year: 'numeric'
-      // });
-      // const formattedTime = now.toLocaleTimeString('en-GB', {
-      //   hour: '2-digit',
-      //   minute: '2-digit'
-      // });
-      // const timeStamp = `${formattedDate} at ${formattedTime}`;
+      const now = new Date();
+      const formattedDate = now.toLocaleDateString('en-GB', {
+        day: '2-digit',
+        month: 'short',
+        year: 'numeric'
+      });
+      const formattedTime = now.toLocaleTimeString('en-GB', {
+        hour: '2-digit',
+        minute: '2-digit'
+      });
+      const timeStamp = `${formattedDate} at ${formattedTime}`;
       
-      // // Convert files to base64
-      // const resumeBase64 = await convertFileToBase64(formState.resume);
-      // const coverLetterBase64 = await convertFileToBase64(formState.coverLetter);
+      // Prepare template parameters
+      const templateParams = {
+        from_name: formState.fullName,
+        reply_to: formState.email,
+        phone: formState.phone,
+        position: formState.position,
+        experience: formState.experience || 'Not specified',
+        time: timeStamp,
+        to_name: 'SPMC Recruitment',
+        to_email: 'info@spmcs.co.uk',
+        message: `This applicant has submitted an initial application. Please contact them to request their CV and any additional documents required for the ${formState.position} position.`
+      };
       
-      // // Prepare template parameters
-      // const templateParams = {
-      //   name: formState.fullName,
-      //   email: formState.email,
-      //   phone: formState.phone,
-      //   position: formState.position,
-      //   experience: formState.experience || 'Not specified',
-      //   resume_name: fileNames.resume,
-      //   cover_letter_name: fileNames.coverLetter || 'Not provided',
-      //   resume_file: resumeBase64,
-      //   cover_letter_file: coverLetterBase64 || 'Not provided',
-      //   time: timeStamp,
-      //   to_email: 'info@spmcs.co.uk'
-      // };
-      
-      // // Send email using EmailJS
-      // await emailjs.send(
-      //   'service_yt00lit', 
-      //   'template_07ddx1i', 
-      //   templateParams, 
-      //   '6T61pTerVCBUrDn_O'
-      // );
+      // Send email using EmailJS
+      await emailjs.send(
+        'service_yt00lit', 
+        'template_07ddx1i',
+        templateParams, 
+        '6T61pTerVCBUrDn_O'
+      );
       
       setSubmitting(false);
       setSubmitted(true);
     } catch (error) {
       console.error('Error submitting application:', error);
       setSubmitting(false);
-      setError('There was an error submitting your application. Please try again later.');
+      setError('There was an error submitting your application. Please try again later or contact us directly at info@spmcs.co.uk');
     }
   };
 
@@ -151,7 +110,7 @@ const CareersApply = () => {
             </div>
             <h1>Application Submitted!</h1>
             <p>Thank you for your interest in joining the SPMCS team. We have received your application and will review it promptly.</p>
-            <p>Our HR team will contact you regarding the next steps in the recruitment process.</p>
+            <p>Our HR team will contact you shortly to request your CV/Resume and any additional documents required for the recruitment process.</p>
             <motion.a 
               href="/careers" 
               className="back-link"
@@ -202,7 +161,7 @@ const CareersApply = () => {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
             >
-              <h2>Application Form</h2>
+              <h2>Initial Application Form</h2>
               <p>All fields marked with an asterisk (*) are required</p>
             </motion.div>
 
@@ -289,45 +248,9 @@ const CareersApply = () => {
                 </div>
               </div>
 
-              <div className="form-row">
-                <div className="form-group file-input-group">
-                  <label htmlFor="coverLetter">Cover Letter</label>
-                  <div className="file-input-container">
-                    <input
-                      type="file"
-                      id="coverLetter"
-                      name="coverLetter"
-                      onChange={handleFileChange}
-                      className="file-input"
-                      accept=".pdf,.doc,.docx"
-                    />
-                    <div className="file-input-trigger">
-                      <FaPaperclip />
-                      <span>{fileNames.coverLetter || 'Choose file'}</span>
-                    </div>
-                  </div>
-                  <small>PDF, DOC or DOCX (Max 5MB)</small>
-                </div>
-
-                <div className="form-group file-input-group">
-                  <label htmlFor="resume">Resume/CV *</label>
-                  <div className="file-input-container">
-                    <input
-                      type="file"
-                      id="resume"
-                      name="resume"
-                      onChange={handleFileChange}
-                      className="file-input"
-                      required
-                      accept=".pdf,.doc,.docx"
-                    />
-                    <div className="file-input-trigger">
-                      <FaPaperclip />
-                      <span>{fileNames.resume || 'Choose file'}</span>
-                    </div>
-                  </div>
-                  <small>PDF, DOC or DOCX (Max 5MB)</small>
-                </div>
+              <div className="cv-notice">
+                <FaInfoCircle className="info-icon" />
+                <p>After submitting this initial application, our recruitment team will contact you to request your CV/Resume and any other necessary documents.</p>
               </div>
 
               {error && (
