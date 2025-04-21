@@ -70,7 +70,7 @@ const ServiceSection = forwardRef(({ contactSectionRef }, ref) => {
       {/* <div className="ellipse-bg ellipse1"></div>
             <div className="ellipse-bg ellipse2"></div> */}
 
-      <h2 className="service-title">High Quality Companionship Services</h2>
+      <h2 className="service-title-home">High Quality Companionship Services</h2>
       <p className="service-subtitle">
         Our companions are thoughtfully chosen for their kindness and
         dedication, bringing positivity and joy to each interaction. Let our

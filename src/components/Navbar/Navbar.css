@@ -10,6 +10,7 @@
     background-color: #DBE5F9;
     padding: 0 20px;
     z-index: 1000;
+    box-sizing: border-box; /* Add box-sizing to ensure padding is included in width calculation */
 }
 
 .navbar-logo img {
@@ -18,7 +19,7 @@
 
 .navbar-links {
     display: flex;
-    gap: 48px;
+    gap: 30px;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -31,11 +32,12 @@
     font-size: 18px;
     font-weight: 500;
     cursor: pointer;
-    padding: 10px 20px;
+    padding: 10px 15px;
     display: flex;
     align-items: center;
     border-radius: 20px 20px 0 0; 
     transition: background-color 0.3s ease;
+    white-space: nowrap;
 }
 
 .navbar-link-item:not(:has(.dropdown-menu)) {
@@ -103,6 +105,10 @@
     background-color: #F0F0F0; 
 }
 
+.nav-buttons {
+    white-space: nowrap;
+}
+
 .contact-button {
     background: linear-gradient(90deg, #85BB40, #6ca233);
     color: white;
@@ -115,6 +121,7 @@
     transition: all 0.3s ease;
     box-shadow: 0 5px 15px rgba(133, 187, 64, 0.3);
     text-decoration: none;
+    white-space: nowrap;
 }
 
 .contact-button:hover {
@@ -126,6 +133,7 @@
     text-decoration: none;
     display: flex;
     align-items: center;
+    white-space: nowrap;
 }
 
 .nav-link:hover {
@@ -265,6 +273,41 @@
     color: #1B1E40;
 }
 
+/* Medium screens - laptops */
+@media screen and (max-width: 1280px) and (min-width: 1101px) {
+    .navbar-links {
+        gap: 20px;
+    }
+    
+    .navbar-link-item {
+        font-size: 17px;
+        padding: 10px 12px;
+    }
+    
+    .contact-button {
+        padding: 14px 35px;
+        font-size: 1.1rem;
+    }
+}
+
+/* Small laptops and tablets */
+@media screen and (max-width: 1100px) and (min-width: 769px) {
+    .navbar-links {
+        gap: 12px;
+    }
+    
+    .navbar-link-item {
+        font-size: 15px;
+        padding: 10px 8px;
+    }
+    
+    .contact-button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Mobile devices */
 @media screen and (max-width: 768px) {
     .navbar-links,
     .contact-button {

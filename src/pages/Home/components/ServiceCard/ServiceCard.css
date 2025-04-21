@@ -72,3 +72,21 @@
 .learn-more:hover {
     font-weight: 600;
 }
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+    .service-card {
+        width: 100% !important;
+        max-width: 280px;
+        height: 220px !important;
+        border-radius: 15px !important;
+    }
+    
+    .card-title {
+        font-size: 20px;
+    }
+    
+    .learn-more {
+        font-size: 14px;
+    }
+}

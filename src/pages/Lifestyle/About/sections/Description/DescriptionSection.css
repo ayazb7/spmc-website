@@ -51,39 +51,6 @@
     background-color: #6ca233; 
 }
 
-@media screen and (max-width: 768px) {
-    .premium-description h2 {
-        font-size: 1.9rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .premium-description p {
-        font-size: 1rem;
-    }
-
-    .learn-more-button {
-        font-size: 16px;
-        padding: 12px 24px;
-    }
-}
-
-.service-cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Default: 3 cards per row */
-    gap: 16px;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.service-card {
-    border-radius: 20px; /* Default border radius */
-    transition: transform 0.3s ease;
-}
-
-.service-card:hover {
-    transform: scale(1.05);
-}
-
 .ellipse-bg {
     position: absolute;
     border-radius: 50%;
@@ -105,4 +72,20 @@
     height: 700px;
     top: 200px;
     right: -150px;
+}
+
+@media screen and (max-width: 768px) {
+    .premium-description h2 {
+        font-size: 1.9rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .premium-description p {
+        font-size: 1rem;
+    }
+
+    .learn-more-button {
+        font-size: 16px;
+        padding: 12px 24px;
+    }
 }

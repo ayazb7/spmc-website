@@ -4,6 +4,9 @@
   min-height: 100vh;
   font-family: 'Urbanist', sans-serif;
   padding-top: 80px; /* Add padding to account for fixed navbar */
+  overflow-x: hidden; /* Prevent horizontal overflow */
+  width: 100%;
+  box-sizing: border-box; /* Ensure padding is included in width calculation */
 }
 
 /* Hero Section */
@@ -65,13 +68,14 @@
   line-height: 0;
   z-index: 10;
   height: 100px; /* Fixed height for the wave */
+  overflow: hidden; /* Prevent SVG from creating overflow */
 }
 
 .wave-decoration svg {
   display: block;
   width: 100%;
   height: 100%;
-  transform: scale(1.05); /* Slightly expand the wave to avoid edge gaps */
+  transform: scale(1.01); /* Slightly scale the wave to avoid edge gaps without causing overflow */
 }
 
 .wave-decoration path {
