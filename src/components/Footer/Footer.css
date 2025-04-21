@@ -128,11 +128,12 @@
     color: #ffffff;
     font-size: 1.5rem;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .social-icon:hover {
-    background-color: #143C68;
+    background-color: #85BB40;
+    transform: translateY(-3px);
 }
 
 /* Mobile-specific styling */

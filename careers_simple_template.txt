@@ -1,0 +1,20 @@
+SPMC - New Job Application
+
+Date: {{time}}
+
+A new job application has been received from {{name}} for the {{position}} position.
+
+--- APPLICANT INFORMATION ---
+Full Name: {{name}}
+Email: {{email}}
+Phone: {{phone}}
+Position: {{position}}
+Experience: {{experience}}
+
+--- APPLICATION MATERIALS ---
+Resume/CV: {{resume_name}} ({{resume_size}})
+Cover Letter: {{cover_letter_name}} ({{cover_letter_size}})
+
+Note: {{applicant_note}}
+
+To reply to this applicant, please email them at: {{email}} 

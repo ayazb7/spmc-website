@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { FaArrowLeft, FaCheck, FaPaperclip, FaSpinner } from 'react-icons/fa';
 import './CareersApply.css';
+import emailjs from 'emailjs-com';
 
 const CareersApply = () => {
   const [formState, setFormState] = useState({
@@ -22,6 +23,12 @@ const CareersApply = () => {
 
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    // Initialize EmailJS
+    emailjs.init('6T61pTerVCBUrDn_O');
+  }, []);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -45,16 +52,73 @@ const CareersApply = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const convertFileToBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+      if (!file) {
+        resolve(null);
+        return;
+      }
+      
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = (error) => reject(error);
+    });
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmitting(true);
+    setError(null);
     
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      // Get current date and time
+      // const now = new Date();
+      // const formattedDate = now.toLocaleDateString('en-GB', {
+      //   day: '2-digit',
+      //   month: 'short',
+      //   year: 'numeric'
+      // });
+      // const formattedTime = now.toLocaleTimeString('en-GB', {
+      //   hour: '2-digit',
+      //   minute: '2-digit'
+      // });
+      // const timeStamp = `${formattedDate} at ${formattedTime}`;
+      
+      // // Convert files to base64
+      // const resumeBase64 = await convertFileToBase64(formState.resume);
+      // const coverLetterBase64 = await convertFileToBase64(formState.coverLetter);
+      
+      // // Prepare template parameters
+      // const templateParams = {
+      //   name: formState.fullName,
+      //   email: formState.email,
+      //   phone: formState.phone,
+      //   position: formState.position,
+      //   experience: formState.experience || 'Not specified',
+      //   resume_name: fileNames.resume,
+      //   cover_letter_name: fileNames.coverLetter || 'Not provided',
+      //   resume_file: resumeBase64,
+      //   cover_letter_file: coverLetterBase64 || 'Not provided',
+      //   time: timeStamp,
+      //   to_email: 'info@spmcs.co.uk'
+      // };
+      
+      // // Send email using EmailJS
+      // await emailjs.send(
+      //   'service_yt00lit', 
+      //   'template_07ddx1i', 
+      //   templateParams, 
+      //   '6T61pTerVCBUrDn_O'
+      // );
+      
       setSubmitting(false);
       setSubmitted(true);
-      // In a real application, you would send the form data to a server here
-    }, 2000);
+    } catch (error) {
+      console.error('Error submitting application:', error);
+      setSubmitting(false);
+      setError('There was an error submitting your application. Please try again later.');
+    }
   };
 
   const positions = [
@@ -265,6 +329,12 @@ const CareersApply = () => {
                   <small>PDF, DOC or DOCX (Max 5MB)</small>
                 </div>
               </div>
+
+              {error && (
+                <div className="error-message">
+                  {error}
+                </div>
+              )}
 
               <div className="form-controls">
                 <a href="/careers" className="back-button">

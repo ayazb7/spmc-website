@@ -3,6 +3,8 @@ import './WhyChooseUs.css';
 import '../../pages/Global.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
+
 
 const WhyChooseUs = () => {
     const sectionRefs = useRef([]);
@@ -171,7 +173,7 @@ const WhyChooseUs = () => {
                     <div className="cta-content">
                         <h2>Ready to Transform Your Support?</h2>
                         <p>We're here to provide personalized care that fits seamlessly into your lifestyle. Our dedicated team works around your schedule, preferences, and unique needs to deliver support that makes a real difference in your daily life. Let's create a care plan that's as individual as you are.</p>
-                        <button className="cta-button no-bottom-margin">Contact Us Today</button>
+                        <Link to="/contact" className="cta-button no-bottom-margin">Contact Us Today</Link>
                     </div>
                     <div className="cta-background-element"></div>
                 </div>

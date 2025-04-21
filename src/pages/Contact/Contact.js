@@ -4,6 +4,7 @@ import './Contact.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { motion } from 'framer-motion';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaCalendarCheck, FaArrowRight, FaPaperPlane, FaHeadset, FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaWhatsapp } from 'react-icons/fa';
+import emailjs from 'emailjs-com';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -16,8 +17,13 @@ const Contact = () => {
     });
     const [isInfoVisible, setIsInfoVisible] = useState(false);
     const [isFormVisible, setIsFormVisible] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState(null);
 
     useEffect(() => {
+        // Initialize EmailJS with your user ID
+        emailjs.init('6T61pTerVCBUrDn_O');
+        
         // Animation triggers
         const observer = new IntersectionObserver(
             (entries) => {
@@ -55,9 +61,57 @@ const Contact = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Handle form submission logic here
-        console.log(formData);
-        alert('Your message has been sent! We will be in touch shortly.');
+        setIsSubmitting(true);
+        setSubmitStatus(null);
+        
+        const now = new Date();
+        const formattedDate = now.toLocaleDateString('en-GB', {
+            day: '2-digit',
+            month: 'short',
+            year: 'numeric'
+        });
+        const formattedTime = now.toLocaleTimeString('en-GB', {
+            hour: '2-digit',
+            minute: '2-digit'
+        });
+        const timeStamp = `${formattedDate} at ${formattedTime}`;
+        
+        const templateParams = {
+            name: `${formData.firstName} ${formData.lastName}`,
+            email: formData.email,
+            phone: formData.phone || 'Not provided',
+            service: formData.service || 'Not specified',
+            message: formData.message,
+            time: timeStamp,
+            to_email: 'info@spmcs.co.uk'
+        };
+        
+        emailjs.send(
+            'service_yt00lit', 
+            'template_9i8zhjj', 
+            templateParams, 
+            '6T61pTerVCBUrDn_O'
+        )
+        .then((response) => {
+            console.log('Email sent successfully:', response);
+            setIsSubmitting(false);
+            setSubmitStatus('success');
+            setFormData({
+                firstName: '',
+                lastName: '',
+                email: '',
+                phone: '',
+                service: '',
+                message: ''
+            });
+            alert('Your message has been sent! We will be in touch shortly.');
+        })
+        .catch((error) => {
+            console.error('Error sending email:', error);
+            setIsSubmitting(false);
+            setSubmitStatus('error');
+            alert('Sorry, there was an error sending your message. Please try again later.');
+        });
     };
 
     return (
@@ -212,10 +266,21 @@ const Contact = () => {
                                             required
                                         ></textarea>
                                     </div>
-                                    <button type="submit" className="submit-button">
-                                        Send Message <FaPaperPlane className="btn-icon" />
+                                    <button 
+                                        type="submit" 
+                                        className="submit-button"
+                                        disabled={isSubmitting}
+                                    >
+                                        {isSubmitting ? 'Sending...' : 'Send Message'} 
+                                        {!isSubmitting && <FaPaperPlane className="btn-icon" />}
                                     </button>
-                                    <p className="cta-text">Don’t wait—take the first step toward simplicity today!</p>
+                                    {submitStatus === 'success' && (
+                                        <p className="success-message">Your message has been sent successfully!</p>
+                                    )}
+                                    {submitStatus === 'error' && (
+                                        <p className="error-message">Failed to send message. Please try again later.</p>
+                                    )}
+                                    <p className="cta-text">Don't wait—take the first step toward simplicity today!</p>
                                 </form>
                             </div>
                         </div>
@@ -235,7 +300,7 @@ const Contact = () => {
                                     <FaPhone />
                                     <p>Schedule a Call</p>
                                 </div>
-                                <div className="contact-method">
+                                <div className="contact-method" onClick={() => window.location.href = 'mailto:info@spmcs.co.uk'} style={{ cursor: 'pointer' }}>
                                     <FaEnvelope />
                                     <p>Email Directly</p>
                                 </div>
