@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./VideoSection.css";
 import CQCLogo from "../../assets/cqc_logo.png";
 import CityCouncilLogo from "../../assets/city_council_logo.png";
@@ -29,9 +30,16 @@ const VideoSection = () => {
               committed to finding the perfect solution to meet your needs.
             </p>
             <div className="button-container">
-              <button className="button-filled">Book Now</button>
-              <button className="button-outline">Contact Us</button>
+              <Link to="/contact" className="button-filled">
+                Book Now
+              </Link>
+              <Link to="/contact" className="button-outline">
+                Contact Us
+              </Link>
             </div>
+            <p className="disclaimer-message">
+              This video is provided by NHS England and explains the importance of integrated care in communities across the UK. It highlights how partnerships between the NHS, local government, and the third sector are improving care delivery.
+            </p>
           </div>
         </div>
         <div className="video-right">
