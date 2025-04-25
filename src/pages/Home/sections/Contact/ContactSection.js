@@ -24,6 +24,9 @@ const ContactSection = forwardRef((props, ref) => {
                 allowFullScreen
               ></iframe>
             </div>
+            <p className="disclaimer-message">
+              This video is provided by NHS England and explains the importance of integrated care in communities across the UK. It highlights how partnerships between the NHS, local government, and the third sector are improving care delivery.
+            </p>
             <p className="video-description">
               We provide exceptional, tailored care to individuals of all ages,
               offering supported living, live-in care, and home care services.
@@ -39,9 +42,6 @@ const ContactSection = forwardRef((props, ref) => {
                 Contact Us
               </Link>
             </div>
-            <p className="disclaimer-message">
-              This video is provided by NHS England and explains the importance of integrated care in communities across the UK. It highlights how partnerships between the NHS, local government, and the third sector are improving care delivery.
-            </p>
           </div>
         </div>
         <div className="contact-right">
