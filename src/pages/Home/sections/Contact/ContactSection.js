@@ -17,7 +17,7 @@ const ContactSection = forwardRef((props, ref) => {
             <div className="video-frame-container">
               <iframe
                 className="embedded-video"
-                src="https://www.youtube.com/watch?v=3YdlV1DsK54"
+                src="https://www.youtube.com/embed/3YdlV1DsK54"
                 title="YouTube video player"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
