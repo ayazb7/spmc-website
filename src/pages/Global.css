@@ -261,7 +261,7 @@
     padding-left: 20px;
 }
 
-@media screen and (max-width: 1280px) and (min-width: 769px) {
+@media screen and (max-width: 1400px) and (min-width: 769px) {
     .care-hero-content h1 {
         font-size: 2.6rem;
     }

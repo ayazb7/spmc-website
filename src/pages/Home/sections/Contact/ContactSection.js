@@ -6,6 +6,7 @@ import CQCLogo from "../../../../assets/cqc_logo.png";
 import CityCouncilLogo from "../../../../assets/city_council_logo.png";
 import ICOLogo from "../../../../assets/ico-logo.png";
 import VideoSection from "../../../Services/VideoSection";
+import BirdieLogo from "../../../../assets/birdie-logo.png";
 
 const ContactSection = forwardRef((props, ref) => {
   return (
@@ -75,6 +76,9 @@ const ContactSection = forwardRef((props, ref) => {
             </div>
             <div className="logo-container">
               <img className="logo-image" src={ICOLogo} alt="ICO" />
+            </div>
+            <div className="logo-container">
+              <img className="logo-image" src={BirdieLogo} alt="Birdie" />
             </div>
           </div>
         </div>

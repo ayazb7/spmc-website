@@ -65,7 +65,7 @@ const HomeCare = () => {
 
             <section className="service-description">
 
-                <h2 className="service-title">Adult and Home Care Services</h2>
+                {/* <h2 className="service-title">Adult and Home Care Services</h2> */}
                 <div className="service-paragraph">
                     <div className="paragraph-text">
                         <p className="service-subtitle" style={{marginBottom: "0px"}}>
@@ -114,7 +114,7 @@ const HomeCare = () => {
             <   div className="section green-section">
                     <div className="section-content">
                         <div className="text-container">
-                            <h3 className="section-title">Home Care Services</h3>
+                            {/* <h3 className="section-title">Home Care Services</h3> */}
                             <ul className="service-list">
                                 <li>
                                     <strong>Medication Administration:</strong> Safe and accurate management of medications, ensuring clients take their prescriptions on time and as prescribed to support their health and well-being.

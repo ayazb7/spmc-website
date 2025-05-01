@@ -56,7 +56,7 @@
 }
 
 .logo-image {
-    width: 175px; 
+    width: 140px; 
     height: auto;
 }
 
@@ -77,9 +77,9 @@
     padding: 0 20px; 
 }
 
-@media screen and (max-width: 1280px) and (min-width: 769px) {
+@media screen and (max-width: 1400px) and (min-width: 769px) {
     .logo-image {
-        width: 125px;
+        width: 110px;
     }
 
     .contact-title {
@@ -92,6 +92,10 @@
 
     .contact-description {
         font-size: 16px;
+    }
+
+    .registration-text {
+        font-size: 10px;
     }
 }
 
@@ -156,6 +160,6 @@
     }
 
     .logo-image {
-        width: 100px; /* Reduce logo size on mobile */
+        width: 75px; /* Reduce logo size on mobile */
     }
 }

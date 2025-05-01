@@ -20,13 +20,13 @@ const FAQ = () => {
     const faqData = [
         {
             question: "What type of support services do you offer?",
-            answer: "We provide a range of non-regulated support services, including home and lifestyle assistance, companionship, errands, travel support, and event assistance. Our goal is to help individuals live comfortably, independently, and with dignity.",
+            answer: "We offer both regulated and non-regulated support services to meet a wide range of individual needs. This includes personal care, medication support, and other regulated activities, as well as home and lifestyle assistance, companionship, errands, travel support, and event assistance. Our goal is to deliver care that promotes independence, comfort, and dignity — whether someone needs everyday support or more specialised help.",
             icon: <FaHandsHelping />,
             category: "services"
         },
         {
             question: "Do you provide personal or medical care?",
-            answer: "No, we do not provide personal or medical care as we are in the process of obtaining our Care Quality Commission (CQC) accreditation. However, we can offer assistance with daily living, companionship, and other essential tasks.",
+            answer: "Yes, we provide regulated personal care services under our Care Quality Commission (CQC) registration (pending). This includes support with tasks such as washing, dressing, mobility, and medication. Our trained care professionals deliver these services with compassion and respect — alongside non-regulated support like companionship, daily living assistance, and help accessing the community.",
             icon: <FaMedkit />,
             category: "services"
         },
@@ -50,7 +50,7 @@ const FAQ = () => {
         },
         {
             question: "Can you remind me to take my medication?",
-            answer: "Yes, we can provide gentle reminders to take your prescribed medication, but we do not administer or handle medication directly.",
+            answer: "Yes, we can provide gentle reminders and also support with administering or handling prescribed medication as part of our regulated services. All medication support is delivered safely by trained staff, in line with current guidelines and your personalised care plan.",
             icon: <FaPrescriptionBottleAlt />,
             category: "services"
         },
@@ -229,6 +229,10 @@ const FAQ = () => {
                         </div>
                     )}
                 </div>
+            </div>
+
+            <div className="faq-disclaimer">
+                <p>Please note: Our Care Quality Commission (CQC) registration is currently pending. All regulated care activities — including personal care and medication administration — will only be delivered once our registration is fully approved. In the meantime, we continue to provide non-regulated support services in line with current guidance.</p>
             </div>
 
             <ContactSection ref={contactSectionRef} />

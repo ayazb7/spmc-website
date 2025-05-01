@@ -50,6 +50,7 @@ const Navbar = () => {
                 { text: 'Supported Living', path: '/supported-living' },
                 { text: 'Disabilities Support', path: '/disabilities-support' },
                 { text: 'Live-in Care', path: '/live-in-care' },
+                { text: 'Night Care Services', path: '/night-care' },
                 { text: 'After Hospital Care', path: '/after-hospital-care' },
                 { text: 'Home Care', path: '/home-care' },
                 { text: 'Social Engagement', path: '/social-engagement' },
@@ -60,6 +61,10 @@ const Navbar = () => {
             path: '/lifestyle'
         },
         {
+            text: 'About Us',
+            path: '/about'
+        },
+        {
             text: 'Why Us?',
             path: '/why-us'
         },
@@ -67,10 +72,6 @@ const Navbar = () => {
             text: 'FAQ',
             path: '/faq'
         },
-        // {
-        //     text: 'Social Events',
-        //     path: '/about'
-        // },
         {
             text: 'Careers',
             path: '/careers'

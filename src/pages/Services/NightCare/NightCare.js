@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import "./CareForAdults.css";
+import "./NightCare.css";
 import "../Global.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import { Helmet } from "react-helmet-async";
-import VideoSection from "../VideoSection";
+import VideoSection from '../VideoSection';
 
 import ServiceImage1 from "../../../assets/care-for-adults.png";
 
-const CareForAdults = () => {
+const NightCare = () => {
   const [postcode, setPostcode] = useState("");
   const [hasScrolled, setHasScrolled] = useState(false);
   const navigate = useNavigate();
@@ -96,21 +96,19 @@ const CareForAdults = () => {
   return (
     <>
       <Helmet>
-        <title>SPMC | Adult Care</title>
+        <title>SPMC | Night Care Services</title>
       </Helmet>
       <div className="care-page">
-        <section className="care-hero-section care-hero-adults">
+        <section className="care-hero-section night-care">
           <div className="care-hero-overlay"></div>
           <div className="care-hero-content">
-            <h1>Care for Adults</h1>
+            <h1>Night Care & Sitters</h1>
             <p>
-              Whether you require assistance for a few hours a day,
-              round-the-clock care, or a dedicated live-in carer, we are
-              committed to finding the perfect solution to meet your needs.
+            Compassionate Support When It Matters Most
             </p>
 
             <div className="care-search-section">
-              <p className="care-search-title">Looking for homecare?</p>
+              <p className="care-search-title">Looking for night care?</p>
               <div className="care-search-bar">
                 <input
                   type="text"
@@ -146,56 +144,27 @@ const CareForAdults = () => {
         </section>
 
         <section className="service-description">
-          {/* <h2 className="service-title">Adult and Home Care Services</h2> */}
           <div className="service-paragraph">
             <div className="paragraph-text">
               <p className="service-subtitle" style={{ marginBottom: "0px" }}>
-                At Solent Primary Medical Care, our mission is to empower
-                individuals to live independently in their own homes, with
-                tailored care designed to meet their unique needs, aspirations,
-                and goals.
-                <br />
-                <br />
-                Our approach is entirely person-centred, with the individuals we
-                support placed at the core of everything we do. We are dedicated
-                to helping every person achieve their full potential and strive
-                to improve their quality of life.
+                At Solent Primary Medical Care, we understand that the need for care doesn't end when the sun sets. 
+                Our dedicated night care services are designed to provide peace of mind and essential support during the overnight hours.
+                <br/>
+                <br/>
+                Whether you're recovering from a hospital stay, managing a chronic condition, or simply require assistance during the night, 
+                our compassionate team is here to help. We offer both sleep-in and waking night care options, tailored to your individual needs, 
+                ensuring safety, comfort, and continuity of care throughout the night.
               </p>
             </div>
             <div className="section-image-container">
               <img
                 src={ServiceImage1}
-                alt="Supported Living Services"
+                alt="Night Care Services"
                 className="section-image"
               />
             </div>
           </div>
-          <div className="service-paragraph">
-            <div className="section-image-container">
-              <img
-                src={ServiceImage1}
-                alt="Supported Living Services"
-                className="section-image"
-              />
-            </div>
-            <div className="paragraph-text">
-              <p className="service-subtitle" style={{ marginBottom: "0px" }}>
-                We provide active support and positive behavioural strategies,
-                refining our care through regular reviews to ensure it remains
-                aligned with each person's needs and preferences. Our team is
-                not only highly skilled and experienced but also committed to
-                truly listening—because understanding individual needs is key to
-                delivering meaningful outcomes and achieving the right balance
-                between practical support and personal priorities.
-                <br />
-                <br />
-                <strong>Solent Primary Medical Care:</strong> where care exceeds
-                expectations. <br />
-                Contact us today to explore how we can provide a bespoke and
-                professional solution for your supported living needs.
-              </p>
-            </div>
-          </div>
+
           <div className="discover-services">
             <span className="line"></span>
             <span className="discover-text">DISCOVER OUR SERVICES</span>
@@ -207,29 +176,20 @@ const CareForAdults = () => {
           <div className="section green-section">
             <div className="section-content">
               <div className="text-container">
-                <h3 className="section-title">Adult Care Services</h3>
+                <h3 className="section-title">Sleep-In Care</h3>
                 <ul className="service-list">
                   <li>
-                    <strong>Dementia Care:</strong> Specialist care to support
-                    adults with dementia, promoting memory retention and
-                    reducing anxiety in a safe environment.
+                    <strong>Overnight Support:</strong> A caregiver stays overnight in your home, available to assist as needed, providing reassurance and prompt support.
                   </li>
                   <li>
-                    <strong>Palliative Care/End of Life Care:</strong>{" "}
-                    Compassionate support for individuals with terminal
-                    illnesses, focusing on comfort, dignity, and peace.
-                  </li>
-                  <li>
-                    <strong>Respite Care:</strong> Temporary relief for primary
-                    carers, providing professional and reliable care for loved
-                    ones.
+                    <strong>Peace of Mind:</strong> Knowing that help is available throughout the night, ensuring safety and comfort for you and your loved ones.
                   </li>
                 </ul>
               </div>
               <div className="image-container">
                 <img
                   src={ServiceImage1}
-                  alt="Adult Care Services"
+                  alt="Sleep-In Care"
                   className="section-image"
                 />
               </div>
@@ -241,24 +201,43 @@ const CareForAdults = () => {
               <div className="image-container">
                 <img
                   src={ServiceImage1}
-                  alt="Adult Care Services"
+                  alt="Waking Night Care"
                   className="section-image"
                 />
               </div>
               <div className="text-container">
-                <h3 className="section-title">Overnight Care and Support</h3>
+                <h3 className="section-title">Waking Night Care</h3>
                 <ul className="service-list">
                   <li>
-                    <strong>Waking Night Care:</strong> Specialist care to
-                    support adults with dementia, promoting memory retention and
-                    reducing anxiety in a safe environment.
+                    <strong>24/7 Alert Support:</strong> A caregiver remains awake and alert throughout the night, ready to provide immediate assistance with mobility, personal care, or medication.
                   </li>
                   <li>
-                    <strong>Sleep-in Support:</strong> Compassionate support for
-                    individuals with terminal illnesses, focusing on comfort,
-                    dignity, and peace.
+                    <strong>Comprehensive Care:</strong> Professional support for all your night-time needs, ensuring you receive the highest quality of care when it matters most.
                   </li>
                 </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="section green-section">
+            <div className="section-content">
+              <div className="text-container">
+                <h3 className="section-title">Night Sitting Services</h3>
+                <ul className="service-list">
+                  <li>
+                    <strong>Companionship:</strong> Ideal for those who may feel anxious or require companionship during the night, our sitters offer a calming presence and attentive support.
+                  </li>
+                  <li>
+                    <strong>Emotional Support:</strong> Providing reassurance and comfort throughout the night, helping you feel secure and well-cared for.
+                  </li>
+                </ul>
+              </div>
+              <div className="image-container">
+                <img
+                  src={ServiceImage1}
+                  alt="Night Sitting Services"
+                  className="section-image"
+                />
               </div>
             </div>
           </div>
@@ -270,4 +249,4 @@ const CareForAdults = () => {
   );
 };
 
-export default CareForAdults;
+export default NightCare; 

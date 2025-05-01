@@ -184,9 +184,10 @@ const WhyChooseUs = () => {
                         <div className="testimonial">
                             <div className="testimonial-content">
                                 <i className="fas fa-quote-left"></i>
-                                <p>SPMC has been my support system for over a year now. Their flexible approach to my needs has made all the difference in my day-to-day life.</p>
+                                <p>"Genuinely changed my mum's quality of life"</p>
+                                <p>We were really nervous about bringing in home care, but from the very first visit, Solent Primary Medical Care put us at ease. The carers are professional but warm, and always treat Mum with dignity and respect. Communication is excellent — they keep us updated without overwhelming us. It's been a huge relief for our family, and my only regret is not reaching out sooner.</p>
                                 <div className="testimonial-author">
-                                    <span className="author-name">Sarah J.</span>
+                                    <span className="author-name">F. Khan</span>
                                     <div className="stars">
                                         <i className="fas fa-star"></i>
                                         <i className="fas fa-star"></i>
@@ -200,9 +201,10 @@ const WhyChooseUs = () => {
                         <div className="testimonial">
                             <div className="testimonial-content">
                                 <i className="fas fa-quote-left"></i>
-                                <p>I appreciate how the team always goes the extra mile. Their attention to detail and genuine care makes them stand out from other service providers.</p>
+                                <p>"Professional, kind, and reliable"</p>
+                                <p>We use Solent for night care services and the difference it's made to my dad's wellbeing is incredible. The carers are punctual and discreet, and we've noticed he sleeps better just knowing someone is there. We had one scheduling hiccup early on, but it was resolved quickly and professionally. I'd definitely recommend them to others looking for thoughtful, person-focused care.</p>
                                 <div className="testimonial-author">
-                                    <span className="author-name">Michael T.</span>
+                                    <span className="author-name">J. Smith</span>
                                     <div className="stars">
                                         <i className="fas fa-star"></i>
                                         <i className="fas fa-star"></i>
@@ -216,9 +218,10 @@ const WhyChooseUs = () => {
                         <div className="testimonial">
                             <div className="testimonial-content">
                                 <i className="fas fa-quote-left"></i>
-                                <p>The peace of mind that comes with having SPMC handle my everyday tasks is invaluable. Their reliable service frees me up to focus on what truly matters.</p>
+                                <p>"Very pleased with the service so far"</p>
+                                <p>We've had a really good experience overall. The staff are friendly, professional, and have been very supportive. Communication is clear, and our questions have been answered quickly. It's been a relief having dependable care in place.</p>
                                 <div className="testimonial-author">
-                                    <span className="author-name">Emily R.</span>
+                                    <span className="author-name">Anonymous</span>
                                     <div className="stars">
                                         <i className="fas fa-star"></i>
                                         <i className="fas fa-star"></i>

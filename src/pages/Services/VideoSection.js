@@ -4,6 +4,7 @@ import "./VideoSection.css";
 import CQCLogo from "../../assets/cqc_logo.png";
 import CityCouncilLogo from "../../assets/city_council_logo.png";
 import ICOLogo from "../../assets/ico-logo.png";
+import BirdieLogo from "../../assets/birdie-logo.png";
 
 const VideoSection = () => {
   return (
@@ -61,6 +62,9 @@ const VideoSection = () => {
           </div>
           <div className="logo-container">
             <img className="logo-image larger" src={ICOLogo} alt="ICO" />
+          </div>
+          <div className="logo-container">
+            <img className="logo-image larger" src={BirdieLogo} alt="Birdie" />
           </div>
         </div>
       </div>

@@ -137,13 +137,17 @@
     text-align: center;
 }
 
-@media screen and (max-width: 1280px) and (min-width: 769px) {
+@media screen and (max-width: 1400px) and (min-width: 769px) {
     .video-title {
         font-size: 24px;
     }
 
     .video-card {
         padding: 30px;
+    }
+
+    .registration-text {
+        font-size: 10px;
     }
 }
 
@@ -188,8 +192,8 @@
         flex: 0 0 auto; /* Adjust flex behavior */
         flex-direction: row;
         width: 100%; /* Full width for logos section */
-        gap: 15px; /* Reduce spacing between logos */
-        align-items: center; /* Center the logos */
+        gap: 10px; /* Reduce spacing between logos */
+        align-items: start; /* Center the logos */
         justify-content: center;
     }
 
@@ -199,7 +203,7 @@
     }
 
     .logo-image.larger {
-        width: 120px; /* Smaller logos for mobile */
+        width: 75px; /* Smaller logos for mobile */
     }
 
     .registration-text {

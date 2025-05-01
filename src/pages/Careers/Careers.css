@@ -79,7 +79,7 @@
 }
 
 .wave-decoration path {
-  fill: white; /* Match background color of content */
+  fill: #f9fafc; /* Match background color of content */
 }
 
 /* Content Section */
@@ -152,7 +152,7 @@
 /* Benefits Section */
 .careers-benefits {
   padding: 80px 0;
-  background-color: #fff;
+  background-color: #f9fafc;
 }
 
 .careers-benefits h2 {

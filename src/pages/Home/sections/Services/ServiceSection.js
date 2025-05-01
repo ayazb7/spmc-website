@@ -30,26 +30,38 @@ const ServiceSection = forwardRef(({ contactSectionRef }, ref) => {
     {
       title: "Live-in Care",
       image: ServiceImage3,
-      roundedCorners: ["top-right"],
+      roundedCorners: [],
       route: "/live-in-care",
     },
     {
       title: "After Hospital Care",
       image: ServiceImage4,
-      roundedCorners: ["bottom-left"],
+      roundedCorners: ["top-right"],
       route: "/after-hospital-care",
     },
     {
       title: "Home Care",
       image: ServiceImage5,
-      roundedCorners: [],
+      roundedCorners: ["bottom-left"],
       route: "/home-care",
     },
     {
       title: "Social Engagement",
       image: ServiceImage6,
-      roundedCorners: ["bottom-right"],
+      roundedCorners: [],
       route: "/social-engagement",
+    },
+    {
+      title: "Supported Living",
+      image: ServiceImage6,
+      roundedCorners: [],
+      route: "/supported-living",
+    },
+    {
+      title: "Night Care Services",
+      image: ServiceImage6,
+      roundedCorners: ["bottom-right"],
+      route: "/supported-living",
     },
   ];
 

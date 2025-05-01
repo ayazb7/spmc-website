@@ -1,6 +1,6 @@
 /* FAQ Page Styles */
 .faq-page {
-    background-color: #f9fafc;
+    background-color: #f8f9fa;
     min-height: 100vh;
     font-family: 'Urbanist', sans-serif;
     padding-top: 80px; /* Add padding to account for fixed navbar */
@@ -267,8 +267,6 @@
     background-color: #6ca233;
 }
 
-
-
 .contact-heading {
     max-width: 700px;
     margin: 0 auto 50px;
@@ -353,8 +351,30 @@
         font-size: 1.2rem;
     }
     
-    
     .contact-heading h2 {
         font-size: 2rem;
+    }
+}
+
+.faq-disclaimer {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-left: 4px solid #85BB40;
+    border-radius: 4px;
+}
+
+.faq-disclaimer p {
+    color: #174374;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .faq-disclaimer {
+        margin: 30px 20px;
+        padding: 15px;
     }
 } 

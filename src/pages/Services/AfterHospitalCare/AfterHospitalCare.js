@@ -65,7 +65,7 @@ const AfterHospitalCare = () => {
 
             <section className="service-description">
 
-                <h2 className="service-title">Adult and Home Care Services</h2>
+                {/* <h2 className="service-title">Adult and Home Care Services</h2> */}
                 <div className="service-paragraph">
                     <div className="paragraph-text">
                         <p className="service-subtitle" style={{marginBottom: "0px"}}>

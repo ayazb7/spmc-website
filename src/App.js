@@ -10,6 +10,7 @@ import AfterHospitalCare from './pages/Services/AfterHospitalCare/AfterHospitalC
 import HomeCare from './pages/Services/HomeCare/HomeCare';
 import SocialEngagement from './pages/Services/SocialEngagement/SocialEngagement';
 import SupportedLiving from './pages/Services/SupportedLiving/SupportedLiving';
+import NightCare from './pages/Services/NightCare/NightCare';
 import Lifestyle from './pages/Lifestyle/Lifestyle';
 import WhyChooseUs from './pages/WhyChooseUs/WhyChooseUs';
 import Contact from './pages/Contact/Contact';
@@ -33,6 +34,7 @@ const App = () => {
                     <Route path="/home-care" element={<HomeCare />} />
                     <Route path="/social-engagement" element={<SocialEngagement />} />
                     <Route path="/supported-living" element={<SupportedLiving />} />
+                    <Route path="/night-care" element={<NightCare />} />
                     <Route path="/lifestyle" element={<Lifestyle />} />
                     <Route path="/why-us" element={<WhyChooseUs />} />
                     <Route path="/contact" element={<Contact />} />

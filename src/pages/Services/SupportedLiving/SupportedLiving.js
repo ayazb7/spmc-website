@@ -65,7 +65,7 @@ const SupportedLiving = () => {
             </section>
 
             <section className="service-description">
-                <h2 className="service-title">Supported Living at SPMCS</h2>
+                {/* <h2 className="service-title">Supported Living at SPMCS</h2> */}
                 <div className="service-paragraph">
                     <div className="paragraph-text">
                         <p className="service-subtitle" style={{marginBottom: "0px"}}>
