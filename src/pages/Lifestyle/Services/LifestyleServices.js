@@ -5,6 +5,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import { Helmet } from 'react-helmet-async';
 
 import ServiceImage1 from '../../../assets/care-for-adults.png';
+import ShoppingImage from '../../../assets/shopping.jpg';
 
 const LifestyleServices = () => {
     const [hasScrolled, setHasScrolled] = useState(false);
@@ -125,7 +126,7 @@ const LifestyleServices = () => {
                     <div className="section-content">
                         <div className="image-container">
                             <img
-                                src={ServiceImage1}
+                                src={ShoppingImage}
                                 alt="Shopping and Errands Services"
                                 className="section-image"
                             />

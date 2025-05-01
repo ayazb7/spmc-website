@@ -6,7 +6,7 @@
     justify-content: center;
     color: white;
     overflow: hidden; /* Ensure the video fits perfectly */
-    margin-bottom: 60px; /* Add spacing after hero section */
+    margin-bottom: 40px; /* Add spacing after hero section */
     background-image: url('../../../../../assets/home_bg.png'); /* Fallback background */
     background-size: cover;
     background-position: center;

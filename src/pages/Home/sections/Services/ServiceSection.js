@@ -10,6 +10,8 @@ import ServiceImage3 from "../../../../assets/service3.png";
 import ServiceImage4 from "../../../../assets/service4.png";
 import ServiceImage5 from "../../../../assets/service5.png";
 import ServiceImage6 from "../../../../assets/service6.png";
+import ServiceImage7 from "../../../../assets/service7.jpg";
+import ServiceImage8 from "../../../../assets/service8.jpg";
 
 const ServiceSection = forwardRef(({ contactSectionRef }, ref) => {
   const navigate = useNavigate();
@@ -53,13 +55,13 @@ const ServiceSection = forwardRef(({ contactSectionRef }, ref) => {
     },
     {
       title: "Supported Living",
-      image: ServiceImage6,
+      image: ServiceImage7,
       roundedCorners: [],
       route: "/supported-living",
     },
     {
       title: "Night Care Services",
-      image: ServiceImage6,
+      image: ServiceImage8,
       roundedCorners: ["bottom-right"],
       route: "/supported-living",
     },

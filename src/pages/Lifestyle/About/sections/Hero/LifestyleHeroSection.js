@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './LifestyleHeroSection.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import heroVideo from '../../../../../assets/hero_video.mp4';
+import heroVideo from '../../../../../assets/lifestyle-video.mp4';
 
 const LifestyleHeroSection = ({ serviceSectionRef }) => {
     const [hasScrolled, setHasScrolled] = useState(false);

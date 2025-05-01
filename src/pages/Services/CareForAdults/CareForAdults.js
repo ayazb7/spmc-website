@@ -7,6 +7,8 @@ import { Helmet } from "react-helmet-async";
 import VideoSection from "../VideoSection";
 
 import ServiceImage1 from "../../../assets/care-for-adults.png";
+import ServiceImage9 from "../../../assets/service9.jpg";
+import ServiceImage10 from "../../../assets/service10.jpg";
 
 const CareForAdults = () => {
   const [postcode, setPostcode] = useState("");
@@ -164,7 +166,7 @@ const CareForAdults = () => {
             </div>
             <div className="section-image-container">
               <img
-                src={ServiceImage1}
+                src={ServiceImage9}
                 alt="Supported Living Services"
                 className="section-image"
               />
@@ -173,7 +175,7 @@ const CareForAdults = () => {
           <div className="service-paragraph">
             <div className="section-image-container">
               <img
-                src={ServiceImage1}
+                src={ServiceImage10}
                 alt="Supported Living Services"
                 className="section-image"
               />

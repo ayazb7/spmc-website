@@ -2,6 +2,8 @@ import React, { useRef, useEffect, useState } from 'react';
 import './ServicesList.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import ServiceImage1 from '../../../../../assets/care-for-adults.png';
+import ShoppingImage from '../../../../../assets/shopping.jpg';
+import PAImage from '../../../../../assets/pa-services.jpg';
 
 const ServicesList = () => {
     const [activeSection, setActiveSection] = useState(0);
@@ -68,7 +70,7 @@ const ServicesList = () => {
                 <div className="section-content">
                     <div className="image-container">
                         <img
-                            src={ServiceImage1}
+                            src={ShoppingImage}
                             alt="Shopping and Errands Services"
                             className="section-image"
                         />
@@ -119,7 +121,7 @@ const ServicesList = () => {
                 <div className="section-content">
                     <div className="image-container">
                         <img
-                            src={ServiceImage1}
+                            src={PAImage}
                             alt="Personal Assistance Services"
                             className="section-image"
                         />
