@@ -43,7 +43,7 @@ const Footer = () => {
                             <hr className="blue-line" />
                         </div>
                         <ul className="link-grid">
-                            <li><a href="tel:07921511703"><FontAwesomeIcon icon={faPhoneAlt} className="contact-icon"/>07921 511703</a></li>
+                            <li><a href="tel:02382145353"><FontAwesomeIcon icon={faPhoneAlt} className="contact-icon"/>02382145353</a></li>
                             <li><a href="mailto:info@spmcs.co.uk"><FontAwesomeIcon icon={faEnvelope} className="contact-icon"/>info@spmcs.co.uk</a></li>
                         </ul>
                     </div>

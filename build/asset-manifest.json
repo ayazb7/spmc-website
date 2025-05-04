@@ -1,0 +1,39 @@
+{
+  "files": {
+    "main.css": "/static/css/main.c531652f.css",
+    "main.js": "/static/js/main.9e54da3b.js",
+    "static/media/hero_video.mp4": "/static/media/hero_video.3e2265e044207d13c8d3.mp4",
+    "static/media/home-care.png": "/static/media/home-care.077e260c3c61fea263e1.png",
+    "static/media/social-engagement.png": "/static/media/social-engagement.796914d6f7ec525c788e.png",
+    "static/media/after-hospital-care.png": "/static/media/after-hospital-care.29476b7b87d5f3c1fc27.png",
+    "static/media/home_bg.png": "/static/media/home_bg.13f173f3e61fb9ef07b1.png",
+    "static/media/disabilities-support.png": "/static/media/disabilities-support.0748f2c946f8ef1e37c5.png",
+    "static/media/about-ellipse-image.png": "/static/media/about-ellipse-image.939702313d45be5487fd.png",
+    "static/media/care-for-adults.png": "/static/media/care-for-adults.6775863dc01d169f015f.png",
+    "static/media/live-in-care.png": "/static/media/live-in-care.a8c53e9290eb6dbe5a5f.png",
+    "static/media/service5.png": "/static/media/service5.fb998b93f7d16249d725.png",
+    "static/media/fa-solid-900.ttf": "/static/media/fa-solid-900.2582b0e4bcf85eceead0.ttf",
+    "static/media/service6.png": "/static/media/service6.3e3764fd02f27206cb0b.png",
+    "static/media/service3.png": "/static/media/service3.fc4df7625643fb16235d.png",
+    "static/media/service4.png": "/static/media/service4.7326bbded91b354f5aaf.png",
+    "static/media/service2.png": "/static/media/service2.eab13a12f323c18b75a8.png",
+    "static/media/service1.png": "/static/media/service1.26dab08f0c4adb35acd9.png",
+    "static/media/fa-brands-400.ttf": "/static/media/fa-brands-400.1815e00441357e01619e.ttf",
+    "static/media/fa-solid-900.woff2": "/static/media/fa-solid-900.2463b90d9a316e4e5294.woff2",
+    "static/media/logo.png": "/static/media/logo.c41347e05611c5bd3507.png",
+    "static/media/fa-brands-400.woff2": "/static/media/fa-brands-400.c210719e60948b211a12.woff2",
+    "static/media/fa-regular-400.ttf": "/static/media/fa-regular-400.914997e1bdfc990d0897.ttf",
+    "static/media/fa-regular-400.woff2": "/static/media/fa-regular-400.89999bdf5d835c012025.woff2",
+    "static/media/cqc_logo.png": "/static/media/cqc_logo.d2a7a1c4a340fe2cda2a.png",
+    "static/media/fa-v4compatibility.ttf": "/static/media/fa-v4compatibility.da94ef451f4969af06e6.ttf",
+    "static/media/city_council_logo.png": "/static/media/city_council_logo.ffc5153d8ddadb6da9c6.png",
+    "static/media/fa-v4compatibility.woff2": "/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
+    "index.html": "/index.html",
+    "main.c531652f.css.map": "/static/css/main.c531652f.css.map",
+    "main.9e54da3b.js.map": "/static/js/main.9e54da3b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c531652f.css",
+    "static/js/main.9e54da3b.js"
+  ]
+}

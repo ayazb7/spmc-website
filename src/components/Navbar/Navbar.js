@@ -60,6 +60,7 @@ const Navbar = () => {
             text: 'Lifestyle Support',
             path: '/lifestyle'
         },
+        
         {
             text: 'About Us',
             path: '/about'
@@ -72,6 +73,11 @@ const Navbar = () => {
             text: 'FAQ',
             path: '/faq'
         },
+
+        // {
+        //     text: 'Social Events',
+        //     path: '/about'
+        // },
         {
             text: 'Careers',
             path: '/careers'
