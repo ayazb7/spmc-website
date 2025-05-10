@@ -29,7 +29,7 @@ const ContactCard = () => {
                     <img src={Logo} alt="Logo" className="contact-logo" />
                     <div className="vertical-line"></div>
                     <div className="contact-details">
-                        <p><i className="fas fa-phone-alt"></i> 07921 511703</p>
+                        <p><i className="fas fa-phone-alt"></i> 02382145353</p>
                         <p><i className="fas fa-envelope"></i> info@spmcs.co.uk</p>
                     </div>
                 </div>
