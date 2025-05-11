@@ -63,7 +63,7 @@ const ServiceSection = forwardRef(({ contactSectionRef }, ref) => {
       title: "Night Care Services",
       image: ServiceImage8,
       roundedCorners: ["bottom-right"],
-      route: "/supported-living",
+      route: "/night-care",
     },
   ];
 
