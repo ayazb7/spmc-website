@@ -35,6 +35,7 @@ const Footer = () => {
                             <li><a href="/after-hospital-care">After Hospital Care</a></li>
                             <li><a href="/home-care">Home Care</a></li>
                             <li><a href="/social-engagement">Social Engagement</a></li>
+                            <li><a href="/night-care">Night Care</a></li>
                         </ul>
                     </div>
                     <div className="footer-section">
