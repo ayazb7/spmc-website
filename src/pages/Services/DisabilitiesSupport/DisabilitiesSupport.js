@@ -5,7 +5,10 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import { Helmet } from 'react-helmet-async';
 import VideoSection from '../VideoSection';
 
-import ServiceImage1 from '../../../assets/care-for-adults.png';
+import DisabilitiesPanel1 from '../../../assets/disabilities-panel1.jpg';
+import DisabilitiesPanel2 from '../../../assets/disabilities-panel2.jpg';
+import DisabilitiesPanel3 from '../../../assets/disabilities-panel1.jpg';
+import DisabilitiesPanel4 from '../../../assets/disabilities-panel2.jpg';
 
 const DisabilitiesSupport = () => {
     const [hasScrolled, setHasScrolled] = useState(false);
@@ -69,14 +72,14 @@ const DisabilitiesSupport = () => {
                 <div className="service-paragraph">
                     <div className="paragraph-text">
                         <p className="service-subtitle" style={{marginBottom: "0px"}}>
-                            At Solent Primary Medical Care, we are committed to supporting individuals with learning disabilities, enabling them to lead meaningful and independent lives. Our care is designed to address each individual’s unique needs, aspirations, and goals, helping them achieve their potential while enhancing their quality of life.                            <br/>
+                            At Solent Primary Medical Care, we are committed to supporting individuals with learning disabilities, enabling them to lead meaningful and independent lives. Our care is designed to address each individual's unique needs, aspirations, and goals, helping them achieve their potential while enhancing their quality of life.                            <br/>
                             <br/>
-                            We work closely with families, support networks, and commissioning partners to create bespoke care plans that cater to every aspect of an individual’s life, from building life skills to fostering social inclusion. Our dedicated team focuses on empowering individuals through active support and positive behavioural strategies, encouraging confidence, independence, and personal growth.
+                            We work closely with families, support networks, and commissioning partners to create bespoke care plans that cater to every aspect of an individual's life, from building life skills to fostering social inclusion. Our dedicated team focuses on empowering individuals through active support and positive behavioural strategies, encouraging confidence, independence, and personal growth.
                         </p>
                     </div>
                     <div className="section-image-container">
                         <img
-                            src={ServiceImage1}
+                            src={DisabilitiesPanel1}
                             alt="Supported Living Services"
                             className="section-image"
                         />
@@ -85,7 +88,7 @@ const DisabilitiesSupport = () => {
                 <div className="service-paragraph">
                     <div className="section-image-container">
                         <img
-                            src={ServiceImage1}
+                            src={DisabilitiesPanel2}
                             alt="Supported Living Services"
                             className="section-image"
                         />
@@ -128,7 +131,7 @@ const DisabilitiesSupport = () => {
                         </div>
                         <div className="image-container">
                             <img
-                                src={ServiceImage1}
+                                src={DisabilitiesPanel3}
                                 alt="Disabilities Support Services"
                                 className="section-image"
                             />
@@ -140,7 +143,7 @@ const DisabilitiesSupport = () => {
                     <div className="section-content">
                         <div className="image-container">
                             <img
-                                src={ServiceImage1}
+                                src={DisabilitiesPanel4}
                                 alt="Recovery and Reablement Services"
                                 className="section-image"
                             />

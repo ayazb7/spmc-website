@@ -52,10 +52,16 @@ const Footer = () => {
                 <div className="footer-bottom">
                     <img src={logo} alt="Logo" className="footer-logo" />
                     <div className="social-icons">
-                        <div className="social-icon"><FontAwesomeIcon icon={faFacebookF} /></div>
-                        <div className="social-icon"><FontAwesomeIcon icon={faInstagram} /></div>
+                        <a href="https://www.facebook.com/share/1ATaFjVP2V/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">
+                            <div className="social-icon"><FontAwesomeIcon icon={faFacebookF} /></div>
+                        </a>
+                        <a href="https://www.instagram.com/solentprimarymedicalcare?igsh=MTkyanNybzd2OWJjdA==" target="_blank" rel="noopener noreferrer">
+                            <div className="social-icon"><FontAwesomeIcon icon={faInstagram} /></div>
+                        </a>
                         <div className="social-icon"><FontAwesomeIcon icon={faXTwitter} /></div>
-                        <div className="social-icon"><FontAwesomeIcon icon={faLinkedinIn} /></div>
+                        <a href="https://www.linkedin.com/company/solent-primary-medical-care-services/" target="_blank" rel="noopener noreferrer">
+                            <div className="social-icon"><FontAwesomeIcon icon={faLinkedinIn} /></div>
+                        </a>
                     </div>
                 </div>
             </div>

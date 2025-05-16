@@ -307,18 +307,18 @@ const Contact = () => {
                             </div>
                             
                             <div className="social-icons-contact">
-                                <div className="social-icon-contact">
+                                <a href="https://www.facebook.com/share/1ATaFjVP2V/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="social-icon-contact">
                                     <FaFacebookF />
-                                </div>
+                                </a>
                                 <div className="social-icon-contact">
                                     <FaTwitter />
                                 </div>
-                                <div className="social-icon-contact">
+                                <a href="https://www.instagram.com/solentprimarymedicalcare?igsh=MTkyanNybzd2OWJjdA==" target="_blank" rel="noopener noreferrer" className="social-icon-contact">
                                     <FaInstagram />
-                                </div>
-                                <div className="social-icon-contact">
+                                </a>
+                                <a href="https://www.linkedin.com/company/solent-primary-medical-care-services/" target="_blank" rel="noopener noreferrer" className="social-icon-contact">
                                     <FaLinkedinIn />
-                                </div>
+                                </a>
                             </div>
                         </div>
                     </div>

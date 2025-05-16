@@ -5,6 +5,9 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import { Helmet } from 'react-helmet-async';
 import VideoSection from '../VideoSection';
 
+import HomePanel1 from '../../../assets/home-panel1.jpg';
+import HomePanel2 from '../../../assets/home-panel2.jpg';
+import HomePanel3 from '../../../assets/home-panel3.jpg';
 import ServiceImage1 from '../../../assets/care-for-adults.png';
 
 const HomeCare = () => {
@@ -77,7 +80,7 @@ const HomeCare = () => {
                     </div>
                     <div className="section-image-container">
                         <img
-                            src={ServiceImage1}
+                            src={HomePanel1}
                             alt="Home Care Services"
                             className="section-image"
                         />
@@ -87,7 +90,7 @@ const HomeCare = () => {
                 <div className="service-paragraph">
                     <div className="section-image-container">
                         <img
-                            src={ServiceImage1}
+                            src={HomePanel2}
                             alt="Personalised Home Care"
                             className="section-image"
                         />
@@ -129,7 +132,7 @@ const HomeCare = () => {
                         </div>
                         <div className="image-container">
                             <img
-                                src={ServiceImage1}
+                                src={HomePanel3}
                                 alt="Home Care Services"
                                 className="section-image"
                             />

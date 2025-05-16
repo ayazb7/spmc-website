@@ -9,6 +9,7 @@ import VideoSection from "../VideoSection";
 import ServiceImage1 from "../../../assets/care-for-adults.png";
 import ServiceImage9 from "../../../assets/service9.jpg";
 import ServiceImage10 from "../../../assets/service10.jpg";
+import AdultsPanel4 from "../../../assets/adults-panel4.jpg";
 
 const CareForAdults = () => {
   const [postcode, setPostcode] = useState("");
@@ -242,7 +243,7 @@ const CareForAdults = () => {
             <div className="section-content">
               <div className="image-container">
                 <img
-                  src={ServiceImage1}
+                  src={AdultsPanel4}
                   alt="Adult Care Services"
                   className="section-image"
                 />
