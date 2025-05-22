@@ -5,7 +5,11 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import { Helmet } from 'react-helmet-async';
 import VideoSection from '../VideoSection';
 
-import ServiceImage1 from '../../../assets/care-for-adults.png';
+import SocialPanel1 from '../../../assets/social-panel1.PNG';
+import SocialPanel2 from '../../../assets/social-panel2.PNG';
+import SocialPanel3 from '../../../assets/social-panel3.PNG';
+import SocialPanel4 from '../../../assets/social-panel4.PNG';
+
 
 const SocialEngagement = () => {
     const [hasScrolled, setHasScrolled] = useState(false);
@@ -77,7 +81,7 @@ const SocialEngagement = () => {
                     </div>
                     <div className="section-image-container">
                         <img
-                            src={ServiceImage1}
+                            src={SocialPanel1}
                             alt="Social Engagement Services"
                             className="section-image"
                         />
@@ -87,7 +91,7 @@ const SocialEngagement = () => {
                 <div className="service-paragraph">
                     <div className="section-image-container">
                         <img
-                            src={ServiceImage1}
+                            src={SocialPanel2}
                             alt="Meaningful Outings and Activities"
                             className="section-image"
                         />
@@ -126,7 +130,7 @@ const SocialEngagement = () => {
                         </div>
                         <div className="image-container">
                             <img
-                                src={ServiceImage1}
+                                src={SocialPanel3}
                                 alt="Social Engagement Services"
                                 className="section-image"
                             />
@@ -138,7 +142,7 @@ const SocialEngagement = () => {
                     <div className="section-content">
                         <div className="image-container">
                             <img
-                                src={ServiceImage1}
+                                src={SocialPanel4}
                                 alt="Supporting Hobbies and Outings"
                                 className="section-image"
                             />

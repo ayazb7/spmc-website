@@ -5,9 +5,12 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import { Helmet } from 'react-helmet-async';
 import VideoSection from '../VideoSection';
 
-import ServiceImage1 from '../../../assets/care-for-adults.png';
 import SupportedLivingPanel1a from '../../../assets/supported-panel1a.jpg';
 import SupportedLivingPanel1b from '../../../assets/supported-panel1b.jpg';
+import SupportedLivingPanel2 from '../../../assets/supported-panel2.jpg';
+import SupportedLivingPanel3 from '../../../assets/supported-panel3.jpg';
+import SupportedLivingPanel4 from '../../../assets/supported-panel4.jpg';
+
 
 const SupportedLiving = () => {
     const [hasScrolled, setHasScrolled] = useState(false);
@@ -135,7 +138,7 @@ const SupportedLiving = () => {
                         </div>
                         <div className="image-container">
                             <img
-                                src={ServiceImage1}
+                                src={SupportedLivingPanel2}
                                 alt="Individual-centered Care"
                                 className="section-image"
                             />
@@ -147,7 +150,7 @@ const SupportedLiving = () => {
                     <div className="section-content">
                         <div className="image-container">
                             <img
-                                src={ServiceImage1}
+                                src={SupportedLivingPanel3}
                                 alt="Technology-backed Services"
                                 className="section-image"
                             />
@@ -190,7 +193,7 @@ const SupportedLiving = () => {
                         </div>
                         <div className="image-container">
                             <img
-                                src={ServiceImage1}
+                                src={SupportedLivingPanel4}
                                 alt="Support Services"
                                 className="section-image"
                             />

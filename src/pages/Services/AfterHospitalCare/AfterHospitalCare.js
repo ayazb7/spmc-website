@@ -5,7 +5,9 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import VideoSection from '../VideoSection';
 import { Helmet } from 'react-helmet-async';
 
-import ServiceImage1 from '../../../assets/care-for-adults.png';
+import HospitalPanel1 from '../../../assets/hospital-panel1.png';
+import HospitalPanel2 from '../../../assets/hospital-panel2.png';
+import HospitalPanel3 from '../../../assets/hospital-panel3.png';
 
 const AfterHospitalCare = () => {
     const [hasScrolled, setHasScrolled] = useState(false);
@@ -77,7 +79,7 @@ const AfterHospitalCare = () => {
                     </div>
                     <div className="section-image-container">
                         <img
-                            src={ServiceImage1}
+                            src={HospitalPanel1}
                             alt="Post-Hospital Care Services"
                             className="section-image"
                         />
@@ -87,7 +89,7 @@ const AfterHospitalCare = () => {
                 <div className="service-paragraph">
                     <div className="section-image-container">
                         <img
-                            src={ServiceImage1}
+                            src={HospitalPanel2}
                             alt="Rehabilitation and Recovery Services"
                             className="section-image"
                         />
@@ -126,7 +128,7 @@ const AfterHospitalCare = () => {
                         </div>
                         <div className="image-container">
                             <img
-                                src={ServiceImage1}
+                                src={HospitalPanel3}
                                 alt="After Hospital Care Services"
                                 className="section-image"
                             />

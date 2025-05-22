@@ -8,7 +8,7 @@ import VideoSection from '../VideoSection';
 import HomePanel1 from '../../../assets/home-panel1.jpg';
 import HomePanel2 from '../../../assets/home-panel2.jpg';
 import HomePanel3 from '../../../assets/home-panel3.jpg';
-import ServiceImage1 from '../../../assets/care-for-adults.png';
+import HomePanel4 from '../../../assets/home-panel4.jpg';
 
 const HomeCare = () => {
     const [hasScrolled, setHasScrolled] = useState(false);
@@ -144,7 +144,7 @@ const HomeCare = () => {
                     <div className="section-content">
                         <div className="image-container">
                             <img
-                                src={ServiceImage1}
+                                src={HomePanel4}
                                 alt="Personal Hygiene Assistance"
                                 className="section-image"
                             />

@@ -6,6 +6,10 @@ import { Helmet } from 'react-helmet-async';
 import VideoSection from '../VideoSection';
 
 import ServiceImage1 from '../../../assets/care-for-adults.png';
+import LiveInCarePanel1 from '../../../assets/livein-panel1.jpg';
+import LiveInCarePanel2 from '../../../assets/livein-panel2.jpg';
+import LiveInCarePanel3 from '../../../assets/livein-panel3.jpg';
+
 
 const LiveInCare = () => {
     const [hasScrolled, setHasScrolled] = useState(false);
@@ -76,7 +80,7 @@ const LiveInCare = () => {
                     </div>
                     <div className="section-image-container">
                         <img
-                            src={ServiceImage1}
+                            src={LiveInCarePanel1}
                             alt="Supported Living Services"
                             className="section-image"
                         />
@@ -85,7 +89,7 @@ const LiveInCare = () => {
                 <div className="service-paragraph">
                     <div className="section-image-container">
                         <img
-                            src={ServiceImage1}
+                            src={LiveInCarePanel2}
                             alt="Supported Living Services"
                             className="section-image"
                         />
@@ -125,7 +129,7 @@ const LiveInCare = () => {
                         </div>
                         <div className="image-container">
                             <img
-                                src={ServiceImage1}
+                                src={LiveInCarePanel3}
                                 alt="Live-in Care Services"
                                 className="section-image"
                             />

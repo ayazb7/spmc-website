@@ -41,9 +41,9 @@ const Careers = () => {
       description: 'Supervise care staff, coordinate schedules, and provide operational support to enhance service quality.',
     },
     {
-      title: 'Field Care Supervisor',
+      title: 'Night Care and Support Assistant',
       icon: <FaClipboardCheck />,
-      description: 'Conduct assessments, monitor care delivery, and ensure compliance with regulatory requirements.',
+      description: 'Deliver responsive, person-centred care and support to individuals during the night, ensuring safety, dignity, and wellbeing at all times.',
     },
   ];
 

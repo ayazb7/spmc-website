@@ -7,6 +7,10 @@ import { Helmet } from "react-helmet-async";
 import VideoSection from '../VideoSection';
 
 import ServiceImage1 from "../../../assets/care-for-adults.png";
+import NightPanel1 from "../../../assets/night-panel1.jpg";
+import NightPanel2 from "../../../assets/night-panel2.jpg";
+import NightPanel3 from "../../../assets/night-panel3.jpg";
+import NightPanel4 from "../../../assets/night-panel4.jpg";
 
 const NightCare = () => {
   const [postcode, setPostcode] = useState("");
@@ -158,7 +162,7 @@ const NightCare = () => {
             </div>
             <div className="section-image-container">
               <img
-                src={ServiceImage1}
+                src={NightPanel1}
                 alt="Night Care Services"
                 className="section-image"
               />
@@ -188,7 +192,7 @@ const NightCare = () => {
               </div>
               <div className="image-container">
                 <img
-                  src={ServiceImage1}
+                  src={NightPanel2}
                   alt="Sleep-In Care"
                   className="section-image"
                 />
@@ -200,7 +204,7 @@ const NightCare = () => {
             <div className="section-content">
               <div className="image-container">
                 <img
-                  src={ServiceImage1}
+                  src={NightPanel3}
                   alt="Waking Night Care"
                   className="section-image"
                 />
@@ -234,7 +238,7 @@ const NightCare = () => {
               </div>
               <div className="image-container">
                 <img
-                  src={ServiceImage1}
+                  src={NightPanel4}
                   alt="Night Sitting Services"
                   className="section-image"
                 />
