@@ -5,10 +5,10 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import { Helmet } from 'react-helmet-async';
 import VideoSection from '../VideoSection';
 
-import SocialPanel1 from '../../../assets/social-panel1.PNG';
-import SocialPanel2 from '../../../assets/social-panel2.PNG';
-import SocialPanel3 from '../../../assets/social-panel3.PNG';
-import SocialPanel4 from '../../../assets/social-panel4.PNG';
+import SocialPanel1 from '../../../assets/services/social/panel1.png';
+import SocialPanel2 from '../../../assets/services/social/panel2.png';
+import SocialPanel3 from '../../../assets/services/social/panel3.png';
+import SocialPanel4 from '../../../assets/services/social/panel4.png';
 
 
 const SocialEngagement = () => {
@@ -98,10 +98,10 @@ const SocialEngagement = () => {
                     </div>
                     <div className="paragraph-text">
                         <p className="service-subtitle" style={{marginBottom: "0px"}}>
-                            We’re here to make outings stress-free and enjoyable, whether it’s attending an appointment, visiting loved ones, or taking a trip to a favourite café. Our carers provide reliable support every step of the way, ensuring independence and confidence.
+                            We're here to make outings stress-free and enjoyable, whether it's attending an appointment, visiting loved ones, or taking a trip to a favourite café. Our carers provide reliable support every step of the way, ensuring independence and confidence.
                             <br/>
                             <br/>
-                            From rekindling hobbies to enjoying walks in the park or participating in community events, we tailor every experience to individual preferences. At Solent Primary Medical Care, social connection goes beyond interaction—it’s about creating purpose and meaningful moments.
+                            From rekindling hobbies to enjoying walks in the park or participating in community events, we tailor every experience to individual preferences. At Solent Primary Medical Care, social connection goes beyond interaction—it's about creating purpose and meaningful moments.
                         </p>
                     </div>
                 </div>
@@ -151,7 +151,7 @@ const SocialEngagement = () => {
                             <h3 className="section-title">Supporting Hobbies and Outings</h3>
                             <ul className="service-list">
                                 <li>
-                                    <strong>Hobbies Support:</strong> Encouragement and assistance with hobbies or interests, whether it’s gardening, arts and crafts, reading, or any activity that brings joy and fulfilment.
+                                    <strong>Hobbies Support:</strong> Encouragement and assistance with hobbies or interests, whether it's gardening, arts and crafts, reading, or any activity that brings joy and fulfilment.
                                 </li>
                                 <li>
                                     <strong>Going Out to Places of Choice:</strong> Facilitation of outings to places the client enjoys, such as parks, cafes, or family gatherings, promoting independence and a continued connection to the community.

@@ -5,10 +5,10 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import { Helmet } from 'react-helmet-async';
 import VideoSection from '../VideoSection';
 
-import HomePanel1 from '../../../assets/home-panel1.jpg';
-import HomePanel2 from '../../../assets/home-panel2.jpg';
-import HomePanel3 from '../../../assets/home-panel3.jpg';
-import HomePanel4 from '../../../assets/home-panel4.jpg';
+import HomePanel1 from '../../../assets/services/home/panel1.jpg';
+import HomePanel2 from '../../../assets/services/home/panel2.jpg';
+import HomePanel3 from '../../../assets/services/home/panel3.jpg';
+import HomePanel4 from '../../../assets/services/home/panel4.jpg';
 
 const HomeCare = () => {
     const [hasScrolled, setHasScrolled] = useState(false);

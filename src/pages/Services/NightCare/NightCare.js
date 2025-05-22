@@ -7,10 +7,10 @@ import { Helmet } from "react-helmet-async";
 import VideoSection from '../VideoSection';
 
 import ServiceImage1 from "../../../assets/care-for-adults.png";
-import NightPanel1 from "../../../assets/night-panel1.jpg";
-import NightPanel2 from "../../../assets/night-panel2.jpg";
-import NightPanel3 from "../../../assets/night-panel3.jpg";
-import NightPanel4 from "../../../assets/night-panel4.jpg";
+import NightPanel1 from "../../../assets/services/night/panel1.jpg";
+import NightPanel2 from "../../../assets/services/night/panel2.jpg";
+import NightPanel3 from "../../../assets/services/night/panel3.jpg";
+import NightPanel4 from "../../../assets/services/night/panel4.jpg";
 
 const NightCare = () => {
   const [postcode, setPostcode] = useState("");

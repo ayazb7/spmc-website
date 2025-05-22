@@ -6,9 +6,9 @@ import { Helmet } from 'react-helmet-async';
 import VideoSection from '../VideoSection';
 
 import ServiceImage1 from '../../../assets/care-for-adults.png';
-import LiveInCarePanel1 from '../../../assets/livein-panel1.jpg';
-import LiveInCarePanel2 from '../../../assets/livein-panel2.jpg';
-import LiveInCarePanel3 from '../../../assets/livein-panel3.jpg';
+import LiveInCarePanel1 from '../../../assets/services/livein/panel1.jpg';
+import LiveInCarePanel2 from '../../../assets/services/livein/panel2.jpg';
+import LiveInCarePanel3 from '../../../assets/services/livein/panel3.jpg';
 
 
 const LiveInCare = () => {

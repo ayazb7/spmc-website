@@ -5,11 +5,11 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import { Helmet } from 'react-helmet-async';
 import VideoSection from '../VideoSection';
 
-import SupportedLivingPanel1a from '../../../assets/supported-panel1a.jpg';
-import SupportedLivingPanel1b from '../../../assets/supported-panel1b.jpg';
-import SupportedLivingPanel2 from '../../../assets/supported-panel2.jpg';
-import SupportedLivingPanel3 from '../../../assets/supported-panel3.jpg';
-import SupportedLivingPanel4 from '../../../assets/supported-panel4.jpg';
+import SupportedLivingPanel1a from '../../../assets/services/supported/panel1a.jpg';
+import SupportedLivingPanel1b from '../../../assets/services/supported/panel1b.jpg';
+import SupportedLivingPanel2 from '../../../assets/services/supported/panel2.jpg';
+import SupportedLivingPanel3 from '../../../assets/services/supported/panel3.jpg';
+import SupportedLivingPanel4 from '../../../assets/services/supported/panel4.jpg';
 
 
 const SupportedLiving = () => {

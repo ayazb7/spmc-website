@@ -5,9 +5,9 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import VideoSection from '../VideoSection';
 import { Helmet } from 'react-helmet-async';
 
-import HospitalPanel1 from '../../../assets/hospital-panel1.png';
-import HospitalPanel2 from '../../../assets/hospital-panel2.png';
-import HospitalPanel3 from '../../../assets/hospital-panel3.png';
+import HospitalPanel1 from '../../../assets/services/hospital/panel1.png';
+import HospitalPanel2 from '../../../assets/services/hospital/panel2.png';
+import HospitalPanel3 from '../../../assets/services/hospital/panel3.png';
 
 const AfterHospitalCare = () => {
     const [hasScrolled, setHasScrolled] = useState(false);
@@ -99,7 +99,7 @@ const AfterHospitalCare = () => {
                             Rehabilitation and Skill Rebuilding: Whether recovering from an illness, injury, or surgery, our services are focused on helping individuals regain strength, mobility, and essential daily skills. Through compassionate and patient-focused care, we help clients rebuild their confidence and independence, enabling them to return to their usual activities at their own pace.
                             <br/>
                             <br/>
-                            We believe in delivering care that goes beyond just meeting immediate needs. With regular reviews and close collaboration with families and healthcare professionals, we adapt our approach to suit each individual’s evolving requirements. At Solent Primary Medical Care, we are dedicated to making recovery at home a positive, empowering, and supported experience.
+                            We believe in delivering care that goes beyond just meeting immediate needs. With regular reviews and close collaboration with families and healthcare professionals, we adapt our approach to suit each individual's evolving requirements. At Solent Primary Medical Care, we are dedicated to making recovery at home a positive, empowering, and supported experience.
                         </p>
                     </div>
                 </div>

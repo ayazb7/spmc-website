@@ -5,10 +5,10 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import { Helmet } from 'react-helmet-async';
 import VideoSection from '../VideoSection';
 
-import DisabilitiesPanel1 from '../../../assets/disabilities-panel1.jpg';
-import DisabilitiesPanel2 from '../../../assets/disabilities-panel2.jpg';
-import DisabilitiesPanel3 from '../../../assets/disabilities-panel3.jpg';
-import DisabilitiesPanel4 from '../../../assets/disabilities-panel4.jpg';
+import DisabilitiesPanel1 from '../../../assets/services/disabilities/panel1.jpg';
+import DisabilitiesPanel2 from '../../../assets/services/disabilities/panel2.jpg';
+import DisabilitiesPanel3 from '../../../assets/services/disabilities/panel3.jpg';
+import DisabilitiesPanel4 from '../../../assets/services/disabilities/panel4.jpg';
 
 const DisabilitiesSupport = () => {
     const [hasScrolled, setHasScrolled] = useState(false);
