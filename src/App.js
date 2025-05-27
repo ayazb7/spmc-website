@@ -19,6 +19,7 @@ import ServiceAvailable from './pages/ServiceAvailable/ServiceAvailable';
 import ServiceUnavailable from './pages/ServiceUnavailable/ServiceUnavailable';
 import Careers from './pages/Careers/Careers';
 import CareersApply from './pages/Careers/CareersApply';
+import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy';
 
 const App = () => {
     return (
@@ -43,6 +44,7 @@ const App = () => {
                     <Route path="/careers-apply" element={<CareersApply />} />
                     <Route path="/service-available" element={<ServiceAvailable />} />
                     <Route path="/service-unavailable" element={<ServiceUnavailable />} />
+                    <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                 </Routes>
             </Layout>
         </Router>

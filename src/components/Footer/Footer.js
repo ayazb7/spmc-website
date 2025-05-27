@@ -17,7 +17,7 @@ const Footer = () => {
                         </div>
                         <ul className="link-grid">
                             <li><a href="/about">About Us</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="/privacy-policy">Privacy Policy</a></li>
                             <li><a href="#">News</a></li>
                             <li><a href="#">Useful Information</a></li>
                         </ul>
