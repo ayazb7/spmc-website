@@ -7,13 +7,17 @@ import './PrivacyPolicy.css';
 const PrivacyPolicy = () => {
     const [activeSection, setActiveSection] = useState('');
     const [scrollProgress, setScrollProgress] = useState(0);
+    const [tocPosition, setTocPosition] = useState(0);
+    const [isFixed, setIsFixed] = useState(false);
     const contentRef = useRef(null);
     const sectionRefs = useRef([]);
+    const tocRef = useRef(null);
 
     useEffect(() => {
         const handleScroll = () => {
-            // Calculate scroll progress
             const scrollTop = window.scrollY;
+            
+            // Calculate scroll progress
             const docHeight = document.documentElement.scrollHeight - window.innerHeight;
             const progress = (scrollTop / docHeight) * 100;
             setScrollProgress(Math.min(progress, 100));
@@ -30,12 +34,54 @@ const PrivacyPolicy = () => {
             });
             
             setActiveSection(currentSection);
+
+            // Handle TOC positioning - only on desktop
+            if (window.innerWidth > 1200 && tocRef.current) {
+                const contentWrapper = document.querySelector('.privacy-content-wrapper');
+                const policyContent = document.querySelector('.policy-content');
+                const navbar = document.querySelector('.navbar');
+                const navbarHeight = navbar ? navbar.offsetHeight : 80;
+                
+                if (contentWrapper && policyContent) {
+                    const wrapperRect = contentWrapper.getBoundingClientRect();
+                    const contentRect = policyContent.getBoundingClientRect();
+                    const wrapperTop = wrapperRect.top + scrollTop;
+                    const contentBottom = contentRect.bottom + scrollTop;
+                    const tocHeight = tocRef.current.offsetHeight;
+                    const viewportHeight = window.innerHeight;
+                    
+                    // Check if we should start fixing the TOC
+                    const shouldStartFixing = scrollTop > (wrapperTop - navbarHeight - 20);
+                    
+                    // Calculate if TOC would go past the bottom of content when fixed
+                    const fixedTocBottom = scrollTop + navbarHeight + 20 + tocHeight;
+                    const shouldStopFixing = fixedTocBottom > contentBottom;
+                    
+                    if (shouldStartFixing && !shouldStopFixing) {
+                        // TOC should be fixed to viewport
+                        setIsFixed(true);
+                        setTocPosition(0);
+                    } else if (shouldStartFixing && shouldStopFixing) {
+                        // TOC should be positioned so its bottom aligns with content bottom
+                        setIsFixed(false);
+                        setTocPosition(contentBottom - wrapperTop - tocHeight);
+                    } else {
+                        // TOC should be in normal flow
+                        setIsFixed(false);
+                        setTocPosition(0);
+                    }
+                }
+            }
         };
 
         window.addEventListener('scroll', handleScroll);
+        window.addEventListener('resize', handleScroll);
         handleScroll(); // Initial call
         
-        return () => window.removeEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('resize', handleScroll);
+        };
     }, []);
 
     useEffect(() => {
@@ -117,7 +163,13 @@ const PrivacyPolicy = () => {
             <div className="privacy-content-wrapper">
                 {/* Table of Contents - Desktop Only */}
                 <motion.div 
-                    className="table-of-contents"
+                    ref={tocRef}
+                    className={`table-of-contents ${isFixed ? 'fixed' : ''}`}
+                    style={{
+                        transform: isFixed ? 'none' : `translateY(${tocPosition}px)`,
+                        top: isFixed ? '100px' : 'auto',
+                        position: isFixed ? 'fixed' : 'absolute'
+                    }}
                     initial={{ opacity: 0, x: -50 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}

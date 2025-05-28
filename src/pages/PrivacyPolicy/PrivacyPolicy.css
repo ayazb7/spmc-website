@@ -97,13 +97,14 @@
     display: flex;
     gap: 40px;
     align-items: flex-start;
+    position: relative;
 }
 
 /* Table of Contents */
 .table-of-contents {
-    position: sticky;
-    position: -webkit-sticky;
-    top: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 320px;
     background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
     border-radius: 20px;
@@ -121,12 +122,28 @@
     z-index: 10;
 }
 
+.table-of-contents.fixed {
+    position: fixed;
+    left: calc((100vw - 1400px) / 2 + 20px);
+}
+
+/* For screens smaller than the max content width */
+@media screen and (max-width: 1440px) {
+    .table-of-contents.fixed {
+        left: 20px;
+    }
+}
+
 .table-of-contents:hover {
     transform: translateY(-2px);
     box-shadow: 
         0 25px 50px rgba(0, 0, 0, 0.12),
         0 12px 24px rgba(0, 0, 0, 0.06),
         inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.table-of-contents.fixed:hover {
+    transform: none;
 }
 
 .toc-header {
@@ -294,6 +311,7 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     padding: 40px;
     position: relative;
+    margin-left: 360px;
 }
 
 .policy-content h2 {
@@ -435,13 +453,23 @@
     .privacy-content-wrapper {
         flex-direction: column;
         gap: 20px;
+        position: static;
     }
     
     .table-of-contents {
-        position: static;
+        position: static !important;
         width: 100%;
         order: -1;
         max-height: none;
+        margin: 0 auto;
+        max-width: 800px;
+        transform: none !important;
+        left: auto !important;
+        top: auto !important;
+    }
+    
+    .policy-content {
+        margin-left: 0;
     }
     
     .table-of-contents ul {
@@ -491,11 +519,15 @@
     
     .privacy-content-wrapper {
         margin-top: 80px;
-        padding: 0 15px;
+        padding: 0 10px;
+        max-width: 100%;
     }
     
     .policy-content {
-        padding: 30px 20px;
+        padding: 30px 15px;
+        margin: 0;
+        width: 100%;
+        box-sizing: border-box;
     }
     
     .policy-content h2 {
@@ -518,6 +550,9 @@
     .table-of-contents {
         padding: 0;
         border-radius: 15px;
+        width: calc(100vw - 20px);
+        max-width: calc(100vw - 20px);
+        margin: 0 auto;
     }
     
     .toc-header {
@@ -563,7 +598,16 @@
         overflow-x: auto;
     }
     
+    .privacy-content-wrapper {
+        padding: 0 5px;
+    }
+    
     .table-of-contents {
-        width: 280px;
+        width: calc(100vw - 10px);
+        max-width: calc(100vw - 10px);
+    }
+    
+    .policy-content {
+        padding: 25px 10px;
     }
 } 
