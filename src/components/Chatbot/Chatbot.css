@@ -126,23 +126,103 @@
   }
   
   .chat-message {
-    max-width: 80%;
-    padding: 0.625rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
     border-radius: 0.5rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .chat-message strong {
-    display: block;
-    margin-bottom: 0.25rem;
-    font-size: 0.875rem;
-    font-weight: 600;
+    max-width: 85%;
+    word-wrap: break-word;
   }
   
   .chat-message p {
-    margin: 0;
-    line-height: 1.4;
-    font-size: 0.9375rem;
+    margin: 0.5rem 0;
+    line-height: 1.5;
+  }
+  
+  .chat-message ul, 
+  .chat-message ol {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+  }
+  
+  .chat-message li {
+    margin: 0.25rem 0;
+    line-height: 1.5;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .chat-message li i {
+    color: #85BB40;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+  }
+  
+  .chat-message a,
+  .chat-message .email-link,
+  .chat-message .phone-link {
+    color: #174374;
+    text-decoration: none;
+    background-color: rgba(133, 187, 64, 0.1);
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.25rem;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  
+  .chat-message a:hover,
+  .chat-message .email-link:hover,
+  .chat-message .phone-link:hover {
+    background-color: rgba(133, 187, 64, 0.2);
+    text-decoration: underline;
+  }
+  
+  .chat-message a i,
+  .chat-message .email-link i,
+  .chat-message .phone-link i {
+    font-size: 0.875rem;
+    color: #85BB40;
+  }
+  
+  .chat-message strong {
+    color: #174374;
+    font-weight: 600;
+  }
+  
+  .chat-message blockquote {
+    margin: 0.5rem 0;
+    padding: 0.5rem 1rem;
+    border-left: 3px solid #85BB40;
+    background-color: rgba(133, 187, 64, 0.05);
+    font-style: italic;
+  }
+  
+  .chat-message code {
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.25rem;
+    font-family: monospace;
+  }
+  
+  .chat-message pre {
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    margin: 0.5rem 0;
+  }
+  
+  .chat-message pre code {
+    background-color: transparent;
+    padding: 0;
+  }
+  
+  .chat-message .highlight {
+    background-color: rgba(133, 187, 64, 0.1);
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.25rem;
   }
   
   .user-message {

@@ -1,13 +1,62 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './Chatbot.css';
-import { FaComments, FaTimes } from 'react-icons/fa';
+import { FaComments, FaTimes, FaLink, FaEnvelope, FaPhone, FaListUl, FaListOl } from 'react-icons/fa';
+import { getSystemPrompt } from './chatContext';
+
+const API_URL = 'https://openrouter.ai/api/v1';
+
+const formatMessage = (content) => {
+  let formattedContent = content.replace(
+    /\*\*(.*?)\*\*/g,
+    '<strong>$1</strong>'
+  );
+
+  formattedContent = formattedContent.replace(
+    /(https?:\/\/[^\s]+)/g,
+    '<a href="$1" target="_blank" rel="noopener noreferrer" class="link"><i class="fa fa-link"></i> $1</a>'
+  );
+
+  formattedContent = formattedContent.replace(
+    /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+)/gi,
+    '<a href="mailto:$1" class="email-link"><i class="fa fa-envelope"></i> $1</a>'
+  );
+
+  formattedContent = formattedContent.replace(
+    /(\+?[\d\s-()]{10,})/g,
+    '<a href="tel:$1" class="phone-link"><i class="fa fa-phone"></i> $1</a>'
+  );
+
+  formattedContent = formattedContent.replace(
+    /^\s*[-*]\s+(.+)$/gm,
+    '<li><i class="fa-solid fa-arrow-right"></i> $1</li>'
+  );
+  formattedContent = formattedContent.replace(
+    /^\s*\d+\.\s+(.+)$/gm,
+    '<li><i class="fa-solid fa-arrow-right"></i> $1</li>'
+  );
+
+  if (formattedContent.includes('<li>')) {
+    formattedContent = formattedContent.replace(
+      /((?:<li>.*<\/li>\n?)+)/g,
+      '<ul>$1</ul>'
+    );
+  }
+
+  formattedContent = formattedContent.replace(
+    /\n\n/g,
+    '</p><p>'
+  );
+  formattedContent = `<p>${formattedContent}</p>`;
+
+  return formattedContent;
+};
 
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
     {
       type: 'ai',
-      content: "Hi! I'm your AI assistant. Ask me anything about SPMC - I'm here to help!"
+      content: "Hi! I'm your AI assistant. Ask me anything about SPMC's services, care options, or how we can help you. I'm here to provide information and support!"
     }
   ]);
   const [inputMessage, setInputMessage] = useState('');
@@ -45,7 +94,6 @@ const Chatbot = () => {
 
     const apiKey = process.env.REACT_APP_DEEPSEEK_API_KEY;
     if (!apiKey) {
-      console.error('DeepSeek API key is missing');
       setMessages(prev => [...prev, {
         type: 'ai',
         content: "I apologize, but there's a configuration issue. Please contact support."
@@ -53,6 +101,7 @@ const Chatbot = () => {
       return;
     }
 
+    // Add user message to chat
     const userMessage = {
       type: 'user',
       content: inputMessage
@@ -62,32 +111,32 @@ const Chatbot = () => {
     setIsLoading(true);
 
     try {
-      // Call DeepSeek API
-      const response = await fetch('https://api.deepseek.com/v1/chat/completions', {
+      const response = await fetch(`${API_URL}/chat/completions`, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${apiKey}`
+          'Authorization': `Bearer ${apiKey}`,
+          'HTTP-Referer': window.location.origin,
+          'X-Title': 'SPMC Website',
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          model: "deepseek-chat",
+          model: 'deepseek/deepseek-v3-base:free',
           messages: [
             {
-              role: "system",
-              content: "You are a helpful AI assistant for SPMC (Southampton Personal Management Company), a care and support service provider. You can help users with information about their services, booking consultations, and general inquiries. Keep responses concise and relevant to SPMC's services."
+              role: 'system',
+              content: getSystemPrompt()
             },
             ...messages.map(msg => ({
               role: msg.type === 'user' ? 'user' : 'assistant',
               content: msg.content
             })),
             {
-              role: "user",
+              role: 'user',
               content: inputMessage
             }
           ],
           temperature: 0.7,
-          max_tokens: 150,
-          stream: false
+          max_tokens: 250
         })
       });
 
@@ -98,21 +147,33 @@ const Chatbot = () => {
           statusText: response.statusText,
           error: errorData
         });
-        throw new Error(`API Error: ${response.status} ${response.statusText}`);
+
+        let errorMessage = "I apologize, but I'm having trouble connecting right now.";
+        
+        if (response.status === 401) {
+          errorMessage = "Authentication error. Please check the API configuration.";
+          console.error('Authentication failed. Please verify your API key is correct and active.');
+        } else if (response.status === 429) {
+          errorMessage = "Rate limit exceeded. Please try again in a moment.";
+        }
+
+        throw new Error(errorMessage);
       }
 
       const data = await response.json();
       
       const aiMessage = {
         type: 'ai',
-        content: data.choices[0].message.content
+        content: data.choices[0].message.content,
+        formattedContent: formatMessage(data.choices[0].message.content)
       };
       setMessages(prev => [...prev, aiMessage]);
     } catch (error) {
-      console.error('Error calling DeepSeek API:', error);
+      console.error('Error calling OpenRouter API:', error);
       const errorMessage = {
         type: 'ai',
-        content: "I apologize, but I'm having trouble connecting right now. Please try again later or contact us directly through our contact form."
+        content: error.message || "I apologize, but I'm having trouble connecting right now. Please try again later or contact us directly through our contact form.",
+        formattedContent: formatMessage(error.message || "I apologize, but I'm having trouble connecting right now. Please try again later or contact us directly through our contact form.")
       };
       setMessages(prev => [...prev, errorMessage]);
     } finally {
@@ -167,7 +228,11 @@ const Chatbot = () => {
                 aria-label={`${message.type === 'ai' ? 'AI' : 'Your'} message`}
               >
                 <strong>{message.type === 'ai' ? 'AI' : 'You'}</strong>
-                <p>{message.content}</p>
+                <div 
+                  dangerouslySetInnerHTML={{ 
+                    __html: message.formattedContent || formatMessage(message.content)
+                  }} 
+                />
               </div>
             ))}
             {isLoading && <LoadingIndicator />}
